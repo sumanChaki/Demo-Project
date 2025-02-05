@@ -1,0 +1,682 @@
+.configure-section {
+    padding-left: 40px;
+    padding-right: 40px;
+
+    @include mobile-lg {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// .config-gallery-sticky {
+//     position: sticky;
+//     top: 0px;
+// }
+
+.config-sticky-gallery {
+    // position: sticky;
+    // top: 160px;
+}
+
+.config-gallery-slider {
+    margin: 43px 20px 0 -40px;
+
+    @include tab-landscape {
+        margin: 0;
+    }
+
+    .swiper-pagination {
+        display: flex;
+        justify-content: center;
+        bottom: 30px;
+
+        @include mobile-lg{
+            bottom: 23px;
+        }
+
+        &-bullet {
+            width: 14px;
+            height: 14px;
+            background: rgba($color: #ffffff, $alpha: 0.3);
+            margin: 0 5px;
+            opacity: 1;
+
+            @include mobile-lg{
+                width: 8px;
+                height: 8px;
+            }
+
+            &-active {
+                background: white;
+            }
+        }
+    }
+}
+
+.config-gallery-img {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 40.85%, rgba(0, 0, 0, 0.49) 100%);
+    }
+}
+
+.config-search {
+    display: flex;
+    margin-bottom: 30px;
+
+    input[type=search] {
+        height: 46px;
+        background: $light-grey-bg url(../images/header/search-icon.svg) no-repeat 20px center !important;
+        padding-left: 50px;
+
+        @include macbook{
+            height: 40px;
+        }
+
+        @include windows-laptop{
+            height: 40px;
+        }
+
+        @include tab-landscape{
+            height: 42px;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .btn {
+        margin-left: 20px;
+       
+        @include mobile-lg{
+            margin-left: 0;
+            padding: 0 14px;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+
+///// 
+
+.config-block {
+    margin-bottom: 40px;
+
+    @include mobile-lg {
+        margin-bottom: 30px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    h2{
+        margin-bottom: 30px;
+
+        @include tab-landscape{
+            margin-bottom: 24px;
+        }
+
+        @include mobile-lg{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.config-toggle-single {
+   
+    &:first-child{
+        .config-toggle-link{
+            padding-top: 0;
+        }
+    }
+
+}
+
+.config-toggle-link {
+    width: 100%;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    font-family: $secondary-font;
+    letter-spacing: -0.04em;
+    color: #000000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid $border-color;
+    transition: 0.3s all;
+
+    @include macbook{
+        font-size: 20px;
+        line-height: 24px;
+        padding: 14px 0;
+    }
+
+    @include windows-laptop{
+        font-size: 20px;
+        line-height: 24px;
+        padding: 14px 0;
+    }
+
+    @include tab-landscape{
+        font-size: 20px;
+        line-height: 24px;
+        padding: 14px 0;
+    }
+
+    @include mobile-lg{
+        font-size: 18px;
+        line-height: 22px;
+        padding: 10px 0;
+    }
+
+    &::after {
+        content: "";
+        flex: none;
+        width: 28px;
+        height: 24px;
+        background: url(../images/configure/config-toggle-icon.svg) no-repeat center / contain;
+        margin-left: 20px;
+
+        @include mobile-lg{
+            width: 22px;
+            height: 18px;
+        }
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+.config-toggle-link-price{
+    border-top: 1px solid $border-color;
+    padding: 20px 0 !important;
+
+    @include macbook{
+        padding: 14px 0 !important;
+    }
+
+    @include windows-laptop{
+        padding: 14px 0 !important;
+    }
+
+    @include tab-landscape{
+        padding: 14px 0 !important;
+    }
+
+    @include mobile-lg{        
+        padding: 10px 0 !important;
+    }
+}
+
+.config-price{
+    margin-left: auto;
+    font-size: 22px;
+    line-height: 21px;
+    font-weight: 500;
+    font-family: $secondary-font;
+    letter-spacing: -0.02em;
+    color: $primary-color;  
+    margin-right: -4px; 
+    
+    @include mobile-lg{
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+
+
+.config-toggle-info {
+    padding-top: 20px;
+}
+
+.price-equipment-area {
+
+    .price-equipment-block {        
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+
+        label{
+            
+            line-height: 28px;
+            font-weight: normal;
+            
+            color: $content-color;  
+            
+            @include mobile-lg{
+                font-size: 15px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.colors-label {
+    margin-bottom: 40px;
+
+    @include mobile-lg{
+        margin-bottom: 20px;
+    }
+
+    &:last-child{
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-size: 22px;
+        line-height: 27px;
+        font-weight: bold;
+        
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin-bottom: 20px;
+
+        @include mobile-lg{
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}
+
+.standard-colour-radio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.standard-colour-check {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -10px;
+    max-width: 500px;
+}
+
+.standard-color-checkbox {
+    line-height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 10px 10px 0;
+
+    input[type=radio] {
+
+        display: none;
+
+        &+label {
+            height: 60px;
+            width: 60px;
+            margin: 0 !important;
+            padding: 0 !important;
+            transition: 0.3s all;
+
+            @include tab-landscape {
+                height: 50px;
+                width: 50px;
+            }
+
+            @include mobile-lg{
+                height: 40px;
+                width: 40px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: auto;
+                left: auto;
+                bottom: 8px;
+                right: 8px;
+                height: 17px;
+                width: 17px;
+                background: url(../images/configure/radio-check-icon.svg) no-repeat center / contain;
+                border: none !important;
+                opacity: 0;
+
+                @include mobile-lg{
+                    bottom: 5px;
+                    right: 5px;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+        }
+
+        &:checked+label {
+            box-shadow: 0px 8px 16px rgba(150, 150, 150, 0.34);
+            transform: scale(1.2);
+            z-index: 3;
+
+            @include tab-landscape {
+                transform: scale(1.1);
+            }
+
+            &:before {
+                opacity: 1;
+                border: none !important;
+            }
+        }
+
+    }
+}
+
+.wheel-radio {
+    display: flex;
+    flex-wrap: wrap;
+
+    .form-check {
+        margin-right: 16px;
+
+        @include tab-landscape {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        @include mobile-lg{
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        input[type=radio]+label {
+            width: 70px;
+            padding: 0 !important;
+            margin: 0 !important;
+
+            @include macbook{
+                width: 50px;
+            }
+
+            @include windows-laptop{
+                width: 50px;
+            }
+
+            @include tab-landscape {
+                width: 60px;
+            }
+
+            @include mobile-lg{
+                width: 40px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100% !important;
+                height: 100% !important;
+                background: rgba(0, 0, 0, 0.2) !important;
+                border-radius: 0 !important;
+                opacity: 0;
+                display: block !important;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: auto;
+                left: auto;
+                bottom: 6px;
+                right: 6px;
+                height: 20px;
+                width: 20px;
+                background: url(../images/configure/radio-check-icon.svg) no-repeat center/contain;
+                border: none !important;
+                opacity: 0;
+                z-index: 2;
+
+                @include mobile-lg{
+                    bottom: 5px;
+                    right: 5px;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+        }
+
+        input[type=radio]:checked+label {
+            &::before {
+                opacity: 1;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.small-note {
+    
+    line-height: 28px;
+    font-weight: normal;
+    color: $content-color;
+    margin-bottom: 20px;
+}
+
+.wheel-sheets-check {
+    display: flex;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    input[type=checkbox]+label {
+        padding: 0 0 0 20px !important;
+
+        &::before {
+            background: none;
+            border: 1px solid $border-color;
+        }
+    }
+
+    p {
+        margin: 0;
+        line-height: 16px;
+
+        a {
+            display: inline-block;
+            margin-left: 10px;
+
+            img {
+                width: 20px;
+            }
+        }
+    }
+
+    .wheel-sheets-price {
+        margin-left: auto;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: black;
+
+        @include mobile-lg{
+            
+            line-height: 15px;
+        }
+    }
+}
+
+.wheel-sheets-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    figure {
+        width: 62px;
+        height: 62px;
+        margin-right: 20px;
+
+        @include mobile-lg{
+            width: 44px;
+            height: 44px;
+            margin-right: 16px;
+        }
+    }
+
+
+    input[type=radio]+label {
+        padding: 0 0 0 22px !important;
+        top: -12px;
+
+        @include mobile-lg{
+            padding: 0 0 0 15px !important;
+            top: -10px;
+        }
+
+        &::before {
+            height: 22px;
+            width: 22px;
+
+            @include mobile-lg{
+                height: 18px;
+                width: 18px;
+            }
+        }
+
+      
+    }
+
+    p {
+        margin: 0;
+        line-height: 16px;
+
+        a {
+            display: inline-block;
+            margin-left: 10px;
+
+            img {
+                width: 20px;
+            }
+        }
+    }
+
+    .wheel-sheets-price {
+        margin-left: auto;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: black;
+
+        @include mobile-lg{
+            
+            line-height: 15px;
+        }
+    }
+}
+
+// ========================== //
+
+.config-gallery-footer {
+    position: absolute;
+    z-index: 11;
+    left: 0;
+    right: 0;
+    bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 30px;
+
+    @include tab-landscape {
+        padding: 0 20px;
+    }
+
+    @include mobile-lg{
+        bottom: 14px;
+        padding: 0 14px;
+    }
+
+    a{
+        pointer-events: auto;
+    }
+
+    .car-icon{
+        width: 50px;
+
+        @include mobile-lg{
+            width: 36px;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .steering-icon{
+        width: 26px;
+
+        @include mobile-lg{
+            width: 20px;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+    
+}
+
+.config-detail-wrapper {
+    @include tab-portrait {
+        margin-top: 30px;
+    }
+}
+
+.config-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile-lg {
+        display: block;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .btn {
+        width: calc(50% - 10px);
+
+        @include mobile-lg {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+}

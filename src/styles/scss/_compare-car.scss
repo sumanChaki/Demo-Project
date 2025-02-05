@@ -1,0 +1,387 @@
+.compare-car {
+    background: $light-grey-bg;
+    border-bottom: 1px solid $border-color;
+    @include tab-portrait {
+        padding-bottom: 0px;
+    }
+    @include tab-sm-portrait {
+        padding-bottom: 50px;
+    }
+}
+
+.compare-car-card-image{
+    @include lists;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    @include tab-landscape{
+        overflow-y: scroll;
+    }
+    li{
+        padding: 20px;
+        width: 100%;
+        @include tab-landscape{
+            padding:20px 10px;
+        }
+        .compare-car-card{
+            @include tab-landscape{
+                width: 300px;
+                margin-bottom: 0px;
+                height: 100% !important;
+            }
+        }
+    }
+}
+
+.subscription-gap {
+    padding: 50px 0px;
+}
+
+.compare-car-card {
+    padding: 20px;
+    background: white;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04), 0px 4px 11px rgba(0, 0, 0, 0.04);
+    position: relative;
+    @include tab-landscape {
+        padding: 10px;
+        margin-bottom: 35px;
+        height: calc(100% - 35px) !important;
+    }
+    @include tab-portrait {
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+    @include tab-sm-portrait {
+        padding: 20px;
+        margin-bottom: 50px;
+        height: auto !important;
+    }
+
+    figure {
+        @include tab-sm-portrait {
+            margin: -20px -20px 20px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    .compare-car-content {
+        padding-top: 16px;
+        @include tab-landscape {
+            padding-top: 10px;
+        }
+        @include tab-sm-portrait {
+            padding-top: 0px;
+        }
+        h4 {
+            margin-bottom: 2px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            a {
+                color: black;
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+            @include tab-landscape {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            @include tab-portrait {
+                font-size: 22px;
+                line-height: 26px;
+                margin-bottom: 8px;
+            }
+        }
+        p {
+            margin-bottom: 0px;
+            font-weight: 500;
+            @include tab-landscape {
+                font-size: 14px;
+                line-height: 22px;
+            }
+            @include tab-portrait {
+                line-height: 28px;
+            }
+        }
+        .btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+}
+
+.add-car {
+    @extend .compare-car-card;
+    padding: 0px 20px 20px 20px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    @include macbook {
+        padding: 20px;
+    }
+    @include windows-laptop {
+        padding: 20px;
+    }
+    @include tab-landscape {
+        padding: 10px;
+    }
+    @include tab-portrait {
+        padding: 20px 30px;
+        margin-bottom: 0px;
+    }
+    @include tab-sm-portrait {
+        padding: 30px 20px;
+    }
+    p {
+        font-weight: 500;
+        margin: 0px;
+    }
+}
+
+.compare-add-car {
+    justify-content: center;
+    .select-car {
+        margin-bottom: 12px;
+    }
+    .select-car-model {
+        margin-top: 48px;
+        @include macbook{
+            margin-top: 18px;
+        }
+        @include windows-laptop{
+            margin-top: 18px;
+        }
+    }
+}
+
+.select-car {
+    background: $light-grey-bg;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 1px dashed $border-color;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tab-landscape {
+        width: 80px;
+        height: 80px;
+    }
+    @include tab-sm-portrait {
+        margin-bottom: 20px;
+    }
+
+
+    span {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    img{
+        width: 30px;
+    }
+}
+
+.select-car-model {
+    width: 100%;
+    flex: none;
+    @include macbook {
+        margin-top: 37px;
+    }
+    @include windows-laptop {
+        margin-top: 37px;
+    }
+    @include tab-landscape {
+        margin-top: 40px;
+    }
+    @include tab-portrait {
+        margin-top: 40px;
+    }
+    .btn {
+        @include tab-landscape {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+    }
+    .selected-wrapper-item {
+        select {
+            display: block;
+            height: 46px;
+            &:nth-child(1) {
+                margin-top: -1px;
+            }
+        }
+    }
+}
+
+.remove-compare-car,
+.modal-close {
+    width: 32px;
+    height: 32px;
+    background: $primary-color;
+    border-radius: 50%;
+    position: absolute;
+    right: -16px;
+    top: -16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s all;
+
+    &:hover {
+        background: white;
+
+        box-shadow: 0px 4px 10px rgba(129, 121, 121, 0.1);
+        path {
+            fill: $primary-color;
+        }
+    }
+}
+
+.modal-close {
+    @include mobile-lg {
+        left: 0;
+        right: 0;
+        bottom: -50px;
+        top: auto;
+        margin: 0 auto;
+    }
+}
+
+.car-comparism {
+    padding: 50px 0px 30px 0px;
+    .car-comparism-card {
+        background: $light-grey-bg;
+        padding: 30px;
+    }
+}
+
+.compare-table {
+    width: 100%;
+    border: 1px solid $border-color;
+    margin-bottom: 30px;
+    @include tab-sm-portrait{
+        width: 1000px;
+    }
+    @include mobile-lg{
+        width: 750px;
+    }
+    thead {
+        border: none;
+        border-bottom: 1px solid $border-color;
+        tr {
+            th {
+                background: $light-grey-bg;
+                font-family: $secondary-font;
+                font-size: 20px;
+                line-height: 18px;
+                font-weight: 500;
+                color: black;
+                padding: 25px 30px;
+                letter-spacing: -0.04em;
+                @include tab-landscape {
+                    padding: 15px;
+                    font-size: 18px;
+                }
+
+                &:first-child {
+                    border-right: 1px solid $border-color;
+                }
+            }
+        }
+    }
+    tbody {
+        tr {
+            background: white;
+            td {
+                padding: 12px 30px;
+                @extend p;
+                margin: 0px;
+                vertical-align: middle;
+                text-align: center;
+                border-bottom: 1px solid $border-color;
+                @include tab-landscape {
+                    padding: 12px 15px;
+                }
+                &:first-child {
+                    background: white;
+                    text-align: left;
+                    width: 330px;
+                    border-right: 1px solid $border-color;
+                    @include tab-portrait {
+                        width: 230px;
+                    }
+                    @include mobile-lg {
+                        width: 175px;
+                    }
+                }
+            }
+            &:nth-child(even) {
+                background: $light-grey-bg;
+            }
+        }
+    }
+}
+
+.choose-car-color {
+    display: flex;
+    justify-content: center;
+    span {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: -12px;
+        @include tab-landscape {
+            width: 20px;
+            height: 20px;
+            margin-left: -7px;
+        }
+        &:last-child {
+            height: 30px;
+            width: auto;
+            @extend p;
+            margin: 0px;
+            padding-left: 10px;
+            line-height: 28px;
+            @include tab-landscape {
+                font-size: 15px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+
+.edit-car-card {
+    .btn {
+        width: 50%;
+        @include macbook {
+            width: 75%;
+        }
+        @include windows-laptop {
+            width: 75%;
+        }
+        @include tab-landscape {
+            width: 100%;
+        }
+        @include tab-portrait {
+            width: 50%;
+        }
+        @include tab-sm-portrait {
+            width: 75%;
+        }
+        @include mobile-lg {
+            width: 75%;
+        }
+    }
+}

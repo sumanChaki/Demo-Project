@@ -1,0 +1,500 @@
+.rental-hero {
+    height: 390px;
+    position: relative;
+    @include tab-portrait {
+        height: auto;
+        padding-top: 80px !important;
+    }
+
+    .rental-hero-img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include tab-portrait {
+            bottom: auto;
+            height: 500px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.57);
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.checklist-black-bullet {
+    ul {
+        @include lists;
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 34px;
+            position: relative;
+
+            @include macbook {
+                padding-left: 30px;
+            }
+
+            @include windows-laptop {
+                padding-left: 30px;
+            }
+
+            @include tab-landscape {
+                padding-left: 30px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: 0;
+                height: 22px;
+                width: 22px;
+                background: url(../images/check-circle-black.svg) no-repeat center / contain;
+
+                @include macbook {
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @include windows-laptop {
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @include tab-landscape {
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @include mobile-lg {
+                    top: 1px;
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+}
+
+.rental-form {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 60px;
+    @include macbook {
+        right: 0;
+        top: 115px;
+    }
+    @include windows-laptop {
+        right: 0;
+        top: 115px;
+    }
+    @include tab-landscape {
+        right: 0;
+        top: 150px;
+    }
+    @include tab-portrait {
+        max-width: 100%;
+        margin: 50px auto 0;
+        position: relative;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .card{
+        @include tab-landscape{
+            padding: 24px;
+        }
+    }
+
+
+
+    textarea,
+    select,
+    input[type="week"],
+    input[type="time"],
+    input[type="month"],
+    input[type="datetime-local"],
+    input[type="datetime"],
+    input[type="date"],
+    input[type="color"],
+    input[type="url"],
+    input[type="text"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="password"],
+    input[type="select"],
+    input[type="number"],
+    input[type="email"] {
+        background: $input-bg-color;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url(../images/select-caret-down-dark.svg);
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+    }
+}
+
+.rental-slot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .rental-select {
+        width: 100%;
+
+        &:last-child{
+            flex: none;
+            width: 155px;
+            margin-left: 20px;
+
+            @include mobile-lg{
+                width: 120px;
+                margin-left: 10px;
+            }
+        }
+
+        select{
+            @include mobile-lg{
+                background-position: right 12px center;
+                padding: 0 20px 0 12px;
+            }
+        }
+        
+    }
+    
+    &:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.rental-details {
+    padding: 50px 0px;
+    .card {
+        margin-bottom: 0px;
+        .form-btn-wrapper {
+            button {
+                width: 100%;
+            }
+        }
+        input[type=radio] + label{
+            font-size: 14px !important;
+        }
+        select {
+            background-position: right 10px center;
+        }
+        textarea, select, input[type=week], input[type=time], input[type=month], input[type=datetime-local], input[type=datetime], input[type=date], input[type=color], input[type=url], input[type=text], input[type=tel], input[type=search], input[type=password], input[type=select], input[type=number], input[type=email]{
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        .form-group label{
+            @include mobile-lg{
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
+
+.rental-booking-modal {
+    max-width: 1240px;
+    @include tab-landscape{
+        max-width: 750px;
+    }
+    @include tab-portrait{
+        max-width: 700px;
+    }
+    @include tab-portrait{
+        max-width: 95%;
+    }
+}
+
+.payment-option-card {
+    background: white;
+    border: 1px solid $border-color;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    @include tab-portrait{
+        padding: 25px;
+    }
+    @include tab-portrait{
+        margin-bottom: 30px;
+    }
+    p {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+    .btn {
+        margin-bottom: 30px;
+    }
+    .price-value {
+        font-weight: normal;
+        font-size: 48px;
+        line-height: 66px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 30px;
+    }
+    .payment-tag {
+        content: "";
+        position: absolute;
+        left: -55px;
+        right: 0;
+        background: #db4c46;
+        color: white;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        opacity: 1;
+        top: 15px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 200px;
+        transform: rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+.rental-booking-content-wrapper {
+    padding: 120px 0px 60px 0px;
+    @include tab-landscape{
+        padding: 80px 0px 50px 0px;
+    }
+}
+
+.rental-booking-content-card {
+    border: 1px solid $border-color;
+    padding: 0 30px;
+    margin-top: -1px;
+    @include tab-portrait{
+        padding:0px 7px;
+    }
+    ul {
+        @include lists;
+        display: flex;
+        align-items: center;
+        li {
+            width: 25%;
+            padding: 15px 0px;
+            text-align: center;
+            color: black;
+            @include tab-portrait{
+                width: 33.3%;
+                font-size: 15px;
+                line-height: 22px;
+            }
+            a {
+                @extend p;
+                position: relative;
+                text-decoration: none;
+                padding-left: 32px;
+                color: black;
+                transition: all 0.5s;
+                @include tab-portrait{
+                    font-size: 15px;
+                    line-height: 22px;
+                }
+                @include mobile-lg{
+                    padding-left: 22px;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $green-color;
+                }
+                
+            }
+        }
+    }
+    .rental-booking-content-body {
+        padding: 20px;
+        margin-bottom: 30px;
+        background: $light-grey-bg;
+        p{
+            @include tab-portrait{
+                font-size: 15px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+.mobile-detail-icon{
+    display: none;
+    @include tab-portrait{
+        display: initial;
+        height: 20px;
+        width: 20px !important;
+        background: $primary-color;
+        padding: 0 !important;
+        margin-left: 10px;
+    }
+    a{
+        display: flex;
+        padding: 0 !important;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        img{
+            width: 11px;
+        }
+    }
+}
+.mobile-hide-detail{
+    @include tab-portrait{
+        display: none;
+    }
+}
+
+.rental-details-arrow {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 12px;
+        height: 8px;
+        background: url(../images/down-arrow.svg) no-repeat center / contain;
+        top: 5px;
+        transition: all 0.5s;
+    }
+    &:hover {
+        color: $green-color;
+        text-decoration: none;
+        &::before {
+            background: url(../images/down-arrow-hover.svg) no-repeat center / contain;
+        }
+    }
+}
+
+.rental-add-item {
+    position: relative;
+    
+    &.tick-icon-add {
+
+        &::before{
+            content: "";
+            display: inline-block;
+            margin-right: 16px;
+            width: 20px;
+            height: 20px;
+            background: url(../images/add-item.svg) no-repeat center/contain;
+            position: relative;
+            top: -1px;
+            vertical-align: middle;
+
+            @include mobile-lg{
+                height: 16px;
+                width: 16px;
+            }
+        }
+    }
+
+    &.tick-icon-remove {
+        &::before{
+            content: "";
+            display: inline-block;
+            margin-right: 16px;
+            width: 14px;
+            height: 12px;
+            background: url(../images/tick-icon-remove.svg) no-repeat center/contain;
+            position: relative;
+            top: -1px;
+            vertical-align: middle;
+        }
+    }
+}
+
+
+
+
+
+.rental-details-table {
+    border: 1px solid $border-color;
+    ul {
+        @include lists;
+        margin: -1px 0;
+        li {
+
+            border-top: 1px solid $border-color;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            padding: 7px 10px;
+
+            @include mobile-lg{
+                display: block;
+            }
+            h5 {
+                line-height: 19px;
+                color: black;
+                margin: 4px 15px 0 0px;
+                @include tab-landscape{
+                    width: 180px;
+                    flex: none;
+                    font-size: 15px;
+                }
+                @include mobile-lg{
+                    width: 100%;
+                    margin-bottom: 12px;
+                }
+            }
+            p{
+                @include tab-sm-portrait{
+                    font-size: 15px;
+                    line-height: 24px;
+                    text-align: right;
+                    @include mobile-lg{
+                        text-align: left;
+                    }
+                }
+            }
+            &:last-child {
+                border-bottom: 1px solid $border-color;
+            }
+        }
+    }
+}
+
+.mobile-margin-bottom0{
+    @include tab-portrait{
+        margin-bottom: 0px;
+    }
+}

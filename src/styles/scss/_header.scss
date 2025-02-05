@@ -1,0 +1,1424 @@
+header {
+    position: relative;
+
+    .outer-wrapper {
+        background: white;
+        box-shadow: 0px 1px 0px $border-color;
+    }
+}
+
+.header-top {
+    height: 86px;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 1px 0px $border-color;
+    padding: 0px 50px;
+
+    // @include monitor-lg {
+    //     padding: 0px 20px;
+    // }
+
+    @include macbook {
+        padding: 0px 20px;
+    }
+
+    @include windows-laptop {
+        padding: 0px 20px;
+        height: 70px;
+    }
+
+    @include tab-landscape {
+        padding: 0px 20px;
+        height: 65px;
+    }
+
+    @include tab-portrait {
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    @include mobile-lg {
+        padding: 0px 20px;
+        height: 52px;
+    }
+
+    .search-panel-body {
+        padding: 0 25px;
+        background: $primary-color;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        margin: 0 auto;
+        height: 72px;
+        transition: all 0.5s ease;
+        transform: translateY(-115px);
+        z-index: 99;
+        display: flex;
+        justify-content: space-between;
+
+        &.open {
+            transform: translateY(0);
+            transition: all 0.5s ease;
+            .header-form {
+                display: block;
+            }
+        }
+    }
+
+    .search-close {
+        right: 25px;
+        margin-left: 25px;
+        font-size: 18px;
+        color: black;
+        text-transform: uppercase;
+        width: 44px;
+        height: 44px;
+        background: white;
+        box-shadow: 0 0 5px #dadada;
+        border-radius: 50%;
+        text-align: center;
+        flex: none;
+        display: none;
+
+        @include tab-landscape {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include mobile-lg {
+            width: 36px;
+            height: 36px;
+            margin-left: 18px;
+        }
+
+        
+        img {
+            width: 16px;
+
+            @include tab-landscape{
+                width: 14px;
+            }
+
+            @include mobile-lg{
+                width: 12px;
+            }
+        }
+    }
+
+    .logo-item {
+        align-self: center;
+        padding-right: 40px;
+
+        @include monitor-lg {
+            padding-right: 15px;
+        }
+        @include macbook {
+            padding-right: 25px;
+        }
+        @include windows-laptop {
+            padding-right: 25px;
+        }
+        @include tab-landscape {
+            padding-right: 20px;
+            margin-right: auto;
+        }
+
+        img {
+            width: 185px;
+            @include tab-landscape {
+                width: 165px;
+            }
+
+            @include mobile-lg{
+                width: 18px;
+            }
+        }
+    }
+}
+
+.deskstop-main-logo{
+    @include mobile-lg{
+        display: none;
+    }
+}
+
+.mobile-main-logo{
+    display: none;
+
+    @include mobile-lg{
+        display: block;
+    }
+}
+
+
+.header-form {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 20px;
+
+
+    @include tab-landscape {
+        padding: 0 25px;
+        background: white;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        margin: 0 auto;
+        height: 65px;
+        transition: all 0.5s ease;
+        transform: translateY(-100%);
+        z-index: 99;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include mobile-lg {
+        height: 52px;
+        padding: 0 20px;
+    }
+
+    input[type="search"] {
+        background: $light-grey-bg;
+        padding: 9px 46px 9px 20px;
+        width: 100%;
+        height: 46px;
+        border: none;
+
+        @include macbook {
+            height: 44px;
+        }
+
+        @include windows-laptop {
+            height: 44px;
+        }
+
+        @include tab-landscape {
+            height: 44px;
+            background: white url(../images/header/search-icon.svg) no-repeat 5px center !important;
+            border: 0 !important;
+            padding: 10px 10px 10px 45px;
+        }
+
+        &:focus {
+            @include tab-landscape {
+                background: white url(../images/header/search-icon.svg) no-repeat 5px center !important;
+                border: 0 !important;
+            }
+        }
+    }
+
+    input[type="submit"] {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: url(../images/header/search-icon.svg) no-repeat center;
+        height: 100%;
+        width: 57px;
+        z-index: 10;
+        border: none;
+        font-size: 0px;
+        padding: 0;
+
+        @include tab-landscape{
+            display: none;
+        }
+        
+    }
+
+    form {
+        width: 100%;
+        position: relative;
+    }
+
+    &.open {
+        transform: translateY(0);
+        transition: all 0.5s ease;
+    }
+}
+
+///////// Header Car Slider Style Start /////////
+
+.header-carousel {
+    border-left: 1px solid #eeeeee;
+    border-right: 1px solid #eeeeee;
+    width: 720px;
+    padding: 0px 30px;
+    overflow: hidden;
+    align-self: center;
+    height: 100%;
+    display: flex;
+    flex: none;
+    align-items: center;
+    display: none;
+
+    @include monitor-lg {
+        padding: 0px 25px;
+    }
+
+    @include macbook {
+        padding: 0px 15px;
+        width: 500px;
+    }
+
+    @include windows-laptop {
+        padding: 0px 15px;
+        width: 500px;
+    }
+
+    @include tab-landscape {
+        border: 0;
+        border-bottom: 1px solid $border-color;
+        width: 100%;
+        height: auto;
+        padding: 24px;
+    }
+
+    .swiper-wrapper {
+        .swiper-slide {
+            .car-model {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                figure {
+                    margin-bottom: 6px;
+                    @include tab-portrait {
+                        margin-bottom: 7px;
+                    }
+                    @include mobile-lg {
+                        margin-bottom: 7px;
+                    }
+
+                    img {
+                        height: 30px;
+                        width: auto;
+                        @include tab-portrait{
+                            width: 100%;
+                        }
+                    }
+                }
+                .car-name {
+                    @extend p;
+                    font-family: $secondary-font;
+                    font-weight: 500;
+                    letter-spacing: -0.04em;
+                    line-height: 16px;
+                    @include monitor-lg {
+                        font-size: 15px;
+                    }
+                    @include macbook {
+                        font-size: 15px;
+                    }
+                    @include windows-laptop {
+                        font-size: 15px;
+                    }
+                    @include tab-portrait {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        background: url(../images/header/swiper-arrow-prev.svg) no-repeat center center;
+        width: 10px;
+        left: 25px;
+        display: none;
+        @include monitor-lg {
+            left: 15px;
+        }
+        @include macbook {
+            left: 15px;
+        }
+        @include windows-laptop {
+            left: 12px;
+        }
+        @include tab-landscape {
+            display: none;
+        }
+    }
+
+    .header-arrow-next {
+        background: url(../images/header/swiper-arrow-next.svg) no-repeat center center;
+        left: auto;
+        right: 25px;
+        @include monitor-lg {
+            right: 15px;
+        }
+        @include macbook {
+            right: 15px;
+        }
+        @include windows-laptop {
+            right: 12px;
+        }
+
+    }
+}
+
+.header-carousel-desktop {
+    @include tab-landscape {
+        display: none;
+    }
+}
+
+.header-carousel-mobile {
+    display: none;
+
+    @include tab-landscape {
+        display: block;
+    }
+}
+
+///////// Header Car Slider Style End /////////
+
+.overlay {
+    background: rgba(0, 0, 0, 0.57);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s all;
+    &.show-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.notification-card {
+    background: white;
+    width: 440px;
+    right: 0;
+    left: auto !important;
+    filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
+    border-radius: 0px;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+
+    @include mobile-lg {
+        width: 340px;
+        left: -18px !important;
+    }
+
+    p {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.notification-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    p {
+        margin-bottom: 0px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .mark-text {
+        a {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 20px;
+            text-decoration: none;
+            position: relative;
+            font-weight: 400;
+            color: $content-color;
+            display: flex;
+            align-items: center;
+            &::after {
+                content: "";
+                position: initial;
+                flex: none;
+                width: 12px;
+                height: 12px;
+                background: url(../images/mark-notification.svg) no-repeat center / contain;
+            }
+
+            &:hover{
+                color: $primary-color;
+
+                &::after {
+                    background: url(../images/mark-notification-active.svg) no-repeat center / contain;
+                }
+            }
+        }
+    }
+}
+
+.notification-body {
+    ul {
+        @include lists;
+
+        li {
+            border-bottom: 1px solid $border-color;
+            padding: 14px 12px;
+        }
+    }
+}
+
+.notification-content {
+    display: flex;
+    .user-image {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        margin-right: 16px;
+        flex: none;
+        img {
+            width: 100%;
+        }
+    }
+    .user-content {
+        width: 100%;
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 10px;
+            a {
+                color: $content-color;
+                &:hover {
+                    color: $content-color;
+                }
+            }
+            strong {
+                color: black;
+            }
+        }
+        .user-comment {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: $content-color;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 12px;
+            &::before {
+                left: 0;
+                content: "";
+                position: absolute;
+                width: 4px;
+                height: 56px;
+                border-radius: 2px;
+                background: #dddee1;
+            }
+        }
+        .user-buttons {
+            margin-bottom: 10px;
+            a {
+                text-decoration: none;
+                position: relative;
+                margin-right: 10px;
+                &::after {
+                    display: none;
+                }
+            }
+            .notification-action-btn-primary,
+            .notification-action-btn-stroke {
+                color: white !important;
+                border-radius: 30px;
+                height: 28px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0.175em;
+                background: $primary-color;
+                padding: 6px 14px;
+                display: inline-flex;
+                align-items: center;
+            }
+            .btn {
+                color: white !important;
+                border-radius: 30px;
+                height: 28px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 28px;
+                letter-spacing: 0.175em;
+                &:hover {
+                    color: $primary-color !important;
+                }
+                &::after {
+                    display: none !important;
+                }
+                &-stroke-primary {
+                    color: $primary-color !important;
+                    &:hover {
+                        color: white !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.post-timeing {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    color: #a5acb8;
+}
+
+.new-notification {
+    a {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 1px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $primary-color;
+            border: 2px solid white;
+        }
+    }
+}
+
+
+
+//////////// Login Content Start
+
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include tab-landscape{
+        border-right: 1px solid $border-color;
+        padding-right: 20px;
+        height: 100%;
+    }
+
+    @include tab-sm-portrait{
+        padding-right: 0;
+    }
+
+    .notification {
+        position: relative;
+        height: 100%;
+
+        &.search-icon {
+            display: none;
+            figure {
+                border: none;
+            }
+            @include tab-landscape {
+                display: block;
+            }
+        }
+
+        figure {
+            padding: 0px 33px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid $border-color;
+            position: relative;
+
+            @include macbook {
+                padding: 0px 20px;
+            }
+
+            @include windows-laptop {
+                padding: 0px 20px;
+            }
+
+            @include tab-landscape {
+                padding: 0px 20px;
+            }
+
+            @include tab-sm-portrait {
+                padding: 0px 18px;
+                border-left: 1px solid $border-color;
+            }
+
+            img {
+                max-width: 24px;
+                width: auto;
+            }
+
+            a {
+                position: relative;
+            }
+        }
+    }
+}
+
+.login-btn {
+    border-left: 1px solid $border-color;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    gap: 15px;
+
+    @include macbook {
+        padding-left: 20px;
+    }
+
+    @include windows-laptop {
+        padding-left: 20px;
+    }
+
+    @include tab-landscape {
+        padding-left: 20px;
+    }
+
+    @include tab-sm-portrait{
+        padding-right: 20px;
+    }
+
+    @include mobile-lg {
+        display: none;
+    }
+
+    .btn {
+        @include tab-portrait {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+
+        &::after {
+            background: url(../images/header/login-icon.svg) no-repeat center center;
+            width: 20px;
+            height: 20px;
+            top: 4px;
+
+            @include macbook {
+                margin-left: 7px;
+            }
+
+            @include windows-laptop {
+                margin-left: 7px;
+            }
+
+            @include tab-landscape {
+                margin-left: 7px;
+            }
+
+            @include tab-portrait {
+                top: 3px;
+            }
+
+        }
+
+        &:hover {
+            color: white;
+            background: darken($primary-color, 15%);
+            border:1px solid darken($primary-color, 15%);
+
+            &::after {
+                background: url(../images/header/login-icon.svg) no-repeat center center;
+            }
+        }
+
+        &:focus {
+            color: white;
+            background: darken($primary-color, 15%);
+            border:1px solid darken($primary-color, 15%);
+
+            &::after {
+                background: url(../images/header/login-icon.svg) no-repeat center center;
+            }
+        }
+    }
+}
+
+.header-profile {
+    border-left: 1px solid $border-color;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+
+    @include tab-landscape {
+        padding-left: 24px;
+    }
+
+    @include tab-sm-portrait {
+        display: none;
+    }
+}
+
+.header-profile-view {
+    // width: 140px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .header-profile-pic {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid $border-color;
+        overflow: hidden;
+        flex: none;
+        margin-right: 10px;
+
+        @include tab-sm-portrait {
+            width: 60px;
+            height: 60px;
+        }
+    }
+
+    .header-profile-info {
+        .profile-name {
+            font-size: 12px;
+            line-height: 11px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            letter-spacing: -0.03em;
+            color: $content-color;
+            margin-bottom: 6px;
+            width: 80px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        span {
+            font-size: 18px;
+            line-height: 17px;
+            font-weight: bold;
+            font-family: $secondary-font;
+            letter-spacing: -0.03em;
+            color: #000000;
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: "";
+                flex: none;
+                margin-left: 7px;
+                margin-top: 2px;
+                width: 11px;
+                height: 7px;
+                background: url(../images/header/account-dropdown-black.svg) no-repeat center / contain;
+            }
+        }
+    }
+}
+
+.profile-dropdown-card {
+    border-radius: 0;
+    width: 280px;
+    border: 1px solid $border-color;
+    border-top: 0 !important;
+
+    .setting-menu {
+        border: none;
+        filter: none;
+    }
+
+    .setting-menu-item {
+        padding: 10px 24px;
+        border: 0;
+
+        figure {
+        }
+
+        .menu-item-content {
+            h5 {
+                line-height: 15px;
+            }
+        }
+    }
+
+    a {
+        &:hover {
+            .setting-menu-item {
+                background: $light-grey-bg;
+            }
+        }
+    }
+}
+
+.mobile-header-profile {
+    display: none;
+
+    @include tab-sm-portrait {
+        display: block;
+        padding: 20px 24px;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .setting-menu {
+        background: white;
+        border: 0;
+        border-radius: 0;
+        padding: 13px 20px 20px;
+        border-top: 3px solid $primary-color;
+        margin: 20px 0 0;
+
+        @include tab-landscape {          
+            background: rgba($color: #000000, $alpha: 0.03);
+        }
+
+        li {
+            margin-bottom: 5px;
+
+            a {
+                font-size: 15px;
+                line-height: 15px;
+                font-weight: 500;
+                font-family: $secondary-font;
+                color: $content-color;
+                transition: 0.3s all;
+
+
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+//////////// Login Content End
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    height: 51px;
+    display: none;
+
+
+    // @include monitor-lg {
+    //     padding: 0px 20px;
+    // }
+
+    @include macbook {
+        padding: 0px 20px;
+    }
+
+    @include windows-laptop {
+        padding: 0px 20px;
+    }
+
+    @include tab-landscape {
+        height: 0;
+        padding: 0;
+    }
+}
+
+.navbar {
+    @include tab-landscape {
+        padding: 0px;
+    }
+
+    .navbar-collapse {
+        @include tab-landscape {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            height: 100% !important;
+            left: 0;
+            width: 320px;
+            z-index: 1001;
+            background-color: white;
+            transition: 0.3s all !important;
+            transform: translateX(-120%);
+            display: block !important;
+        }
+
+        .collapse-close {
+            display: none;
+            @include tab-landscape {
+                height: 36px;
+                width: 36px;
+                border-radius: 50%;
+                background-color: #f4f5f6;
+                position: absolute;
+                right: 20px;
+                top: 29px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            img {
+                width: 12px;
+            }
+        }
+
+        &::before {
+            @include tab-landscape {
+                content: "";
+                position: absolute;
+                bottom: 17px;
+                right: 0;
+                height: 338px;
+                width: 204px;
+                background: url(../images/logo-mobile.svg) no-repeat center/contain;
+                pointer-events: none;
+                opacity: 0.05;
+            }
+        }
+
+        &.show {
+            @include tab-landscape {
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+.navbar-nav {
+    @include lists;
+    @include tab-landscape {
+        flex-direction: column !important;
+        padding: 30px 20px;
+    }
+}
+
+////////////////////////
+
+.international-link {
+    margin-top: 5px;
+
+    @include macbook{
+        margin-top: 0px;
+    }
+
+    @include windows-laptop{
+        margin-top: 0px;
+    }
+
+    @include tab-landscape {
+        display: none;
+    }
+
+    a {
+        font-size: 18px;
+        line-height: 17px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.03em;
+        color: black;
+
+        @include macbook{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @include windows-laptop{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @include tab-landscape {
+            font-size: 17px;
+        }
+    }
+
+    svg {
+        width: 18px;
+        margin-right: 10px;
+        margin-top: -2px;
+    }
+
+    &-active {
+        a {
+            color: $primary-color;
+        }
+        svg {
+            path {
+                fill: $primary-color;
+            }
+        }
+    }
+}
+
+.international-link-mobile {
+    display: none;
+
+    @include tab-landscape {
+        display: block;
+        padding: 24px;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+    }
+    figure {
+        line-height: 0px;
+    }
+    a {
+        
+        line-height: 17px;
+        font-weight: 500;
+        color: black;
+        letter-spacing: -0.03em;
+    }
+
+    &-active {
+        a {
+            color: $primary-color;
+        }
+        svg {
+            path {
+                fill: $primary-color;
+            }
+        }
+    }
+}
+////////////////////////
+
+///////////////////////////////
+
+.new-message {
+    a {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 1px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $primary-color;
+            border: 2px solid white;
+        }
+    }
+}
+
+
+.primary-nav {
+    margin-top: 2px;
+
+    @include tab-landscape {
+        border-bottom: 1px solid $border-color;
+    }
+
+    li {
+        position: relative;
+        padding: 0 24px;
+        line-height: normal;
+
+        @include macbook{
+            padding: 0 15px;
+        }
+
+        @include windows-laptop{
+            padding: 0 15px;
+        }
+
+        @include tab-landscape {
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        a {
+            font-size: 18px;
+            line-height: 17px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            color: $content-color;
+            padding: 0px 0px;
+            transition: 0.3s all;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+
+            @include macbook{
+                font-size: 15px;
+                line-height: 16px;
+            }
+
+            @include windows-laptop{
+                font-size: 15px;
+                line-height: 16px;
+            }
+
+            @include tab-landscape { 
+                font-size: 17px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+        &:hover {
+            a {
+                text-decoration: none;
+                color: $primary-color;
+            }
+        }
+
+        &.active {
+            a {
+                color: $primary-color;
+            }
+        }
+
+        &:first-child {
+            padding-left: 0;
+
+            a {
+                padding-left: 0;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.menu-item-has-children {
+    > a {
+        position: relative;
+        &::after {
+            content: "";
+            position: relative;
+            top: -2px;
+            display: inline-block;
+            width: 12px;
+            height: 8px;
+            margin-left: 8px;
+            background: url(../images/header/header-dropdown-arrow.svg) no-repeat center / contain;
+        }
+    }
+
+    &:hover {
+        a {
+            &::after {
+                background: url(../images/header/header-dropdown-arrow-red.svg) no-repeat center / contain;
+            }
+        }
+    }
+
+    &.active {
+        a {
+            &::after {
+                background: url(../images/header/header-dropdown-arrow-red.svg) no-repeat center / contain;
+            }
+        }
+    }
+}
+
+#myUL {
+    .dropdown-menu {
+        position: absolute;
+        background: white;
+        border: 0;
+        border-radius: 0;
+        padding: 18px 20px 18px;
+        width: 220px;
+        top: 34px;
+        border-top: 3px solid $primary-color;
+        box-shadow: 0px 5px 36px rgba(0, 0, 0, 0.09);
+        // display: block !important;
+
+        @include tab-landscape {
+            top: 0 !important;
+            position: relative;
+            width: 100%;
+            margin: 20px 0 0;   
+            box-shadow: none; 
+            background: rgba($color: #000000, $alpha: 0.03);
+            filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.07));
+        }
+
+        @include mobile-lg {
+            margin: 14px 0 0;
+        }
+
+        li {
+            padding: 0;
+            margin-bottom: 15px;
+
+            @include macbook{
+                margin-bottom: 12px;
+            }
+
+            @include windows-laptop{
+                margin-bottom: 12px;
+            }
+
+            @include tab-landscape {
+                margin-bottom: 15px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                font-size: 18px;
+                line-height: 17px;
+                padding: 0px;
+                color: $content-color;
+
+                @include macbook{
+                    font-size: 16px;
+                    line-height: 15px;
+                }
+
+                @include windows-laptop{
+                    font-size: 16px;
+                    line-height: 15px;
+                }
+
+                @include tab-landscape {                    
+                    line-height: 16px;
+                    font-weight: 400;                    
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: transparent;
+            // pointer-events: none;
+        }
+    }
+}
+
+///// Hamberger Menu style
+
+.hamburger-menu {
+    display: none;
+
+    @include tab-landscape {
+        flex: none;
+        display: flex;
+        height: 100%;
+        width: 24px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 20px;
+
+        span {
+            height: 2px;
+            width: 100%;
+            background: $primary-color;
+            margin: 3px 0px;
+            display: block;
+        }
+    }
+}
+
+///////////////////
+
+.mobile-scrollbar {
+    @include tab-landscape {
+        height: calc(100vh - 95px);
+        overflow-y: scroll;
+    }
+}
+
+.mobile-collsapse-logo {
+    display: none;
+
+    @include tab-landscape {
+        display: block;
+        position: relative;
+        padding: 24px;
+        border-bottom: 1px solid $border-color;
+    }
+
+    img{
+        width: 185px;
+    }
+}
+
+.mobile-login-btn {
+    display: none;
+
+    @include mobile-lg {
+        display: block;
+        border-bottom: 1px solid $border-color;
+        padding: 24px;
+    }
+
+    .btn {
+        width: 100%;
+
+        &::after {
+            background: url(../images/header/login-icon.svg) no-repeat center center;
+            width: 20px;
+            height: 20px;
+            top: 4px;
+        }
+
+        &:hover {
+            background: white;
+            color: $primary-color;
+
+            &::after {
+                background: url(../images/header/login-icon-red.svg) no-repeat center center;
+            }
+        }
+
+        &:focus {
+            background: white;
+            color: $primary-color;
+
+            &::after {
+                background: url(../images/header/login-icon-red.svg) no-repeat center center;
+            }
+        }
+    }
+}
+
+
+/* ============= EDITING ============= */
+
+.navbar-expand-lg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+}

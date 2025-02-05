@@ -1,0 +1,603 @@
+.finance-hero {
+    padding: 60px 0;
+    position: relative;
+    @include tab-portrait {
+        padding-bottom: 0;
+    }
+    .finance-hero-img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @include tab-portrait {
+            bottom: auto;
+            height: 550px;
+        }
+        @include tab-sm-portrait {
+            height: 350px;
+        }
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(269.93deg, rgba(0, 0, 0, 0) -1.24%, rgba(0, 0, 0, 0.7) 105.92%);
+        }
+    }
+    .container {
+        position: relative;
+    }
+    .heading-component-1 {
+        margin-bottom: 50px;
+        @include tab-portrait {
+            text-align: center;
+        }
+        @include mobile-lg {
+            margin-bottom: 30px;
+        }
+        h1 {
+            @include tab-portrait {
+                padding-left: 0;
+            }
+            &::before {
+                @include tab-portrait {
+                    display: none;
+                }
+            }
+        }
+    }
+    .sell-content-boxes {
+        @include tab-landscape {
+            display: block;
+            width: 350px;
+        }
+        @include tab-portrait {
+            display: flex;
+            width: auto;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        @include tab-sm-portrait {
+            display: none;
+        }
+        .content-box-single {
+            @include tab-landscape {
+                display: flex;
+                align-items: center;
+                width: auto;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            @include tab-portrait {
+                display: block;
+                width: 200px;
+                margin: 0 10px;
+            }
+            .content-box-icon {
+                @include tab-landscape {
+                    flex: none;
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+                @include tab-portrait {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+.finance-hero-card {
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px 32px;
+    @include macbook {
+        padding: 24px;
+    }
+    @include windows-laptop {
+        padding: 24px;
+    }
+    @include tab-landscape {
+        padding: 30px;
+    }
+    @include tab-portrait {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    @include tab-sm-portrait {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    @include mobile-lg {
+        padding: 20px;
+    }
+    .heading-component-2 {
+        margin-bottom: 20px;
+        h2 {
+            font-size: 26px;
+            line-height: 32px;
+        }
+    }
+    .btn {
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .info-text {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+        text-align: center;
+    }
+}
+
+.finance-hero-card-checklist {
+    margin-bottom: 30px;
+    ul {
+        @include lists;
+        li {
+            
+            line-height: 28px;
+            font-weight: normal;
+            
+            color: #000000;
+            padding-left: 28px;
+            margin-bottom: 15px;
+            position: relative;
+            @include mobile-lg {
+                line-height: 24px;
+                margin-bottom: 12px;
+                padding-left: 24px;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 4px;
+                left: 0;
+                height: 18px;
+                width: 18px;
+                background: url(../images/finance/finance-checklist.svg) no-repeat center / contain;
+                @include mobile-lg {
+                    height: 16px;
+                    width: 16px;
+                }
+            }
+        }
+    }
+}
+
+////////////////////////
+.finance-step {
+    .row {
+        &>[class*=col] {
+            &:last-child {
+                .finance-step-card {
+                    @include tab-portrait {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.finance-step-card {
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: blur(36px);
+    padding: 30px;
+    position: relative;
+    @include tab-landscape {
+        padding: 24px;
+    }
+    @include tab-portrait {
+        margin-bottom: 30px;
+    }
+    .finance-step-card-number {
+        position: absolute;
+        top: 24px;
+        right: 28px;
+        font-size: 59px;
+        line-height: 50px;
+        font-weight: bold;
+        font-family: $secondary-font;
+        letter-spacing: -0.03em;
+        color: rgba($color: $primary-color, $alpha: 0.16);
+        @include tab-landscape {
+            font-size: 48px;
+            line-height: 40px;
+        }
+    }
+    .finance-step-card-icon {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        background: rgba($color: $primary-color, $alpha: 0.1);
+        @include tab-landscape {
+            height: 72px;
+            width: 72px;
+        }
+        img {
+            max-width: 54px;
+            max-height: 54px;
+            @include tab-landscape {
+                max-width: 40px;
+                max-height: 40px;
+            }
+        }
+    }
+    h3 {
+        margin-bottom: 12px;
+    }
+}
+
+////////////////////////
+.finance-features-info {
+    @include tab-landscape {
+        margin-bottom: 50px;
+    }
+    h2 {
+        margin-bottom: 20px;
+    }
+    p {
+        margin-bottom: 30px;
+    }
+    ul {
+        @include lists;
+        margin-bottom: 30px;
+        li {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 12px;
+            padding-left: 34px;
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 22px;
+                width: 22px;
+                background: url(../images/check-circle-white.svg) no-repeat center / contain;
+                @include macbook {
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @include windows-laptop {
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+
+                @include tab-landscape{
+                    top: 4px;
+                    height: 18px;
+                    width: 18px;
+                }
+                @include mobile-lg {
+                    top: 1px;
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+}
+
+.finance-features-row {
+    margin-bottom: -40px;
+}
+
+.finance-features-item {
+    margin-right: 20px;
+    margin-bottom: 40px;
+    @include tab-landscape {
+        margin-right: 10px;
+    }
+    @include tab-portrait {
+        margin-right: 0;
+    }
+    .finance-features-icon {
+        height: 50px;
+        width: 50px;
+        margin: 10px 0 14px 10px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            height: 100%;
+            width: 100%;
+            background: rgba($color: #ffffff, $alpha: 0.03);
+        }
+        img {
+            position: relative;
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
+    h3 {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 500;
+        
+        margin-bottom: 10px;
+    }
+}
+
+////////////////////////
+.lending-partners-wrapper {
+    ul {
+        @include lists;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: -25px;
+
+        @include macbook{
+            margin: -15px;
+        }
+
+        @include windows-laptop{
+            margin: -15px;
+        }
+
+        @include tab-landscape {
+            margin: -10px;
+        }
+        @include mobile-lg {
+            margin: -5px;
+        }
+        li {
+            width: 20%;
+            padding: 25px;
+
+            @include macbook{
+                padding: 15px;
+            }
+
+            @include windows-laptop{
+                padding: 15px;
+            }
+
+            @include tab-landscape {
+                padding: 10px;
+            }
+            @include tab-sm-portrait {
+                width: 33.3%;
+            }
+            @include mobile-lg {
+                width: 50%;
+                padding: 5px;
+            }
+            .lending-partner-item {
+                background: white;
+                height: 180px;
+                display: flex;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                @include tab-landscape {
+                    height: 160px;
+                    padding: 10px;
+                }
+                @include tab-portrait {
+                    height: 120px;
+                }
+                @include mobile-lg {
+                    height: 150px;
+                }
+                img {
+                    max-width: 90%;
+                    max-height: 90%;
+                }
+            }
+        }
+    }
+}
+
+////////////////////////
+.document-cards {
+    .row {
+        margin-left: -25px;
+        margin-right: -25px;
+
+        @include tab-landscape {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        &>[class*=col] {
+            padding-left: 25px;
+            padding-right: 25px;
+
+            @include tab-landscape {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            &:last-child{
+                .document-card {
+                    @include tab-portrait{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.document-card {
+    background: $light-grey-bg;
+    border: 1px solid $border-color;
+    padding: 40px;
+
+    @include macbook{
+        padding: 30px;
+    }
+
+    @include windows-laptop{
+        padding: 30px;
+    }
+
+    @include tab-landscape{
+        padding: 24px;
+    }
+
+    @include tab-portrait{
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    @include mobile-lg {
+        padding: 20px
+    }
+
+    h3 {
+        @extend h4;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        padding-bottom: 26px;
+        margin-bottom: 26px;
+        border-bottom: 1px solid $border-color;
+        position: relative;
+        padding-left: 42px;
+
+        @include macbook{
+            padding-bottom: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include windows-laptop{
+            padding-bottom: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include tab-landscape{
+            padding-bottom: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include mobile-lg {
+            padding-left: 35px;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 26px;
+            width: 26px;
+            background: url(../images/finance/loan-elegibility-icon.svg) no-repeat center / contain;
+            @include mobile-lg {
+                top: 2px;
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+
+    ul {
+        @include lists;
+
+        li {
+            margin-bottom: 26px;
+            position: relative;
+            padding-left: 30px;
+
+            @include macbook{
+                margin-bottom: 12px;
+            }
+
+            @include windows-laptop{
+                margin-bottom: 12px;
+            }
+
+            @include tab-landscape{
+                margin-bottom: 12px;
+                line-height: 22px;
+            }
+
+            @include mobile-lg {
+                margin-bottom: 16px;
+                padding-left: 28px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 0;
+                height: 18px;
+                width: 18px;
+                background: url(../images/finance/document-card-checklist.svg) no-repeat center / contain;
+
+                @include tab-landscape{
+                    top: 2px;
+                }
+
+                @include mobile-lg {
+                    top: 3px;
+                    height: 14px;
+                    width: 14px;
+                }
+            }
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.document-icon {
+        h3 {
+            &::before {
+                background: url(../images/finance/loan-document-icon.svg) no-repeat center / contain;
+            }
+        }
+    }
+}
+
+.light-bg {
+    .document-card {
+        background: white;
+    }
+}
+
+////////////////////////
+.accordion-container {
+    border: 1px solid $border-color;
+    padding: 40px;
+    @include mobile-lg {
+        padding: 20px;
+    }
+    .accordion-item {
+        &:last-child{
+            border-bottom: 0 !important;
+            .accordion-body{
+                padding-bottom: 0;
+            }
+        }
+    }
+}

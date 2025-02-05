@@ -1,0 +1,563 @@
+.sell-content-wrapper {
+    position: relative;
+
+    .sell-content-bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: $primary-color;
+            opacity: 90%;
+        }
+    }
+
+    .container {
+        position: relative;
+    }
+}
+
+.sell-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding-right: 30px;
+
+    @include tab-landscape{
+        text-align: center;
+        padding-right: 0;
+        max-width: 80%;
+        margin: 0 auto 40px;
+    }
+
+    @include tab-portrait{
+        max-width: 100%;
+    }
+
+    h1 {
+        max-width: 90%;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 24px;
+
+        @include macbook {
+            font-size: 46px;
+            line-height: 52px;
+            margin-bottom: 20px;
+        }
+
+        @include windows-laptop {
+            font-size: 46px;
+            line-height: 52px;
+            margin-bottom: 20px;
+        }
+        
+        @include tab-landscape{
+            font-size: 46px;
+            line-height: 52px;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+
+        @include tab-sm-portrait{
+            font-size: 40px;
+            line-height: 46px;
+        }
+
+        @include mobile-lg{
+            font-size: 32px;
+            line-height: 38px;
+            margin-bottom: 15px;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 34px;
+        letter-spacing: -0.02em;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+
+        @include macbook {
+            font-size: 17px;
+            line-height: 28px;
+        }
+
+        @include windows-laptop {
+            font-size: 17px;
+            line-height: 28px;
+        }
+
+        @include tab-sm-portrait{
+            font-size: 17px;
+            line-height: 28px;
+        }
+
+        @include mobile-lg{
+            line-height: 24px;
+        }
+    }
+
+    .sell-content-checklist {
+        margin: 50px 0 0px;
+
+        @include tab-landscape{
+            display: none;
+        }
+
+        @include macbook {
+            margin: 30px 0;
+        }
+
+        @include windows-laptop {
+            margin: 30px 0;
+        }
+
+        ul {
+            @include lists;
+            li {
+                font-size: 20px;
+                line-height: 28px;
+                font-weight: normal;
+                color: rgba($color: #ffffff, $alpha: 0.8);
+                position: relative;
+                padding-left: 34px;
+                margin-bottom: 16px;
+
+                @include macbook {
+                    font-size: 17px;
+                    line-height: 24px;
+                    padding-left: 30px;
+                    margin-bottom: 12px;
+                }
+
+                @include windows-laptop {
+                    font-size: 17px;
+                    line-height: 24px;
+                    padding-left: 30px;
+                    margin-bottom: 12px;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                    height: 22px;
+                    width: 22px;
+                    background: url(../images/check-circle-white.svg) no-repeat center / contain;
+
+                    @include macbook {
+                        height: 18px;
+                        width: 18px;
+                    }
+
+                    @include windows-laptop {
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .sell-content-boxes {
+        @include tab-landscape{
+            display: none;
+        }
+    }
+}
+
+.sell-content-boxes {
+    display: flex;
+
+    .content-box-single {
+        width: 204px;
+        flex: none;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(69px);
+        padding: 20px;
+        margin-right: 20px;
+
+        @include macbook {
+            width: 180px;
+        }
+
+        @include windows-laptop {
+            width: 180px;
+        }
+
+        .content-box-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.16);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include macbook {
+                margin-bottom: 16px;
+            }
+
+            @include windows-laptop {
+                margin-bottom: 16px;
+            }
+
+            img {
+                max-width: 30px;
+                max-height: 30px;
+            }
+        }
+
+        h3 {
+            font-size: 22px;
+            line-height: 26px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 6px;
+
+            @include macbook {
+                font-size: 20px;
+            }
+
+            @include windows-laptop {
+                font-size: 20px;
+            }
+        }
+
+        p {
+            font-size: 16px !important;
+            line-height: 16px !important;            
+            color: rgba($color: white, $alpha: 0.6);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.product-sell-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    padding: 34px 40px 40px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 115px;
+
+    @include macbook {
+        margin-left: 0;
+    }
+
+    @include windows-laptop {
+        margin-left: 0;
+    }
+
+    @include tab-landscape {
+        margin-left: 0;
+    }
+
+    @include tab-portrait {
+        margin: 0 30px;
+    }
+
+    @include tab-landscape {
+        margin: 0;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+    }
+
+    .form-check {
+        margin-right: 0;
+    }
+
+    input[type="radio"] + label {
+        font-size: 14px !important;
+        color: #000000 !important;
+        padding: 0 0 0 26px !important;
+        margin: 0px 8px 0 0 !important;
+    }
+
+    .row {
+        margin-left: -15px;
+        margin-right: -15px;
+
+        @include tab-portrait {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        & > [class*="col"] {
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @include tab-portrait {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+/* ============== Sell a car 01  ============== */
+
+.sell-form-wrapper {
+    position: relative;
+    .w-50{
+        @include tab-landscape{
+            width: 100% !important;
+        }
+        @include tab-portrait{
+            width: 50% !important;
+        } 
+        @include tab-sm-portrait{
+            width: 60% !important;
+        }
+        @include mobile-lg{
+            width: 100% !important;
+        }       
+    }
+    .card {
+        p {
+            color: rgba($color: $content-color, $alpha: 0.6);
+        }
+    }
+    .btn-stroke-primary{
+        &::after{
+            margin-left: 10px;
+        }
+    }
+}
+
+.estimed-card {
+    padding: 40px;
+    background: $primary-color;
+    margin: 40px 0px;
+    @include tab-landscape{
+        padding: 30px;
+    } 
+    @include tab-sm-portrait{
+        padding: 20px;
+    }
+    p {
+        color: rgba($color: white, $alpha: 0.77);
+    }
+    .estimed-card-header {
+        display: flex;
+        margin-bottom: 30px;
+        @include tab-landscape{
+            margin-bottom: 20px;
+        }
+        .estimed-card-icon {
+            width: 42px;
+            height: 66px;
+            margin-right: 25px;
+            background: rgba($color: white, $alpha: 0.18);
+            flex: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include tab-landscape{
+                margin-right: 15px;
+            }
+        }
+        .estimed-card-content {
+            width: 100%;
+            h5 {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 15px;
+                line-height: 18px;
+                color: rgba($color: white, $alpha: 0.6);
+                margin-bottom: 1px;
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 47px;
+                line-height: 57px;
+                color: white;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                @include macbook{
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+                @include windows-laptop{
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+                @include tab-landscape{
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+                @include mobile-lg{
+                    font-size: 32px;
+                    line-height: 38px;
+                }
+                &::after{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.insurance-company-card {
+    padding: 30px;
+    background: $light-grey-bg;
+    @include tab-portrait{
+        margin-bottom: 40px;
+    }
+    @include tab-sm-portrait{
+        padding: 20px;
+    }
+    h4 {
+        margin-bottom: 12px;
+    }
+    p {
+        color: rgba($color: $content-color, $alpha: 0.6);
+    }
+}
+
+.doorstep-image {
+    display: flex;
+    .doorstep-image-card {
+        width: 25%;
+        margin-right: 20px;
+        position: relative;
+        @include tab-sm-portrait{
+            margin-right: 10px;
+        }
+        @include mobile-lg{
+            display: inline-block;
+            // width: calc(50% - 20px);
+            // margin-right: 0px;
+        }
+
+        img {
+            width: 100%;
+
+        }
+
+        .remove-compare-car {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2000;
+            opacity: 0;
+        }
+
+        .select-car {
+            width: 60px;
+            height: 60px;
+            background: white;
+            z-index: 5;
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include tab-sm-portrait{
+                width: 40px;
+                height: 40px;
+            }
+            @include mobile-lg{
+                width: 30px;
+                height: 30px;
+            }
+            a{
+                display: block;
+                img{
+                    width: 18px;
+                }
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba($color: #000000, $alpha: 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s all;
+            z-index: 3;
+        }
+        &:hover {
+            &::after {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .remove-compare-car {
+                opacity: 1;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0px;
+            background: $light-grey-bg;
+            border: 1px solid $border-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.book-doorstep{
+    .date-radio-button-item{
+        @include tab-landscape{
+            width: calc(33.33% - 12px) !important;
+        }  
+        @include tab-portrait{
+            width: calc(25% - 12px) !important;
+        } 
+        @include mobile-lg{
+            width: calc(50% - 12px) !important;
+        }     
+    }
+    .time-button-item{
+        @include tab-landscape{
+            width: calc(50% - 12px) !important;
+        }
+        @include mobile-lg{
+            width: 100% !important;
+        }
+    }
+}
+
+.mobile-doorstep-card{
+    @include mobile-lg{
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.mobile-no-gutter{
+    @include mobile-lg{
+        padding: 20px 0px !important;
+    }    
+}

@@ -1,0 +1,307 @@
+
+.swiper-buttons{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.swiper-button{
+    position: relative;
+    transform: none;
+    margin: 0;
+    width: 46px;
+    height: 46px;
+    pointer-events: auto;
+    background-color: $primary-color;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: center;
+
+    @include macbook{
+        width: 40px;
+        height: 40px;
+        background-size: 10px;
+    }
+
+    @include windows-laptop{
+        width: 40px;
+        height: 40px;
+        background-size: 10px;
+    }
+
+
+    @include tab-landscape{
+        width: 40px;
+        height: 40px;
+        background-size: 10px;
+    }
+
+
+
+    &-prev{
+        left: -80px;
+        background-image: url(../images/slider-arrow-prev.svg);
+
+        @media (max-width:  1750px){
+            left: -20px;
+        }       
+
+        @include tab-landscape{
+            left: -23px;
+        }
+    }
+
+    &-next{
+        right: -80px;
+        background-image: url(../images/slider-arrow-next.svg);
+
+        @media (max-width:  1750px){
+            right: -20px;
+        } 
+
+        @include tab-landscape{
+            right: -23px;
+        }
+    }
+}
+
+
+.light-bg{
+    background: $light-grey-bg;
+}
+
+.page-light-bg{
+    background: $page-light-bg;
+}
+
+.dark-bg{
+    background: $dark-bg;
+
+    h1, h2, h3, h4, h5, h6{
+        color: white;
+    }
+
+    p, li{
+        color: rgba($color: #ffffff, $alpha: 0.8);
+    }
+}
+
+.heading-component-1{
+    h1, h2{
+        font-size: 56px;
+        line-height: 60px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.03em;
+        color: #FFFFFF;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 62px;
+
+        @include macbook{
+            font-size: 48px;
+            line-height: 54px;
+        }
+
+        @include windows-laptop{
+            font-size: 40px;
+            line-height: 46px;
+        }
+
+        @include tab-landscape{
+            font-size: 38px;
+            line-height: 46px;
+            padding-left: 52px;
+            margin-bottom: 10px;
+        }
+
+        @include tab-portrait{
+            font-size: 36px;
+            line-height: 44px;
+            padding-left: 48px;
+            margin-bottom: 10px;
+        }
+
+        @include tab-sm-portrait{
+            font-size: 30px;
+            line-height: 32px;
+            padding-left: 40px;
+            margin-bottom: 8px;
+        }
+
+        @include mobile-lg{
+            font-size: 28px;
+            line-height: 30px;
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 0;
+            width: 42px;
+            height: 47px;
+            background: url(../images/btn-arrow-white.svg) no-repeat center $primary-color;
+
+            @include macbook{
+                width: 40px;    
+                height: 44px;
+            }
+
+            @include windows-laptop{
+                width: 40px;    
+                height: 44px;
+                top: 3px;
+            }
+
+            @include tab-landscape{
+                width: 36px;
+                height: 40px;
+                top: 4px;
+            }
+
+            @include tab-portrait{
+                width: 32px;
+                height: 36px;
+                top: 4px;
+            }
+
+            @include tab-sm-portrait{
+                width: 26px;
+                height: 28px;
+                top: 4px;
+            }
+
+            @include mobile-lg{
+                top: 1px;
+            }
+
+        }
+
+        &::after{
+            display: none;
+        }
+    }
+
+    p{
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: normal;
+        font-family: $secondary-font;
+        letter-spacing: -0.02em;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+
+        @include macbook{
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @include windows-laptop{
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @include tab-landscape{
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        @include tab-portrait{
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        @include tab-sm-portrait{
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        @include mobile-lg{
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+
+    }
+}
+
+.heading-component-2{
+    margin-bottom: 30px;
+
+    h2, h3{
+        letter-spacing: -0.04em;
+        margin-bottom: 8px;   
+    }
+
+    p{
+        color: rgba($color: $content-color, $alpha: 0.8);
+    }
+}
+
+.heading-h2{
+    @extend h2;
+}
+
+.heading-h3{
+    @extend h3;
+}
+
+.border-top{
+    border-top: 1px solid $border-color;
+}
+
+.border-bottom{
+    border-bottom: 1px solid $border-color;
+}
+
+.general-content{
+    h1{
+        margin-bottom: 20px;
+    }
+
+    h2{
+        margin-bottom: 20px;
+    }
+}
+
+.card{
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    padding: 40px;
+    margin-bottom: 40px;
+
+    @include tab-landscape{
+        padding: 30px;
+        margin-bottom: 30px;
+    }
+
+    @include mobile-lg{
+        padding: 20px;
+    }
+}
+
+.heading-border-style{
+    @extend h2;
+    font-size: 26px;
+    line-height: 32px;
+}
+
+////////////==================//////////////
+
+
+
+
+
+////////////==================//////////////
+
+
+
+

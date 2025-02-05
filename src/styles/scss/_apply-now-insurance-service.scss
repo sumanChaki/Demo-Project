@@ -1,0 +1,289 @@
+
+
+.apply-now-from{
+    max-width: 620px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+    @include macbook{
+        padding: 28px 32px 30px;
+        max-width: 540px;
+    }
+    
+    @include windows-laptop{
+        padding: 28px 32px 30px;
+        max-width: 540px;
+    }
+
+    @include tab-landscape{
+        padding: 28px 32px 30px;
+        max-width: 540px;
+    }
+
+    @include mobile-lg{
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+}
+
+.heading-arrow-style{
+    @extend h2;
+    padding-left: 43px;
+    margin-bottom: 30px;
+
+    @include mobile-lg{
+        font-size: 26px;
+        line-height: 30px;
+        padding-left: 34px;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 27px;
+        height: 36px;
+        background: url(../images/btn-arrow-white.svg) no-repeat center $primary-color;
+
+        @include macbook{
+            top: 2px;
+            background-size: 9px;
+        }
+
+        @include windows-laptop{
+            top: 2px;
+            background-size: 9px;
+        }
+
+        @include tab-landscape{
+            top: 2px;
+            background-size: 9px;
+        }
+
+        @include tab-sm-portrait{
+            top: 2px;
+        }
+
+        @include mobile-lg{
+            top: 2px;
+            width: 24px;
+            height: 28px;
+            margin-bottom: 20px;
+            background-size: 8px;
+        }
+    }
+
+    &:after{
+        display: none;
+    }
+
+}
+
+.apply-now-from{
+
+    .form-check-inline{
+        margin-right: 24px;
+
+        @include macbook{
+            margin-right: 16px;
+        }
+
+        @include windows-laptop{
+            margin-right: 16px;
+        }
+
+        @include tab-landscape{
+            margin-right: 16px;
+        }
+
+        @include mobile-lg{
+            margin-right: 10px;
+        }
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+    input[type=radio] + label{
+        margin-right: 0 !important;
+
+        @include mobile-lg{
+            padding: 0 0 0 26px !important;
+        }
+    }
+}
+
+.form-check-group{
+    display: flex;
+    margin-right: -1px;
+}
+
+.vehicle-type-check-box{
+    margin-bottom: 0;
+
+    @include mobile-lg{
+        display: flex;
+        width: calc(33.3% - 5px);
+    }
+
+    input[type=radio] + label{
+        min-width: 120px;
+        padding:0 16px !important;
+        border: 1px solid #000000;
+        height: 42px !important;
+        line-height: 42px !important;
+        text-align: center;
+        // padding: 0 !important;
+        font-weight: 500 !important;
+        margin: 0 !important;
+
+        @include mobile-lg{
+            min-width: 100%;
+        }
+
+        &::before{
+            position: relative !important;
+            top: 1px;
+            display: none !important;
+            border: none !important;
+            height: 14px !important;
+            width: 14px !important;
+            background: url(../images/input-check-white.svg) no-repeat center !important;
+            transform: none !important;
+            margin-right: 8px !important;
+            z-index: 3;
+        }
+
+        &::after{
+            top: 0;
+            left: 0;
+            height: 100% !important;
+            width: 100% !important;
+            margin: 0 !important;
+            border: none !important;
+            background: transparent !important;            
+        }
+
+        span{
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    input[type=radio]:checked + label{
+        color: white !important;
+
+        &::before{
+            display: inline-block !important;
+
+            @include mobile-lg{
+                display: none !important;
+            }
+        }
+
+        &::after{
+            display: inline-block !important;
+            border-radius: 0 !important;
+            background: black !important;
+            transform: none !important;
+        }
+    }    
+}
+
+.directry-radiobtn{
+    display: flex;
+    justify-content: space-between;
+
+    .form-check{
+        width: calc(33.3% - 13px);
+
+        @include windows-laptop{
+            width: calc(33.3% - 5px);
+        }
+        
+        @include tab-landscape{
+            width: calc(33.3% - 5px);
+        }
+
+        @include mobile-lg{
+            width: calc(33.3% - 5px);
+        }
+
+        input[type=radio] + label{
+            @include windows-laptop{
+                font-size: 14px !important;
+                padding: 0 12px !important;
+            }
+
+            @include tab-landscape{
+                font-size: 14px !important;
+                padding: 0 12px !important;
+            }
+        }
+    }
+
+    .vehicle-type-check-box{
+        input[type=radio] + label{
+            min-width: 100%;
+    
+            &::before{
+                @include mobile-lg{
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+
+}
+
+
+.form-btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile-lg{
+        flex-direction: column;
+    }
+    
+    .btn{
+        width: calc(50% - 20px);
+
+        @include tab-sm-portrait{
+            width: calc(50% - 10px);
+            font-size: 14px;
+            letter-spacing: 0.2em;
+        }
+
+        @include mobile-lg{
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.note-shield{
+    line-height: 28px;
+    font-weight: normal;
+    color: #000000;
+    padding-left: 28px;
+    position: relative;
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background: url(../images/shield-note-icon.svg) no-repeat center / contain;
+    }
+}

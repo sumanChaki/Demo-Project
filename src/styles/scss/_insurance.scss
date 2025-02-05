@@ -1,0 +1,1513 @@
+//// ============== Insurance Sidebar Style Start ============== ////
+
+.insurance-sidebar {
+ 
+    @include tab-landscape {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    @include tab-portrait {
+        display: block;
+    }
+
+    .insurance-sidebar-card {
+        @include tab-landscape {
+            width: calc(50% - 20px);
+        }
+
+        @include tab-portrait {
+            width: 100%;
+        }
+    }
+
+}
+
+.aside-insurance-cards {
+    margin-bottom: 30px;
+
+    ul {
+        @include lists;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        @include macbook {
+            margin: -5px;
+        }
+
+        @include windows-laptop {
+            margin: -5px;
+        }
+
+        li {
+            width: 33.3%;
+            padding: 10px;
+
+            @include macbook {
+                padding: 5px;
+            }
+
+            @include windows-laptop {
+                padding: 5px;
+            }
+
+            @include mobile-lg {
+                width: 50%;
+            }
+
+            a {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.aside-insurance-card {
+    height: 100%;
+    display: block;
+    text-align: center;
+    border: 1px solid $border-color;
+
+    figure {
+        padding: 10px;
+        border-bottom: 1px solid $border-color;
+
+        img {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
+    p {
+        padding: 10px 5px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+
+        @include tab-landscape {
+            font-size: 13px;
+        }
+    }
+}
+
+.insurance-sidebar-card {
+    padding: 30px;
+
+    @include macbook {
+        padding: 24px;
+    }
+
+    @include windows-laptop {
+        padding: 24px;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+    }
+
+    h3 {
+        @include windows-laptop {
+            margin-bottom: 20px;
+        }
+
+        &::after {
+
+            @include macbook {
+                display: none;
+            }
+
+            @include windows-laptop {
+                display: none;
+            }
+        }
+    }
+
+    textarea,
+    select,
+    input[type=week],
+    input[type=time],
+    input[type=month],
+    input[type=datetime-local],
+    input[type=datetime],
+    input[type=date],
+    input[type=color],
+    input[type=url],
+    input[type=text],
+    input[type=tel],
+    input[type=search],
+    input[type=password],
+    input[type=select],
+    input[type=number],
+    input[type=email] {
+
+        @include macbook {
+            height: 46px;
+        }
+
+        @include windows-laptop {
+            height: 46px;
+        }
+    }
+
+    .form-group {
+        @include macbook {
+            margin-bottom: 20px;
+        }
+
+        @include windows-laptop {
+            margin-bottom: 20px;
+        }
+    }
+
+    .btn {
+        height: 52px;
+        line-height: 50px;
+
+        @include macbook {
+            font-size: 13px;
+            height: 46px;
+            line-height: 44px;
+        }
+
+        @include windows-laptop {
+            font-size: 13px;
+            height: 46px;
+            line-height: 44px;
+        }
+
+        @include mobile-lg {
+            font-size: 13px;
+            height: 46px;
+            line-height: 44px;
+        }
+
+        &-text {
+            height: auto;
+            line-height: initial;
+        }
+    }
+}
+
+//// ============== Insurance Sidebar Style End ============== ////
+
+
+
+
+//// ==============  Vehicle Insurance Company Directry Start ============== ////
+
+.insurance-hero {
+    height: 635px;
+
+    @include tab-landscape {
+        height: auto;
+    }
+}
+
+.featured-companies-card {
+    padding: 30px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+
+    @include macbook {
+        padding: 20px;
+    }
+
+    @include windows-laptop {
+        padding: 20px;
+    }
+
+    @include tab-landscape{
+        padding: 20px;
+    }
+
+    @include tab-portrait {
+        padding: 24px;
+    }
+
+    @include tab-sm-portrait {
+        padding: 30px;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+    }
+
+    .featured-companies-card-header {
+        display: flex;
+        align-items: center;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $border-color;
+
+        @include macbook{
+            padding-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        @include windows-laptop{
+            padding-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        @include tab-landscape{
+            padding-bottom: 25px;
+            margin-bottom: 20px;
+        }
+
+        @include tab-portrait {
+            display: block;
+        }
+
+        @include tab-sm-portrait {
+            display: flex;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include mobile-lg {
+            display: block;
+        }
+
+        figure {
+            flex: none;
+            width: 100px;
+            height: 100px;
+            border: 1px solid $border-color;
+            margin-right: 20px;
+
+            @include macbook {
+                width: 90px;
+                height: 90px;
+            }
+
+            @include windows-laptop {
+                width: 90px;
+                height: 90px;
+            }
+
+            @include tab-landscape{
+                width: 90px;
+                height: 90px;
+            }
+
+            @include tab-portrait {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            @include tab-sm-portrait {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            @include mobile-lg {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+        }
+
+        h3 {
+            margin-bottom: 10px;
+
+            @include macbook {
+                font-size: 22px;
+                line-height: 26px;
+            }
+
+            @include windows-laptop {
+                font-size: 22px;
+                line-height: 26px;
+            }
+
+            
+            @include tab-landscape {
+                font-size: 22px;
+                line-height: 26px;
+            }
+               
+
+            @include mobile-lg {
+                font-size: 22px;
+                line-height: 28px;
+            }
+
+            a {
+                color: #000000;
+                transition: 0.3s all;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        p {
+            color: $primary-color;
+        }
+
+    }
+
+    .featured-companies-card-body {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid $border-color;
+
+        @include macbook{
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        @include windows-laptop{
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        @include tab-landscape{
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+    }
+
+    .featured-companies-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include tab-portrait {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+        .btn {
+
+            @include macbook {
+                font-size: 13px;
+                letter-spacing: 0.2em;
+                padding: 0px 14px;
+            }
+
+            @include windows-laptop {
+                font-size: 13px;
+                letter-spacing: 0.2em;
+                padding: 0px 14px;
+            }
+
+            @include tab-landscape{
+                font-size: 13px;
+                padding: 0px 14px;
+            }
+
+            @include tab-portrait {
+                margin-bottom: 20px;
+            }
+
+            &::after {
+                @include macbook {
+                    margin-left: 12px;
+                }
+
+                @include windows-laptop {
+                    margin-left: 12px;
+                }
+
+                @include tab-landscape{
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+}
+
+.checklist-black-tick {
+    ul {
+        @include lists;
+
+        li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 14px;
+
+            @include macbook{
+                line-height: 24px;
+                margin-bottom: 6px;
+            }
+
+            @include windows-laptop{
+                line-height: 24px;
+                margin-bottom: 6px;
+            }
+
+            @include tab-landscape{
+                line-height: 24px;
+                margin-bottom: 6px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 6px;
+                width: 14px;
+                height: 12px;
+                background: url(../images/options-tick.svg) no-repeat center / contain;
+
+                @include macbook{
+                    top: 4px;
+                }
+
+                @include windows-laptop{
+                    top: 4px;
+                }
+
+                @include tab-landscape{
+                    top: 4px;
+                }
+
+            }
+        }
+    }
+}
+
+.featured-companies-note {
+    background: $light-grey-bg;
+    padding: 6px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    color: $content-color;
+    display: initial;
+}
+
+.other-companies-card {
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    margin-bottom: 24px;
+
+    @include tab-sm-portrait {
+        align-items: flex-start;
+    }
+
+    @include mobile-lg {
+        display: block;
+        text-align: center;
+    }
+
+    figure {
+        flex: none;
+        width: 98px;
+        height: 98px;
+        border: 1px solid $border-color;
+        margin-right: 20px;
+
+        @include mobile-lg {
+            margin: 0 auto 20px;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: bold;
+        font-family: $secondary-font;
+        margin-bottom: 9px;
+
+        a {
+            color: black;
+            transition: 0.3s all;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .other-companies-emi {
+        
+        line-height: 15px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.02em;
+        color: $content-color;
+        margin-bottom: 12px;
+
+        span {
+            color: $primary-color;
+        }
+    }
+
+    .btn {
+        margin-left: auto;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .other-companies-card-body {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        @include tab-sm-portrait {
+            display: block;
+        }
+
+        .other-companies-card-info {
+            @include tab-sm-portrait {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.find-insurance-card {
+    padding: 30px;
+    margin-top: -615px;
+    position: sticky;
+    top: 160px;
+
+    @include macbook {
+        padding: 24px;
+    }
+
+    @include windows-laptop {
+        padding: 24px;
+    }
+
+    @include tab-landscape{
+        padding: 20px;
+    }
+
+    @include mobile-lg {
+        padding: 24px 20px;
+    }
+
+    h3 {
+        @include macbook {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        @include windows-laptop {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        &::after {
+            @include macbook {
+                width: 40px;
+            }
+
+            @include windows-laptop {
+                width: 40px;
+            }
+        }
+    }
+
+    textarea,
+    select,
+    input[type=week],
+    input[type=time],
+    input[type=month],
+    input[type=datetime-local],
+    input[type=datetime],
+    input[type=date],
+    input[type=color],
+    input[type=url],
+    input[type=text],
+    input[type=tel],
+    input[type=search],
+    input[type=password],
+    input[type=select],
+    input[type=number],
+    input[type=email] {
+        @include windows-laptop {
+            height: 46px;
+        }
+    }
+
+    .form-group {
+        @include windows-laptop {
+            margin-bottom: 20px;
+        }
+    }
+
+    &.desktop-view {
+
+        @include tab-landscape {
+            display: none;
+        }
+    }
+
+    &.mobile-view {
+        display: none;
+        margin: 0;
+        position: initial;
+
+        @include tab-landscape {
+            display: block;
+        }
+
+        @include tab-portrait {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @include tab-sm-portrait {
+            max-width: 100%;
+        }
+    }
+
+
+}
+
+// .directry-radiobtn{
+//     display: flex;
+
+    
+// }
+
+
+.insurance-model-slider {
+    .swiper-buttons {
+        @include mobile-lg {
+            position: initial;
+            transform: none;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .swiper-button {
+            @include mobile-lg {
+                position: initial;
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+.insurance-model-swiper {
+    .swiper-slide {
+        padding: 1px;
+    }
+}
+
+.insurance-model-card {
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+
+    .insurance-model-info {
+        padding: 25px 30px 30px;
+
+        @include macbook {
+            padding: 22px 30px 26px;
+        }
+
+        @include windows-laptop {
+            padding: 22px 30px 26px;
+        }
+
+        @include tab-landscape {
+            padding: 18px 24px 24px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+
+            @include macbook {
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            @include windows-laptop {
+                font-size: 24px;
+                line-height: 28px;
+            }
+
+            @include tab-landscape {
+                font-size: 23px;
+                line-height: 26px;
+            }
+
+            a {
+                color: black;
+                transition: 0.3s all;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .insurance-starting-amount {
+            font-size: 22px;
+            line-height: 21px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            letter-spacing: -0.02em;
+            color: $content-color;
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+
+            @include tab-portrait {
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            span {
+                color: $primary-color;
+                margin: 0 4px;
+            }
+
+            sup {
+                font-size: 18px;
+                top: 0;
+
+                @include tab-portrait {
+                    
+                }
+            }
+        }
+
+        .btn {
+            @include tab-portrait {
+                font-size: 14px;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+//// ==============  Vehicle Insurance Company Directry End ============== ////
+
+
+
+//// ============== Vehicle Insurance Compare Start ============== ////
+
+.insurance-compare-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    position: relative;
+    margin-bottom: 30px;
+
+    @include tab-portrait {
+        align-items: flex-start;
+    }
+
+    @include mobile-lg {
+        display: block;
+        text-align: center;
+    }
+
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.insurance-compare-img {
+    flex: none;
+    width: 98px;
+    height: 98px;
+    border: 1px solid $border-color;
+    margin-right: 20px;
+
+    @include tab-portrait {
+        width: 110px;
+        height: 110px;
+    }
+
+    @include mobile-lg {
+        margin: 0 auto 20px;
+    }
+}
+
+.insurance-compare-card-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tab-portrait {
+        display: block;
+    }
+}
+
+.insurance-compare-card-info {
+    max-width: 520px;
+
+    @include tab-landscape {
+        max-width: 536px;
+    }
+
+    @include tab-portrait {
+        max-width: 100%;
+    }
+
+    h3 {
+        font-size: 22px;
+        line-height: 26px;
+        color: #000000;
+        margin-bottom: 8px;
+    }
+
+    p {
+        line-height: 26px;
+    }
+}
+
+.insurance-compare-card-note {
+    max-width: 200px;
+    margin-left: 20px;
+    flex: none;
+
+    @include tab-landscape {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .value-number {
+        
+        line-height: 16px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: $content-color;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 1px;
+
+        @include tab-portrait {
+            justify-content: flex-start;
+            margin-top: 16px;
+        }
+
+        @include mobile-lg {
+            justify-content: center;
+        }
+
+        span {
+            font-size: 21px;
+            line-height: 21px;
+            font-weight: bold;
+            color: $primary-color;
+            margin-right: 5px;
+        }
+
+        &::after {
+            flex: none;
+            content: "";
+            width: 10px;
+            height: 14px;
+            margin-left: 18px;
+            background: url(../images/arrow-red-bold.svg) no-repeat center / contain;
+        }
+    }
+
+    p {
+        font-size: 13px;
+        line-height: 26px;
+    }
+}
+
+.insurance-compare-checklist-card {
+    border: 1px solid $border-color;
+    padding: 24px 30px 30px;
+    margin-bottom: 30px;
+
+    @include mobile-lg {
+        padding: 16px 20px 20px
+    }
+
+    ul {
+        @include lists;
+        margin-bottom: 30px;
+
+        li {
+            line-height: 24px;
+            padding-left: 28px;
+            margin-bottom: 6px;
+            position: relative;
+        
+
+            @include mobile-lg {
+                margin-bottom: 12px;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 2px;
+                left: 0;
+                width: 14px;
+                height: 17px;
+                background: url(../images/tick-icon-primary.svg) no-repeat center / contain;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.learnmore-card {
+    background: $primary-color;
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include tab-portrait {
+        display: block;
+    }
+
+    @include mobile-lg {
+        text-align: center;
+        padding: 24px;
+    }
+
+    .note-info {
+
+        h3 {
+            color: white;
+            margin-bottom: 9px;
+        }
+
+        p {
+            color: rgba($color: #ffffff, $alpha: 0.6);
+        }
+    }
+
+    .btn {
+        margin-left: 30px;
+
+        @include tab-landscape {
+            margin-left: 0;
+            margin-top: 30px;
+        }
+
+        @include mobile-lg {
+            margin-top: 20px;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+//// ============== Vehicle Insurance Compare End ============== ////
+
+
+//// ============== Single Vehicle Insurance Start ============== ////
+
+.single-insurance-card {
+    border: 1px solid $border-color;
+    padding: 40px;
+    margin-bottom: 30px;
+
+    @include macbook{
+        padding: 30px;
+    }
+
+    @include macbook{
+        padding: 30px;
+    }     
+
+    @include tab-landscape {
+        padding: 30px;
+    }
+
+    @include tab-sm-portrait {
+        padding: 24px;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.single-insurance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 35px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+
+    @include mobile-lg {
+        display: block;
+        padding-bottom: 24px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    figure {
+        flex: none;
+        order: 1;
+        width: 150px;
+        height: 150px;
+        margin-left: 50px;
+
+        @include macbook{
+            width: 130px;
+            height: 130px;
+        }
+
+        @include windows-laptop{
+            width: 130px;
+            height: 130px;
+        }
+
+        @include tab-sm-portrait {
+            width: 100px;
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        @include mobile-lg {
+            margin: 0 auto 20px;
+        }
+    }
+
+    .single-insurance-header-info {
+        h1 {
+            @extend h2;
+            margin-bottom: 14px;
+
+            @include macbook{
+                font-size: 28px;
+                line-height: 32px;
+            }
+
+            @include windows-laptop{
+                font-size: 28px;
+                line-height: 32px;
+            }
+
+            @include tab-landscape{
+                font-size: 28px;
+                line-height: 32px;
+            }
+
+            @include tab-sm-portrait {
+                font-size: 25px;
+                line-height: 28px;
+                margin-bottom: 10px;
+            }
+
+            @include mobile-lg {
+                font-size: 22px;
+                line-height: 28px;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .insurance-starting-amount {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.02em;
+        color: $content-color;
+        margin-bottom: 30px;
+
+        @include macbook{
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include windows-laptop{
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include tab-landscape{
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include tab-sm-portrait {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        @include mobile-lg {
+            justify-content: center;
+        }
+
+        span {
+            color: $primary-color;
+            margin: 0 5px;
+        }
+
+        sup {
+            top: 0;
+            font-size: 18px;
+
+            @include tab-sm-portrait {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.single-insurance-lists {
+
+    ul {
+        @include lists;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -20px -14px 0;
+
+        @include tab-sm-portrait {
+            margin-bottom: 0;
+        }
+
+        li {
+            
+            line-height: 24px;
+            font-weight: normal;            
+            color: $content-color;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 28px;
+            width: 50%;
+            padding-right: 20px;
+
+            @include tab-landscape {
+                width: 50%;
+            }
+
+            @include tab-sm-portrait {
+                width: 100%;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 0;
+                height: 12px;
+                width: 14px;
+                background: url(../images/options-tick.svg) no-repeat center / contain;
+
+                @include mobile-lg {
+                    top: 5px;
+                }
+            }
+
+            &:nth-last-child(1) {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.addons-wrapper {
+    margin-bottom: 30px;
+
+    ul {
+        @include lists;
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+
+        @include mobile-lg {
+            margin: 0;
+        }
+
+        li {
+            width: 25%;
+            padding: 10px;
+
+            @include tab-portrait {
+                width: 33.3%;
+            }
+
+            @include mobile-lg {
+                width: 50%;
+                padding: 0;
+                margin: 0 -1px -1px 0;
+            }
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.addons-card {
+    padding: 20px;
+    border: 1px solid $border-color;
+    height: 100%;
+
+    @include mobile-lg {
+        padding: 16px 10px;
+    }
+
+    figure {
+        height: 54px;
+        width: 54px;
+        border-radius: 50%;
+        background: $primary-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        img {
+            max-width: 24px;
+            max-height: 24px;
+        }
+    }
+
+    h4 {
+        margin-bottom: 5px;
+
+        @include mobile-lg {
+            font-size: 19px;
+            line-height: 22px;
+            letter-spacing: -0.02em;
+        }
+    }
+
+    p {
+        line-height: 20px;
+    }
+}
+
+.disclaimer-card {
+    padding: 24px 30px 30px;
+    border: 1px solid $border-color;
+    margin-bottom: 30px;
+
+    @include mobile-lg {
+        padding: 16px 20px 20px;
+    }
+
+    h3 {
+        margin-bottom: 14px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+//// ============== Single Vehicle Insurance End ============== ////
+
+
+// ===================== Vehicle Insurance Compare ===================== //
+
+
+
+.vehicle-insurance-head {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 50px;
+    margin-top: -50px;
+    padding-top: 16px;
+    padding-bottom: 17px;
+    position: sticky;
+    top: 138px;
+    background: white;
+    z-index: 1030;
+
+    @include macbook {
+        top: 139px;
+    }
+
+    @include windows-laptop {
+        top: 122px;
+    }
+
+    @include tab-landscape {
+        top: 66px;
+    }
+
+    @include tab-portrait {
+        top: 66px;
+    }
+
+    @include tab-sm-portrait {
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    @include mobile-lg {
+        top: 0;
+        position: relative;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 50px;
+        z-index: 0;
+    }
+}
+
+.vehicle-head-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tab-sm-portrait {
+        display: block;
+    }
+
+    .vehicle-head-left {
+        h4 {
+            font-family: $secondary-font;
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            color: black;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            text-align: left;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                display: inline-block;
+                position: relative;
+                margin-left: 30px;
+                line-height: 19px;
+
+                @include tab-landscape {
+                    margin-left: 24px;
+                }
+
+                @include mobile-lg {
+                    display: block;
+                    margin-left: 17px;
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                }
+
+                &::before {
+                    content: "";
+                    position: relative;
+                    display: inline-block;
+                    top: -3px;
+                    left: -15px;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: $content-color;
+
+                    @include tab-landscape {
+                        left: -14px;
+                    }
+                }
+
+                &:first-child {
+                    padding-left: 0px;
+                    margin-left: 0px;
+
+                    @include mobile-lg {
+                        margin-left: 17px;
+                    }
+
+                    &::before {
+                        display: none;
+
+                        @include mobile-lg {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .vehicle-head-right {
+        .btn {
+            font-family: $secondary-font;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: center;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: black;
+            background: white;
+
+            @include tab-sm-portrait {
+                border: 1px solid black;
+                margin-top: 10px;
+            }
+
+            &::after {
+                background: url(../images/button-arrow-black.svg) no-repeat center center;
+            }
+
+            &:hover {
+                color: white;
+                background: $primary-color;
+                border: 1px solid $primary-color;
+
+                @include tab-sm-portrait {
+                    border: 1px solid $primary-color;
+                }
+
+                &::after {
+                    background: url(../images/button-arrow-white.svg) no-repeat center center;
+                }
+            }
+        }
+    }
+}

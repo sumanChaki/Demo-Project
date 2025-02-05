@@ -1,0 +1,109 @@
+.about-hero-heading {
+  h4 {
+    line-height: 30px;
+  }
+}
+
+.partner-logos-desktop {
+  @include tab-landscape {
+    display: none;
+  }
+
+  ul {
+    @include lists;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -60px;
+
+    li {
+      width: 16.666%;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.partner-logos-mobile {
+  display: none;
+
+  @include tab-landscape {
+    display: block;
+  }
+
+  .partner-logo {
+    img {
+      max-width: 85%;
+      max-height: 80px;
+    }
+  }
+}
+
+////// Section Start
+
+.about-counter-info {
+  margin: 0 35px;
+
+  @include tab-landscape {
+    margin: 0 200px 0 0;
+  }
+
+  @include tab-portrait {
+    margin: 0;
+  }
+}
+.about-counter-blocks {
+  margin-bottom: 40px;
+
+  @include mobile-lg {
+    margin-bottom: 10px;
+  }
+
+  .about-counter-block {
+    @include mobile-lg {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.about-counter-block {
+  h3 {
+    font-size: 60px;
+    line-height: 66px;
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    color: $primary-color;
+    margin-bottom: 10px;
+
+    @include tab-sm-portrait {
+      font-size: 50px;
+      line-height: 56px;
+    }
+  }
+
+  h4 {
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: bold;
+    margin: 0;
+
+    @include tab-sm-portrait {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
+.about-counter-img {
+  @include tab-landscape {
+    max-width: 600px;
+    margin: 0 0 50px 0;
+  }
+
+  @include tab-portrait {
+    max-width: 100%;
+  }
+
+  @include mobile-lg {
+    margin-bottom: 30px;
+  }
+}

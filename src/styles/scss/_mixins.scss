@@ -1,0 +1,202 @@
+
+@mixin heading {
+    font-weight: bold;
+    font-family: $secondary-font;
+    color: black;
+    letter-spacing: -0.04em;
+    margin: 0 0 24px 0;
+    padding: 0;
+    position: relative;  
+}
+
+
+
+@mixin button {
+    font-family: $secondary-font;
+    font-size: 15px;
+    line-height: 44px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    height: 46px;
+    background: $primary-color;
+    display: inline-block;
+    padding: 0px 20px;
+    border-radius: 0px;
+    vertical-align: baseline;
+    text-transform: uppercase;
+    transition: 0.3s all;
+    position: relative;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+
+
+::placeholder {
+    color: $content-color;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: $content-color;
+}
+
+::-ms-input-placeholder {
+    color: $content-color;
+}
+
+
+@mixin input {
+    width: 100%;
+    height: 52px;
+    border: 1px solid $border-color;
+    background: white;
+    padding: 0 20px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: normal;
+    color: $content-color;
+    transition: 0.3s ease-in-out;
+    outline: none;
+    position: relative;
+
+    @include macbook{
+        height: 46px;
+    }
+
+    @include windows-laptop{
+        height: 46px;
+    }
+
+    @include mobile-lg{
+        height: 44px;
+    }
+}
+
+
+@mixin lists{
+    margin: 0;
+    padding: 0;
+
+    li{
+        list-style: none;
+        
+        line-height: 28px;
+        font-weight: normal;
+        
+        color: $content-color;
+        margin-bottom: 0px;
+    }
+}
+
+
+@mixin input-focus {
+    color: black !important;
+}
+
+
+@mixin transitionEffect {
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+
+@mixin monitor-lg {
+    @media all and #{$monitor-lg} {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media all and #{$desktop-lg} {
+        @content;
+    }
+}
+
+
+@mixin hd-display {
+    @media all and #{$hd-display} {
+        @content;
+    }
+}
+
+@mixin macbook {
+    @media all and #{$macbook} {
+        @content;
+    }
+}
+
+@mixin windows-laptop {
+    @media all and #{$windows-laptop} {
+        @content;
+    }
+}
+
+@mixin tab-lg {
+    @media all and #{$tab-lg} {
+        @content;
+    }
+}
+
+@mixin tab-landscape {
+    @media all and #{$tab-landscape} {
+        @content;
+    }
+}
+
+@mixin tab-lg-portrait {
+    @media all and #{$tab-lg-portrait} {
+        @content;
+    }
+}
+
+@mixin tab-portrait {
+    @media all and #{$tab-portrait} {
+        @content;
+    }
+}
+
+@mixin tab-sm-portrait {
+    @media all and #{$tab-sm-portrait} {
+        @content;
+    }
+}
+
+@mixin mobile-lg {
+    @media all and #{$mobile-lg} {
+        @content;
+    }
+}
+
+@mixin mobile-sm-portrait {
+    @media all and #{$mobile-sm-portrait} {
+        @content;
+    }
+}
+
+@mixin iphone-old {
+    @media all and #{$iphone-old} {
+        @content;
+    }
+}
+
+@mixin android-mobile {
+    @media all and #{$android-mobile} {
+        @content;
+    }
+}
+
+@mixin iphone-vs {
+    @media all and #{$iphone-vs} {
+        @content;
+    }
+}

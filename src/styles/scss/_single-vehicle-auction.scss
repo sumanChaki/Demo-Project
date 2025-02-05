@@ -1,0 +1,401 @@
+.current-bid-dialog{
+    max-width: 450px;
+}
+
+.current-bid {
+
+    .timeing-slot{
+        padding: 0 16px;
+        height: 48px;
+        box-shadow: 0px 2px 0px $border-color;
+
+        h5{
+            
+            line-height: 28px;
+            font-weight: 500;
+            
+            letter-spacing: 0;
+            color: $content-color;
+        }
+
+        .primary-color-text{
+            color: $primary-color;
+            letter-spacing: -0.04em;
+            font-family: $secondary-font;
+        }
+
+    }
+
+    .timeing-remaining{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        
+        letter-spacing: -0.02em;
+        color: $content-color;
+    }
+
+    h4 {
+        font-weight: 500;
+        margin-bottom: 6px;
+        span {
+            color: $primary-color;
+        }
+    }
+    .timeing-slot {
+        h5 {
+            padding-left: 0px;
+            &::before {
+                display: none;
+            }
+            &.primary-color-text {
+                font-weight: bold;
+                font-size: 26px;
+                line-height: 32px;
+
+                @include mobile-lg{
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+        }
+    }
+
+}
+
+.higgest-bidder {
+    max-width: 720px !important;
+
+    @include tab-landscape{
+        max-width: 560px !important;
+    }
+}
+
+.current-bid-modal {
+    max-width: 800px;
+    @include tab-portrait {
+        max-width: 700px;
+    }
+    @include tab-portrait {
+        max-width: 550px;
+    }
+}
+
+.timeing-remaining {
+    margin-bottom: 28px;
+    strong {
+        color: black;
+    }
+}
+
+.cauction {
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 14px 0px;
+    .cauction-item {
+        display: flex;
+        position: relative;
+        .cauction-content {
+            padding-left: 12px;
+            h6 {
+                font-weight: bold;
+                color: $primary-color;
+                line-height: 19px;
+                margin-bottom: 4px;
+                letter-spacing: -0.02em;
+            }
+            p {
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 15px;
+            }
+        }
+        &::before {
+            content: "";
+            height: 31px;
+            width: 31px;
+            background: url(../images/caution-text.svg) no-repeat center / contain;
+        }
+    }
+}
+
+.top-bidder {
+    border: none;
+    padding: 0px;
+    h3 {
+        font-size: 26px;
+        line-height: 32px;
+        color: $green-color;
+        margin-bottom: 0px;
+
+        @include tab-landscape{
+            margin-bottom: 4px;
+        }
+
+        @include mobile-lg{
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+    .cauction-item {
+        &::before {
+            content: "";
+            height: 50px;
+            width: 50px;
+            background: url(../images/top-bidder.svg) no-repeat center / contain;
+
+            @include mobile-lg{
+                height: 30px;
+                width: 30px;
+            }
+        }
+        .timeing-remaining {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.place-new-bid {
+    background: $light-grey-bg;
+    padding: 16px 24px 24px;
+    margin-top: 28px;
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .countdown-field {
+        margin-bottom: 0px;
+    }
+    h5 {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 5px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    
+}
+
+
+.new-bid-check{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .vehicle-type-check-box{
+        width: calc(25% - 13px);
+
+        @include tab-portrait{
+            width: calc(50% - 13px);
+            padding: 10px 0;
+        }
+
+        @include mobile-lg{
+            width: calc(50% - 8px);
+            padding: 8px 0;
+        }
+
+        input[type=radio]{
+            display: none;
+        }
+
+        input[type=radio] + label{
+            min-width: 100%;
+        }
+
+        input[type="radio"] + label span {
+            font-weight: 500;
+            font-size: 18px;
+            color: $content-color;
+
+            @include mobile-lg{
+                font-size: 15px;
+            }
+        }
+    
+        input[type="radio"] + label strong {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            position: relative;
+            z-index: 2;
+
+            @include mobile-lg{
+                font-size: 15px;
+            }
+        }
+    
+        input[type="radio"]:checked + label::before {
+            display: none !important;
+        }
+    
+        input[type="radio"]:checked + label strong {
+            color: white !important;
+        }
+    
+        input[type="radio"]:checked + label span {
+            color: rgba($color: white, $alpha: 0.6);
+        }
+    }
+}
+
+
+/* ========= Bidding History ========= */
+
+.bidding-header {
+    a {
+        position: relative;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: $primary-color;
+        padding-left: 18px;
+        display: block;
+        margin-bottom: 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 10px;
+            background: url(../images/back-arrow.svg) no-repeat center / contain;
+        }
+    }
+}
+
+.bidding-card {
+    background: white;
+    border: 1px solid $border-color;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include macbook{
+        padding: 30px;
+    }
+
+    @include windows-laptop{
+        padding: 30px;
+    }
+
+    @include tab-landscape{
+        padding: 30px;
+    }
+
+    @include tab-portrait {
+        padding: 20px;
+    }
+
+    @include tab-portrait{
+        display: block;
+    }
+
+    @include mobile-lg{
+        padding: 10px;
+    }
+
+    h3 {
+        margin-bottom: 8px;
+        @include tab-portrait {
+
+            font-size: 22px;
+            line-height: 28px;
+        }
+    }
+    h4 {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 10px;
+        @include tab-portrait {
+            font-size:18px;
+            line-height: 24px;
+        }
+        span {
+            color: $primary-color;
+        }
+    }
+    .bidding-image {
+        width: 465px;
+        flex: none;
+        margin-right: 40px;
+
+        @include tab-landscape {
+            width: 280px;
+            align-self: flex-start;
+            margin-right: 25px;
+        }
+
+        @include tab-portrait {
+            margin-bottom: 30px;
+        }
+
+        @include tab-sm-portrait{
+            width: 100%;
+            margin-right: 0px;
+        }
+        img {
+            width: 100%;
+        }
+    }
+
+    .bidding-content {
+        width: 100%;
+        .bidding-content-header {
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 18px;
+            margin-bottom: 17px;
+        }
+    }
+}
+
+.bidding-count {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    ul {
+        @include lists;
+        li {
+            display: inline-block;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 21px;
+            @include tab-portrait {
+                font-size: 14px;
+                line-height: 21px;
+            }
+            strong {
+                color: black;
+            }
+        }
+    }
+}
+
+.previous-bid {
+    margin-top: 60px;
+    table {
+        margin-bottom: 25px;
+
+        @include tab-sm-portrait{
+            width: 600px;
+        }
+
+        th {
+            color: black;
+        }
+        tr {
+            td {
+                width: 33.33%;
+                border-top: 1px solid $border-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,837 @@
+
+// ============= Hero Section Style Start =============
+
+.hero-slider-card{
+    position: relative;
+
+    figure{
+
+        @media (min-width: 1367px) and (max-width: 1920px){
+            height: calc(100vh - 137px);
+        }        
+
+        @include tab-portrait{
+            height: 500px;
+        }
+        @include mobile-lg{
+            height: 460px;
+        }
+
+        img{
+            
+            @media (min-width: 1367px) and (max-width: 1920px){
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            
+
+            @include tab-portrait{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .hero-slide-content{
+        position: absolute;
+        bottom: 75px;
+        left: 80px;
+
+        @include tab-landscape{
+            bottom: 40px;
+            left: 40px;
+        }
+
+        @include mobile-lg{
+            left: 20px;
+            bottom: 20px;
+        }
+
+        h1, h2{
+            &::before{
+                @include tab-sm-portrait{
+                    height: auto;
+                    top: 4px;
+                    bottom: 4px;
+                }
+            }
+        }
+
+        p{
+            @include mobile-lg{
+                line-height: 22px;
+            }
+        }
+      
+    }
+}
+
+.hero-swiper{
+    
+    .hero-swiper-pagination{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: 60px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;  
+        
+        @include tab-sm-portrait{
+            display: none;
+        }
+
+        .swiper-pagination-bullet{
+            height: auto;
+            width: auto;
+            background: none;
+            margin: 10px 0;
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: bold;
+            font-family: $secondary-font;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            opacity: 0.4;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &::after{
+                content: "";
+                width: 2px;
+                height: 0px;
+                background: white;
+                transition: 0.3s all;
+            }
+
+            &.swiper-pagination-bullet-active{
+                opacity: 1;
+                color: $primary-color;
+
+                &::after{
+                    height: 50px;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+// ============= Hero Section Style End =============
+
+
+
+// ============= Featured Vehicles Section Style Start =============
+
+.featured-vehicles{
+    padding: 30px 0;
+}
+
+.section-heading-landing{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+    @include tab-sm-portrait{
+        display: block;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    h2{
+        letter-spacing: -0.04em;
+        margin-bottom: 0;
+        
+        @include tab-sm-portrait{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.container{
+    .section-heading-landing{
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+}
+
+
+.featured-vehicles-row{
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-bottom: -10px;
+
+    &>[class*=col] {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 10px;
+
+    }
+}
+
+.featured-vehicles-card{
+    position: relative;
+
+    figure{
+        position: relative;
+        overflow: hidden;
+
+        @include tab-sm-portrait{
+            height: 350px;
+        }
+
+        @include mobile-lg{
+            height: 320px;
+        }
+
+        img{
+            transition: 0.3s all;
+
+            @include tab-sm-portrait{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.4);
+            transition: 0.3s all;
+        }
+    }
+
+    &:hover{
+        figure{
+            img{
+                transform: scale(1.15);
+                filter: blur(6px);
+                -webkit-filter: blur(6px);
+            }
+
+            &::after{               
+                background: rgba(0, 0, 0, 0.55);
+            }
+        }
+    }
+}
+
+.featured-vehicles-card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+
+    @include tab-landscape{
+        padding: 25px;
+    }
+
+    @include tab-portrait{
+        padding: 30px;
+    }
+
+    @include mobile-lg{
+        padding: 25px;
+    }
+
+    .featured-vehicles-card-heading{
+
+        h3{
+            font-size: 30px;
+            line-height: 32px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            letter-spacing: -0.02em;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            margin-bottom: 14px;
+
+            @include windows-laptop{
+                font-size: 28px;
+                line-height: 30px;
+            }
+
+            @include tab-landscape{
+                font-size: 26px;
+                line-height: 28px;
+            }
+
+            @include tab-portrait{
+                margin-bottom: 11px;
+            }
+
+            @include mobile-lg{
+                width: 85%;
+            }
+
+            .new{
+                display: inline-block;
+                vertical-align: middle;
+                padding: 6px 14px;
+                font-size: 14px;
+                line-height: 13px;
+                font-weight: normal;
+                letter-spacing: -0.02em;
+                color: #FFFFFF;
+                background: $primary-color;
+                margin-left: 14px;
+                border-radius: 50px;
+                position: relative;
+                top: -2px;
+
+                @include mobile-lg{
+                    padding: 4px 10px;
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+
+        p{
+            font-size: 20px;
+            line-height: 19px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            letter-spacing: -0.02em;
+            color: #FFFFFF;
+
+            @include tab-landscape{
+                font-size: 18px;
+                line-height: 18px;
+            }
+
+            @include tab-landscape{
+                font-size: 18px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .featured-vehicles-card-btns{
+        display: flex;
+
+        .btn{
+            margin-right: 20px;
+
+            @include tab-landscape{
+                margin-right: 15px;
+                font-size: 12px;
+                line-height: 40px;
+                height: 42px;
+                letter-spacing: 0.14em;
+                padding: 0px 16px;
+            }
+
+            @include tab-portrait{
+                padding: 0 20px;
+            }
+
+            &::after{
+                @include tab-landscape{
+                    margin-left: 12px;
+                }
+
+                @include tab-portrait{
+                   margin-left: 16px;
+                }
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+
+// ============= Featured Vehicles Section Style End =============
+
+
+
+
+
+
+
+
+// ============= Featured Dealers Section Style Start =============
+
+.featured-dealers-sec{
+    padding: 30px 0;
+}
+
+.featured-dealers{
+    @include tab-landscape{
+        display: none;
+    }
+
+    ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 0 -1px 0 0;
+
+        li{
+            list-style: none;
+            width: 14.28%;
+            margin: 0 0 -1px -1px;
+
+            @include tab-landscape{
+                width: 20%;
+            }
+
+            a{
+                display: block;
+                height: 100%;
+                transition: 0.3s all;
+                &:hover{
+                    .featured-dealer-card{
+                        background: $light-grey-bg;
+                        transition: 0.3s all;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.featured-dealer-card{
+    text-align: center;
+    border: 1px solid $border-color;   
+    height: 100%;
+    padding: 40px 12px 35px;
+    transition: 0.3s all;
+
+    @include macbook{
+        padding: 30px 12px 25px;
+    }
+
+    @include windows-laptop{
+        padding: 30px 12px 25px;
+    }
+
+    @include tab-landscape{
+        padding: 30px 12px 25px;
+    }
+
+    figure{
+        width: 84px;
+        height: 84px;
+        margin: 0 auto 16px;
+        transition: 0.3s all;
+
+        @include macbook{
+            height: 72px;
+            width: 72px;
+        }
+
+        @include windows-laptop{
+            height: 72px;
+            width: 72px;
+        }
+        
+        @include tab-portrait{
+            width: 84px;
+            height: 84px;
+        }
+
+        @include tab-sm-portrait{
+            height: 72px;
+            width: 72px;
+        }
+
+        img{            
+            border: 1px solid $border-color;
+            border-radius: 50%;
+        }
+
+    }
+
+
+    h3{
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin-bottom: 5px;
+        transition: 0.3s all;
+
+        @include macbook{
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        @include windows-laptop{
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        @include tab-landscape{
+            font-size: 17px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .featured-dealer-rating{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        i{
+            font-size: 14px;
+            margin: 0 2px;
+            color: $border-color;
+
+            &.rated{                
+                color: #F5B100;
+            }
+        }
+    }
+
+    &:hover{
+        background: $light-grey-bg;
+
+        figure{
+            box-shadow: 0px 15px 55px rgba(157, 163, 180, 0.16);
+        }
+
+        h3{
+            color: $primary-color;
+        }
+    }
+}
+
+.featured-dealers-slider{
+    display: none;
+
+    @include tab-landscape{
+        display: block;
+    }
+
+    .featured-dealers-swiper{
+       
+        @include tab-sm-portrait{
+            width: calc(100% + 50px);
+        }
+
+        @include mobile-lg{
+            width: calc(100% + 20px);
+            padding-right: 20px;
+        }
+    }
+
+    .swiper-slide{
+        height: 100%;
+    }
+
+    .swiper-buttons{
+        @include tab-sm-portrait{
+            display: none;
+        }
+    }
+}
+
+// ============= Featured Dealers Section Style End =============
+
+
+
+// ============= Featured Private Sellers Section Style Start =============
+
+
+.private-seller-slider{
+
+    .private-seller-swiper{
+        @include tab-sm-portrait{
+            width: calc(100% + 50px);
+        }
+
+        @include mobile-lg{
+            width: calc(100% + 20px);
+            padding-right: 20px;
+        }
+    }
+
+    .swiper-slide{
+        padding: 0 1px;
+    }
+    
+    .swiper-buttons{
+        @include tab-sm-portrait{
+            display: none;
+        }
+    }
+
+}
+
+.private-seller-card{
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid $border-color;
+    position: relative;
+    padding: 20px;
+    transition: 0.3s all;
+
+    @include mobile-lg{
+        padding: 16px;
+    }
+
+    figure{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 14px;
+
+        @include tab-landscape{
+            width: 80px;
+            height: 80px;
+        }
+
+        @include mobile-lg{
+            height: 70px;
+            width: 70px;
+            margin-bottom: 10px;
+        }
+
+        img{
+            border-radius: 50%;
+        }
+    }
+
+    h3{
+        font-size: 18px;
+        line-height: 26px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin-bottom: 2px;
+
+        @include tab-landscape{
+            margin-bottom: 5px;
+        }
+    }
+
+    h4{
+        font-size: 14px;
+        line-height: 13px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.03em;
+        color: $primary-color;
+        margin: 0;
+    }
+
+    &:hover{
+        background: $light-grey-bg;
+    }
+}
+
+// ============= Featured Private Sellers Section Style End =============
+
+
+
+
+
+.exclusive-deals-slider{
+    .swiper-buttons{
+
+        @include tab-sm-portrait{
+            position: initial;
+            transform: none;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        @include mobile-lg{
+            padding-top: 10px;
+        }
+
+        .swiper-button{
+            @include tab-sm-portrait{
+                position: initial;
+                margin: 0 20px;
+            }
+
+            @include mobile-lg{
+                margin: 0 10px;
+            }
+        }
+        
+    }
+}
+
+.exclusive-deals-swiper{
+    .vehicle-card{
+        margin-bottom: 10px;
+        border: 1px solid $border-color;
+    }
+}
+
+
+
+
+////////////==================//////////////
+
+.shopping-tool{
+    padding: 30px 0;
+}
+
+.shopping-tool-card{
+    position: relative;
+    box-shadow: inset -1px 0px 0px rgba(255, 255, 255, 0.14);
+
+    @include mobile-lg{
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    figure{
+        position: relative;
+        overflow: hidden;
+
+        @include tab-portrait{
+            height: 345px;
+        }
+
+        @include mobile-lg{
+            height: auto;
+        }
+
+        img{            
+            transition: 0.3s all;
+
+            @include tab-portrait{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 52.93%, rgba(0, 0, 0, 0.55) 100%);
+        }
+    }
+
+    .shopping-tool-card-info{
+        position: absolute;
+        bottom: 34px;
+        left: 0;
+        right: 20px;
+        padding-left: 58px;
+
+        @include macbook{
+            padding-left: 52px;
+        }
+
+        @include windows-laptop{
+            padding-left: 52px;
+        }
+
+        @include tab-landscape{
+            padding-left: 50px;
+            bottom: 20px;
+        }
+
+        h3{
+            color: white;
+            margin-bottom: 4px;
+
+            @include tab-landscape{
+                font-size: 22px;
+                line-height: 24px;
+                margin-bottom: 7px;
+            }
+        }
+
+        p{
+            line-height: 22px;
+            color: #FFFFFF;
+            opacity: 0.72;
+
+            @include tab-landscape{
+                line-height: 20px;
+            }
+        }
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 6px;
+            left: 0;
+            width: 30px;
+            background: url(../images/btn-arrow-white.svg) no-repeat center $primary-color;
+            transition: 0.3s all;
+        }
+    }
+
+    a{
+        &:hover{
+            figure{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+
+            .shopping-tool-card-info{
+        
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    bottom: 4px;
+                    left: 0;
+                    width: 30px;
+                    background: url(../images/btn-arrow-red.svg) no-repeat center white;
+                }
+            }
+        }
+    }
+}
+
+.shopping-tool-cards{
+
+    &>[class*=col] {
+        &:last-child{
+            .shopping-tool-card{
+                @include tab-portrait{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+}

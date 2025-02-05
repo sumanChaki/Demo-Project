@@ -1,0 +1,95 @@
+.dealer-signup-container {
+    .signup-left {
+        width: 44%;
+
+        @include monitor-lg {
+            width: 52%;
+        }
+        
+        @include macbook {
+            width: 54%;
+        }
+
+        @include windows-laptop {
+            width: 54%;
+        }
+
+        .signup-left-content {
+            max-width: inherit;
+            padding-left: 80px;
+            padding-right: 80px;
+
+            @include macbook {
+                padding-left: 40px;
+                padding-right: 40px;
+                max-height: 520px;
+            }
+
+            @include windows-laptop {
+                max-height: 510px;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            .signup-left-info {
+                h1 {
+                    margin-bottom: 20px;
+                    font-family: $secondary-font;
+                }
+
+                p {
+                    margin-bottom: 50px;
+
+                    // @include monitor-lg {
+                    //     font-size: 20px;
+                    //     line-height: 32px;
+                    //     margin-bottom: 30px;
+                    // }
+                }
+            }
+
+            .sell-content-boxes {
+                .content-box-single {
+                    width: auto;
+                    height: auto;
+                    flex: 1;
+
+                    .content-box-info {
+                        p {
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            @include windows-laptop {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .signup-right {
+
+        select,
+        input:not([type=checkbox]):not([type=radio]) {
+            @include windows-laptop {
+                height: 42px;
+            }
+        }
+
+        .form-group {
+            @include windows-laptop {
+                margin-bottom: 18px;
+            }
+        }
+
+        .toggle-password {
+            @include windows-laptop {
+                top: inherit;
+                bottom: 8px;
+            }
+        }
+    }
+}

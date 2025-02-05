@@ -1,0 +1,57 @@
+// responsive devices
+
+$desktop-lg: "(min-width: 1920px)";
+$monitor-lg: "(min-width: 1601px) and (max-width: 1919px)";
+$macbook: "(min-width: 1367px) and (max-width: 1600px)";
+$windows-laptop: "(min-width: 1280px) and (max-width: 1366px)";
+$tab-lg: "(min-width: 1201px) and (max-width: 1366px) and (min-height: 880px)";
+$tab-landscape: "(max-width: 1279px)";
+$tab-lg-portrait: "(min-width: 1024px) and (max-width: 1200px) and (orientation: portrait)";
+$tab-portrait: "(max-width: 991px)";
+$tab-sm-portrait: "(max-width: 767px)";
+$mobile-lg: "(max-width: 575px)";
+$mobile-sm-portrait: "(max-width: 410px)";
+$iphone-old: "(max-width: 410px) and (max-height: 667px)";
+$android-mobile: "(max-width: 360px)";
+$iphone-vs: "(max-width: 320px)";
+
+
+
+
+// ============ Fonts Variable ============ // 
+
+$primary-font: "Poppins", sans-serif;
+$secondary-font: "Poppins", sans-serif;
+
+
+
+
+
+// ============ Color Variable ============ // 
+
+
+$primary-color:#DB4C46;
+$content-color:#727272;
+$light-grey-bg:#F8F8F8;
+$dark-bg:#1E1E1E;
+$border-color:#E8E8E8;
+$green-color:#04C48A;
+$yellow-color:#F5B100;
+$border-color-one:#EEEEEE;
+$filter-item-card:#F4F4F4;
+$filter-item-content:#888888;
+$page-light-bg: #F9F9F9;
+$table-row-bg: #FBFBFB;
+$light-text-color: #92A4A9;
+$very-light-text-color: #A9A9AA;
+
+
+
+$light-primary-color:#FAE9E8;
+$input-bg-color:#F8F9FA;
+$green-color:#04C38A;
+
+
+
+
+

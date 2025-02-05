@@ -1,0 +1,929 @@
+// ============= Vehicle Card Component Style =============
+
+.vehicle-card {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+    margin-bottom: 40px;
+
+    @include macbook{
+        margin-bottom: 30px;
+    }
+
+    @include windows-laptop{
+        margin-bottom: 30px;
+    }
+
+    @include tab-landscape {
+        margin-bottom: 30px;
+    }
+}
+
+.vehicle-card-img {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0) 33.42%);
+        pointer-events: none;
+    }
+}
+
+.vehicle-card-info {
+    padding: 25px 30px 30px;
+
+    @media (min-width: 1601px) and (max-width: 1800px){
+        padding: 24px;
+    }
+
+    @include macbook{
+        padding: 18px;
+    }
+
+    @include windows-laptop{
+        padding: 18px;
+    }
+
+    @include tab-portrait{
+        padding: 20px;
+    }
+
+}
+
+.vehicle-name-price {
+    h3 {
+        font-size: 24px;
+        line-height: 29px;
+        font-weight: 700;
+        font-family: $secondary-font;
+        letter-spacing: -0.04em;
+        color: #000000;
+        margin-bottom: 10px;
+
+        @include macbook{
+            font-size: 21px;
+            line-height: 25px;
+        }
+
+        @include windows-laptop{
+            font-size: 21px;
+            line-height: 25px;
+        }
+
+        @include tab-landscape{
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        @include tab-portrait{            
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+        }
+
+        @include tab-sm-portrait{
+            min-height: auto;        
+        }
+
+        @include mobile-lg{
+            font-size: 20px;
+        }
+
+        a {
+            color: #000000;
+            transition: 0.3s all;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+
+    .vehicle-price {
+        display: flex;
+        // align-items: center;
+        margin-bottom: 18px;
+
+        @include macbook {
+            margin-bottom: 12px;
+        }
+
+        @include windows-laptop {
+            margin-bottom: 12px;
+        }
+
+        span {
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 500;
+            font-family: $secondary-font;
+            letter-spacing: -0.02em;
+            color: $primary-color;
+
+            @include macbook{
+                font-size: 18px;
+                line-height: 19px;
+            }
+
+            @include windows-laptop{
+                font-size: 18px;
+                line-height: 19px;
+            }
+
+            @include tab-landscape{
+                font-size: 20px;
+                line-height: 19px;
+            }
+
+            @include tab-portrait{
+                font-size: 18px;
+                line-height: 21px;
+            }
+
+            @include mobile-lg{
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        .badge {
+            height: 22px;
+            background: #f8f8f8;
+            border: 1px solid #e8e8e8;
+            padding: 0 11px;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: normal;
+            
+            letter-spacing: -0.02em;
+            color: #727272;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            margin-left: 6px;
+
+            @include macbook{
+                font-size: 12px;
+            }
+
+            @include windows-laptop{
+                font-size: 12px;
+            }
+
+
+            @include mobile-lg{
+                height: 18px;
+                padding: 0 7px;
+                font-size: 11px;
+                line-height: 12px;
+            }
+        }
+    }
+}
+
+.vehicle-certification {
+    margin-bottom: 20px;
+
+    @include macbook{
+        margin-bottom: 14px;
+    }
+
+    @include windows-laptop{
+        margin-bottom: 14px;
+    }
+
+    @include tab-landscape{
+        margin-bottom: 14px;
+    }
+
+    ul {
+        @include lists;
+        display: flex;
+
+        li {
+            display: flex;
+            align-items: center;
+            height: 28px;
+            background: rgba($color: $primary-color, $alpha: 0.1);
+            padding: 0 11px;
+            border-radius: 50px;
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 500;
+            
+            letter-spacing: -0.02em;
+            color: $primary-color;
+            margin-right: 16px;
+
+            &.dealer-certified-icon {
+                padding-left: 0;
+
+                &::before {
+                    flex: none;
+                    content: "";
+                    height: 28px;
+                    width: 28px;
+                    border: 1px solid rgba($color: $primary-color, $alpha: 0.1);
+                    border-radius: 50%;
+                    margin-right: 7px;
+                    background: #ffffff url(../images/tick-icon-primary.svg) no-repeat center / 13px;
+                }
+            }
+
+            &.trade-in-icon {
+                padding-left: 0;
+
+                &::before {
+                    flex: none;
+                    content: "";
+                    height: 28px;
+                    width: 28px;
+                    border: 1px solid $primary-color;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                    background: $primary-color url(../images/trade-in-icon.svg) no-repeat center / 13px;
+                }
+            }
+
+            &.certified-icon {
+                padding-left: 0;
+                background: $primary-color;
+                color: white;
+
+                &::before {
+                    flex: none;
+                    content: "";
+                    height: 28px;
+                    width: 28px;
+                    border: 1px solid $primary-color;
+                    border-radius: 50%;
+                    margin-right: 7px;
+                    background: white url(../images/certified-icon.svg) no-repeat center / 9px;
+                }
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.vehicle-description {
+    margin-bottom: 24px;
+
+    @include macbook {
+        margin-bottom: 20px;
+    }
+
+    @include windows-laptop {
+        margin-bottom: 20px;
+    }
+
+    @include mobile-lg {
+        display: none;
+    }
+}
+
+.vehicle-card-body {
+    display: none;
+}
+
+.vehicle-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include macbook{
+        flex-wrap: wrap;
+    }
+
+    @include windows-laptop{
+        flex-wrap: wrap;
+    }
+
+    @include tab-portrait{
+        display: block;
+    }
+
+    @include tab-sm-portrait{
+        display: flex;    
+    }
+
+    @include mobile-lg{
+        display: block;
+    }
+
+    input[type="checkbox"] + label {
+        margin: 0 !important;
+
+        @include macbook{
+            font-size: 13px !important;
+            letter-spacing: -0.01em !important;
+        }
+        
+        @include windows-laptop{
+            font-size: 13px !important;
+            letter-spacing: -0.01em !important;
+        }
+    }
+
+    &.vehicle-card-footer-order {
+        .vehicle-card-footer-btns {
+            order: 1;
+        }
+    }
+}
+
+.time-left-count{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    padding: 14px 0 16px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+   font-family: $secondary-font;
+    letter-spacing: -0.02em;
+    color: #000000;
+
+    @include mobile-lg{
+        padding: 10px 0 12px;
+        
+        line-height: 20px;
+    }
+
+    span{
+        color: $primary-color;
+    }
+}
+
+.vehicle-card-footer-btns {
+    display: flex;
+    align-items: center;
+
+
+    @include tab-portrait{
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    @include tab-sm-portrait{
+        margin-bottom: 0;
+    }    
+    
+
+    @include mobile-lg{
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        margin-right: 20px;
+
+        @media (min-width: 1601px) and (max-width: 1800px){
+            font-size: 13px;
+            line-height: 40px;
+            height: 42px;
+            letter-spacing: 0.2em;
+            padding: 0px 16px;
+        }
+
+        @include macbook {
+            font-size: 13px;
+            line-height: 38px;
+            height: 40px;
+            letter-spacing: 0.16em;
+            padding: 0px 18px;
+        }
+
+        @include windows-laptop {
+            font-size: 12px;
+            line-height: 38px;
+            height: 40px;
+            letter-spacing: 0.16em;
+            padding: 0px 12px;
+        }
+   
+        @include tab-portrait{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        @include mobile-lg {            
+            font-size: 14px;
+            line-height: 42px;
+            height: 42px;
+            letter-spacing: 0.24em;
+        }
+
+        &::after{
+            @include macbook{
+                height: 11px;
+                width: 6px;
+                top: 1px;
+                margin-left: 10px;
+            }
+
+            @include windows-laptop{
+                height: 11px;
+                width: 6px;
+                top: 1px;
+                margin-left: 5px;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.list-vehicle-card {
+    display: flex;
+
+    @include mobile-lg{
+        padding: 15px 15px 48px 15px;
+        margin-bottom: 20px;
+    }
+  
+    .vehicle-card-img {
+        width: 575px;
+        flex: none;
+
+        @include macbook {
+            width: 380px;
+        }
+
+        @include windows-laptop {
+            width: 350px;
+        }
+
+        @include tab-landscape {
+            width: 320px;
+        }
+
+        @include tab-portrait {
+            width: 250px;
+        }
+
+        @include tab-sm-portrait{
+            width: 280px;
+        }
+
+        @media (max-width: 700px){
+            width: 230px;
+        }
+
+        @include tab-sm-portrait{
+            width: 205px;
+        }
+
+        @include mobile-lg{
+            width: 110px;
+            height: 85px;
+        }
+
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .vehicle-card-info {
+        width: 100%;
+        padding: 36px 36px 40px;
+
+
+
+        @include macbook{
+            padding: 30px;
+        }
+
+        @include windows-laptop{
+            padding: 30px;
+        }
+
+        @include tab-landscape{
+            padding: 30px;
+        }
+
+        @include tab-portrait {
+            padding: 20px;
+        }
+
+        @include mobile-lg {
+            padding: 0;
+            margin-left: 14px;
+        }
+    }
+
+    .vehicle-name-price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include tab-portrait {
+            display: block;
+        }
+
+        h3 {
+
+            @include tab-portrait{
+                min-height: auto;
+            }
+
+            @include tab-sm-portrait {
+                margin-bottom: 10px;
+            }
+
+            @include mobile-lg{
+                font-size: 17px;
+                line-height: 19px;
+                margin-bottom: 6px;
+            }
+
+        }
+
+        .vehicle-price {
+            @include mobile-lg{
+                margin-bottom: 0;
+            }
+            span {
+                order: 1;
+                margin-left: 8px;
+
+                @include mobile-lg{
+                    order: 0;
+                    margin-left: 0;
+                    margin-right: 4px;
+                    font-size: 15px;
+                    line-height: 16px;
+                }
+            }
+
+            .badge {
+                margin-left: 0;
+            }
+        }
+
+    }
+
+    
+    .vehicle-description{
+        @include tab-portrait{
+            display: none;
+        }
+    }
+
+    .vehicle-certification {
+        margin-bottom: 12px;
+
+        @include macbook{
+            margin-bottom: 16px;
+        }
+
+        @include windows-laptop{
+            margin-bottom: 16px;
+        }
+
+        @include windows-laptop{
+            margin-bottom: 16px;
+        }
+
+        @include tab-landscape{
+            margin-bottom: 16px;
+        }
+
+        @include tab-portrait {
+            margin-bottom: 16px;
+        }
+
+        @include mobile-lg{
+            margin-bottom: 8px;
+        }
+
+        ul {
+    
+            li {
+
+                @include mobile-lg{
+                    height: 20px;
+                    padding: 0 6px;
+                    font-size: 10px;
+                    margin-right: 8px;
+                }
+    
+                &.dealer-certified-icon {
+                   @include mobile-lg{
+                        padding-left: 0;
+        
+                        &::before {
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 4px;
+                            background: #ffffff url(../images/tick-icon-primary.svg) no-repeat center / 9px;
+                        }
+                   }
+                }
+
+                &.trade-in-icon {
+                    @include mobile-lg{
+                         padding-left: 0;
+         
+                         &::before {
+                             height: 20px;
+                             width: 20px;
+                             margin-right: 4px;
+                             background: $primary-color url(../images/trade-in-icon.svg) no-repeat center / 9px;
+                         }
+                    }
+                }
+
+                &.certified-icon {
+                    @include mobile-lg{
+                        padding-left: 0;
+         
+                        &::before {
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 4px;
+                            background: #ffffff url(../images/certified-icon.svg) no-repeat center / 6px;
+                        }
+                    }
+                }
+        
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+
+    }
+
+    .vehicle-card-body {
+        display: block;
+        border-top: 1px solid $border-color;
+        padding-top: 16px;
+        margin-bottom: 30px;
+
+        @include macbook {
+            display: none;
+        }
+
+        @include windows-laptop {
+            display: none;
+        }
+
+        @include tab-landscape {
+            display: none;
+        }
+    }
+
+    .vehicle-description {
+        margin-bottom: 16px;
+    }
+
+    .vehicle-card-footer {
+
+        @media (min-width: 1601px) and (max-width: 1900px){
+            display: flex;
+        }
+
+        @include tab-portrait{
+            display: flex;
+        }
+
+        @include tab-sm-portrait{
+            display: block;
+        }
+
+        .vehicle-card-footer-btns {
+
+            @media (min-width: 1601px) and (max-width: 1900px){
+                margin: 0;
+            }
+
+            @include macbook{
+                margin-bottom: 0px;
+            }
+        
+            @include windows-laptop{
+                margin-bottom: 0px;
+            }
+
+            @include tab-portrait{
+                margin-bottom: 0;
+            }
+
+            @include tab-sm-portrait{
+                margin-bottom: 16px;
+            }
+
+            @include tab-sm-portrait{
+                display: none;
+            }
+
+            .btn-stroke-primary{
+               @include tab-landscape{
+                   display: none;
+               }
+            }
+        }
+
+        .compare-checkbox{
+            line-height: 0;
+            @include mobile-lg{
+                position: absolute;
+                left: 15px;
+                bottom: 15px;
+            }
+
+            input[type=checkbox] + label {
+                padding: 0 0 0 26px !important;
+                font-size: 15px !important;
+                line-height: 15px !important;
+
+                &::before{
+                    width: 16px;
+                    height: 16px;
+                    top: -1px;
+                }
+
+                &::after{
+                    left: 5px;
+                    top: 1px;
+                }
+            }
+        }
+    }
+    .time-left-count{
+        @include tab-portrait{
+            display: none;
+        }
+    }
+}
+
+
+.swiper-slide{
+
+    .vehicle-card-info{
+        @include macbook{
+            padding: 25px;
+        }
+
+        @include windows-laptop{
+            padding: 25px;
+        }
+    }
+}
+
+
+
+
+
+// ******** ====================
+
+
+
+.label-trade-in {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    background: white;
+    padding: 0 11px 0 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: $primary-color;
+    right: 16px;
+    top: 16px;
+    z-index: 5;
+
+    &::before {
+        flex: none;
+        content: "";
+        height: 28px;
+        width: 28px;
+        border: 1px solid $primary-color;
+        border-radius: 50%;
+        margin-right: 7px;
+        background: $primary-color url(../images/trade-in-icon.svg) no-repeat center / 13px;
+    }
+}
+
+.label-dealer-certified {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    background: $primary-color;
+    padding: 0 11px 0 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: white;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 5;
+
+    &::before {
+        flex: none;
+        content: "";
+        height: 28px;
+        width: 28px;
+        border: 1px solid rgba($color: $primary-color, $alpha: 0.1);
+        border-radius: 50%;
+        margin-right: 7px;
+        background: #ffffff url(../images/tick-icon-primary.svg) no-repeat center / 13px;
+    }
+}
+
+.label-certified {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 11px 0 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    background: $primary-color;
+    color: white;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 5;
+
+    &::before {
+        flex: none;
+        content: "";
+        height: 28px;
+        width: 28px;
+        border: 1px solid $primary-color;
+        border-radius: 50%;
+        margin-right: 7px;
+        background: white url(../images/certified-icon.svg) no-repeat center / 9px;
+    }
+}
+
+.label-vehicle-location {
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 11px 0 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: -0.02em;
+    color: #db4c46;
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    z-index: 5;
+    &::before {
+        flex: none;
+        content: "";
+        height: 42px;
+        width: 42px;
+        border-radius: 50%;
+        margin-right: 12px;
+        background: rgba($color: white, $alpha: 0.44) url(../images/vehicle-location.svg) no-repeat center/16px;
+    }
+    .label-vehicle-location-details {
+        h4 {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 22px;
+            color: white;
+            margin-bottom: 4px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 16px;
+            color: white;
+        }
+    }
+}
+
+
+
+

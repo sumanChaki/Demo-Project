@@ -1,0 +1,203 @@
+
+.contact-section-img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: calc(50% + 80px);
+
+    @include tab-landscape{
+       position: initial;
+       height: 350px;
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.contact-section-info{
+    margin-left: -40px;
+    padding: 50px 0;
+
+    @include tab-landscape{
+        margin: 0;
+    }
+
+    h2{
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    p{
+        color: $content-color;
+    }
+}
+
+.contact-lists{
+    margin-bottom: 10px;
+
+    .contact-list{
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+
+        @include macbook{
+            margin-bottom: 25px;
+        }
+
+        @include windows-laptop{
+            margin-bottom: 25px;
+        }
+
+        @include mobile-lg{
+            margin-bottom: 25px;
+        }
+    
+        .contact-list-icon{
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 62px;
+            width: 62px;
+            border-radius: 50%;
+            background: rgba($color: $primary-color, $alpha: 0.1);
+            margin-right: 20px;
+
+            @include macbook{
+                height: 52px;
+                width: 52px;
+            }
+
+            @include windows-laptop{
+                height: 52px;
+                width: 52px;
+            }
+
+            @include mobile-lg{
+                height: 52px;
+                width: 52px;
+            }
+
+            img{
+                max-height: 24px;
+                max-width: 24px;
+
+                @include macbook{
+                    max-height: 22px;
+                    max-width: 22px;
+                }
+
+                @include windows-laptop{
+                    max-height: 22px;
+                    max-width: 22px;
+                }
+
+                @include mobile-lg{
+                    max-height: 22px;
+                    max-width: 22px;
+                }
+            }
+        }
+    
+        .contact-list-info{
+            h3{
+                font-size: 20px;
+                line-height: 20px;
+                font-weight: 500;
+                font-family: $secondary-font;
+                letter-spacing: -0.04em;
+                color: #000000;
+                margin-top: 2px;
+                margin-bottom: 5px;
+            }
+    
+            a, address, p{
+                line-height: 24px;
+                font-weight: normal;
+                color: $content-color;
+                // color: rgba($color: $content-color, $alpha: 0.8);   
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+.contact-socials{
+    margin-bottom: 40px;
+
+    h2{
+        margin-bottom: 30px;
+
+        @include macbook{
+            margin-bottom: 25px;
+        }
+
+        @include windows-laptop{
+            margin-bottom: 25px;
+        }
+
+    }
+
+    ul{
+        @include lists;
+        display: flex;
+
+        li{
+            margin-right: 20px;
+
+            @include macbook{
+                margin-right: 14px;
+            }
+
+            @include windows-laptop{
+                margin-right: 14px;
+            }
+
+            a{
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                background: $primary-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                transition: 0.3s all;
+
+                i{
+                    
+                }
+
+                &:hover{
+                    text-decoration: none;
+                    background: rgba($color: $primary-color, $alpha: 0.1);
+                    color: $primary-color;
+                }
+            }
+
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.contact-map{
+    iframe{
+        width: 100%;
+        height: 350px;
+
+        @include macbook{
+            height: 300px;
+        }
+
+        @include windows-laptop{
+            height: 300px;
+        }
+    }
+}

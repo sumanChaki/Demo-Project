@@ -1,0 +1,1035 @@
+.dealer-card {
+    padding: 30px;
+    border: 1px solid $border-color;
+    margin-bottom: 40px;
+
+    @include macbook {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    @include windows-laptop {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    @include tab-landscape {
+        margin-bottom: 30px;
+    }
+
+    @include tab-portrait {
+        padding: 20px;
+    }
+
+    @include tab-sm-portrait {
+        display: block;
+        padding: 30px;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+        margin-bottom: 24px;
+    }
+
+}
+
+.dealer-card-body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include macbook {
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+
+    @include windows-laptop {
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+
+    @include tab-landscape {
+        align-items: flex-start;
+    }
+
+    @include tab-portrait {
+        width: 100%;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    @include tab-sm-portrait {
+        margin-bottom: 30px;
+    }
+
+    @include mobile-lg {
+        margin-bottom: 20px;
+    }
+
+    .dealer-card-logo {
+        flex: none;
+        width: 124px;
+        height: 124px;
+        border: 1px solid $border-color;
+        margin-right: 20px;
+
+        @include macbook {
+            height: 90px;
+            width: 90px;
+            margin-right: 16px;
+        }
+
+        @include windows-laptop {
+            height: 90px;
+            width: 90px;
+            margin-right: 16px;
+        }
+
+        @include tab-landscape {
+            height: 110px;
+            width: 110px;
+        }
+
+        @include tab-portrait {
+            width: 100px;
+            height: 100px;
+        }
+
+        @include mobile-lg {
+            width: 70px;
+            height: 70px;
+            margin-right: 14px;
+        }
+    }
+
+    .dealer-card-info {
+
+        h2 {
+            color: black;
+            margin-bottom: 15px;
+
+            @include tab-landscape {
+                font-size: 28px;
+                line-height: 38px;
+            }
+
+            @include tab-sm-portrait {
+                font-size: 26px;
+                line-height: 30px;
+            }
+
+            @include mobile-lg {
+                font-size: 22px;
+                line-height: 28px;
+                margin-bottom: 10px;
+            }
+
+            &::after {
+                display: none;
+            }
+
+            a {
+                color: black;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: bold;
+            font-family: $secondary-font;
+            letter-spacing: -0.04em;
+            margin-top: 0;
+            margin-bottom: 16px;
+            text-align: left;
+
+            @include macbook {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 6px;
+            }
+
+            @include windows-laptop {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 6px;
+            }
+
+            @include tab-portrait {
+                font-size: 22px;
+                line-height: 26px;
+                margin-bottom: 8px;
+            }
+
+
+            a {
+                color: #000000;
+                transition: 0.3s all;
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        p {
+            line-height: 24px;
+
+            @include macbook {
+                line-height: 22px;
+            }
+
+            @include windows-laptop {
+                line-height: 22px;
+            }
+
+            @include tab-portrait {}
+        }
+
+        .dealer-card-address {
+
+            @include mobile-lg {
+                display: none;
+            }
+
+        }
+    }
+
+
+}
+
+
+.dealers-ratings-area {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    @include macbook{
+        margin-bottom: 10px;
+    }
+
+    @include windows-laptop{
+        margin-bottom: 10px;
+    }
+
+    @include mobile-lg {
+        margin-bottom: 0;
+    }
+
+    .dealer-rating {
+        display: flex;
+        margin-right: 11px;
+
+        @include mobile-lg {
+            margin-right: 8px;
+        }
+
+        i {
+            
+            margin-right: 6px;
+
+            @include macbook {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+
+            @include windows-laptop {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+
+            @include tab-portrait {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+
+            @include mobile-lg {
+                font-size: 12px;
+                margin-right: 3px;
+            }
+
+            &.rated{                
+            color: #FFB800;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 14px !important;
+    }
+}
+
+
+.dealer-card-footer {
+    display: flex;
+    justify-content: space-between;
+   
+
+    @include tab-landscape {
+        // flex-direction: column;
+    }
+
+    @include tab-portrait {
+        justify-content: flex-start;
+        margin-right: 20px;
+    }
+
+    @include tab-sm-portrait {
+        margin-left: 0;
+        flex-direction: row;
+    }
+
+    @include mobile-lg {
+        display: block;
+    }
+
+    .btn {
+        width: calc(50% - 10px);
+
+        @include macbook {
+            font-size: 12px;
+            line-height: 38px;
+            letter-spacing: 0.24em;
+            height: 40px;
+        }
+
+        @include windows-laptop {
+            font-size: 12px;
+            line-height: 38px;
+            letter-spacing: 0.24em;
+            height: 40px;
+            padding: 0px 12px;
+        }
+
+        @include tab-landscape{
+            font-size: 13px;
+            letter-spacing: 0.24em;
+        }
+
+        @include tab-portrait {
+            width: auto;
+            margin-right: 15px;
+            line-height: 42px;
+            letter-spacing: 0.2em;
+            height: 44px;
+        }
+
+        @include tab-sm-portrait {
+            margin-bottom: 0px;
+            width: calc(50% - 10px);
+        }
+
+        @include mobile-lg {
+            width: 100%;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            margin-top: 15px;
+        }
+
+        &::after{
+           @include macbook{
+            margin-left: 10px;
+           }
+
+           @include windows-laptop{
+            margin-left: 10px;
+           }
+        }
+
+        &:first-child{
+            @include macbook{
+                width: 60%;
+                margin-right: 20px;
+            }
+
+            @include windows-laptop{
+                width: 60%;
+                margin-right: 20px;
+            }
+
+            @include tab-landscape{
+                width: 65%;
+                margin-right: 20px;
+            }
+
+            @include tab-portrait{
+                width: auto;
+            }
+
+            @include mobile-lg{
+                width: 100%;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.dealer-card.dealer-card-listview {
+    display: flex;
+    align-items: center;
+
+    @include tab-sm-portrait {
+        display: block;
+        text-align: center;
+    }
+
+    .dealer-card-body {
+        margin: 0;
+        align-items: center;
+
+        @include tab-sm-portrait {
+            margin-bottom: 24px;
+        }
+
+        @include mobile-lg {
+            display: block;
+        }
+
+        .dealer-card-logo {
+            height: 100px;
+            width: 100px;
+
+            @include mobile-lg {
+                margin: 0 auto 20px;
+            }
+        }
+
+        .dealers-ratings-area {
+            @include mobile-lg {
+                justify-content: center;
+            }
+        }
+    }
+
+    .dealer-card-address {
+
+        p {
+            position: relative;
+            padding-left: 25px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: 0;
+                width: 15px;
+                height: 23px;
+                background: url(../images/dealer-card-location-icon.svg) no-repeat center / contain;
+
+            }
+        }
+    }
+
+    .dealer-card-footer {
+        margin-left: auto;
+
+        .btn {
+            width: auto;
+
+            @include mobile-lg {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+
+.dealer-card.seller-card {
+    .dealer-card-body {
+
+        @include macbook {
+            align-items: center;
+        }
+
+        @include windows-laptop {
+            align-items: center;
+        }
+
+        @include tab-landscape {
+            align-items: center;
+        }
+
+        .dealer-card-logo {
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 24px;
+
+            @include mobile-lg {
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+
+///// Single Seller Page Hero Card
+
+.single-seller-hero {
+    display: flex;
+    align-items: center;
+    border: 1px solid $border-color;
+    overflow: hidden;
+
+    @include tab-portrait {
+        display: block;
+        padding: 30px;
+    }
+
+    @include mobile-lg {
+        padding: 20px;
+    }
+}
+
+.single-seller-header {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+
+    @include macbook {
+        padding: 24px;
+    }
+
+    @include windows-laptop {
+        padding: 24px;
+    }
+
+    @include windows-laptop {
+        padding: 20px;
+    }
+
+    @include tab-portrait {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    @include mobile-lg {
+        margin-bottom: 20px;
+    }
+
+    .dealers-ratings-area {
+        @include macbook {
+            margin-bottom: 12px;
+        }
+
+        @include windows-laptop {
+            margin-bottom: 12px;
+        }
+
+        @include tab-landscape {
+            margin-bottom: 6px;
+        }
+
+        .dealer-rating i {
+            @include macbook {
+                font-size: 14px;
+            }
+
+            @include windows-laptop {
+                font-size: 14px;
+            }
+
+            @include tab-landscape {
+                font-size: 14px;
+                margin-right: 4px;
+            }
+
+            @include mobile-lg {
+                font-size: 12px;
+                margin-right: 3px;
+            }
+
+        }
+
+
+    }
+}
+
+.single-seller-img {
+    flex: none;
+    width: 120px;
+    height: 120px;
+    margin-right: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include macbook {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+
+    @include windows-laptop {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+
+    @include tab-landscape {
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+    }
+
+    @include tab-portrait {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    @include tab-sm-portrait {
+        width: 100px;
+        height: 100px;
+    }
+
+    @include mobile-lg {
+        width: 70px;
+        height: 70px;
+        margin-right: 16px;
+    }
+
+
+}
+
+.single-seller-info {
+    width: 290px;
+    flex: none;
+
+    @include macbook {
+        width: 220px;
+    }
+
+    @include windows-laptop {
+        width: 220px;
+    }
+
+    @include tab-landscape {
+        width: 220px;
+    }
+
+    h1 {
+        font-size: 34px;
+        line-height: 42px;
+        margin-bottom: 12px;
+
+        @include macbook {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 10px;
+        }
+
+        @include windows-laptop {
+            font-size: 30px;
+            line-height: 36px;
+            margin-bottom: 10px;
+        }
+
+        @include tab-landscape {
+            font-size: 26px;
+            line-height: 28px;
+            margin-bottom: 10px;
+        }
+
+        @include mobile-lg {
+            font-size: 22px;
+            line-height: 24px;
+            margin-bottom: 8px;
+        }
+    }
+
+    .single-seller-location {
+        line-height: 24px;
+        padding-left: 25px;
+        position: relative;
+
+        @include mobile-lg {
+            padding-left: 20px;
+        }
+
+        &::before {
+            content: "";
+            width: 15px;
+            height: 23px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../images/location-icon-grey.svg) no-repeat center / contain;
+
+            @include mobile-lg {
+                width: 12px;
+                height: 19px;
+                top: 1px;
+            }
+        }
+    }
+}
+
+.single-seller-body {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+
+    @include tab-landscape {
+        display: block;
+        padding: 30px;
+    }
+
+    @include tab-portrait {
+        padding: 0;
+    }
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -50vw;
+        bottom: -50vw;
+        left: 0;
+        width: 1px;
+        background: $border-color;
+
+        @include tab-portrait {
+            display: none;
+        }
+    }
+
+    h4 {
+        margin-bottom: 8px;
+    }
+}
+
+.single-seller-desc {
+    position: relative;
+    padding: 30px 70px;
+
+
+    @include macbook {
+        padding: 20px;
+    }
+
+    @include windows-laptop {
+        padding: 24px;
+    }
+
+    @include tab-landscape {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    @include mobile-lg {
+        margin-bottom: 20px;
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -50vw;
+        bottom: -50vw;
+        right: 0;
+        width: 1px;
+        background: $border-color;
+
+        @include tab-landscape {
+            display: none;
+        }
+    }
+}
+
+.single-seller-msg {
+    width: 250px;
+    flex: none;
+    padding: 30px;
+    text-align: right;
+
+    @include macbook {
+        width: 220px;
+        padding: 20px;
+    }
+
+    @include windows-laptop {
+        width: 220px;
+        padding: 24px;
+    }
+
+    @include tab-landscape {
+        padding: 0;
+        text-align: left;
+        width: 100%;
+    }
+}
+
+
+///// Single Dealer Page Hero Card
+
+.single-dealer-hero {
+    display: flex;
+    border: 1px solid $border-color;
+    padding: 30px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+
+    @include tab-landscape {
+        display: block;
+    }
+
+    @include mobile-lg {
+        padding: 16px;
+    }
+
+    .dealer-card {
+        padding: 0;
+        border: 0;
+        margin: 0;
+
+        h4 {
+            margin-bottom: 8px;
+        }
+
+        .dealer-card-address {
+
+            p {
+                padding-left: 25px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -1px;
+                    left: 0;
+                    width: 15px;
+                    height: 23px;
+                    background: url(../images/dealer-card-location-icon.svg) no-repeat center/contain;
+                }
+            }
+        }
+    }
+
+    .dealer-card-body {
+        margin-bottom: 40px;
+
+        @include macbook {
+            align-items: center;
+        }
+
+        @include windows-laptop {
+            align-items: center;
+        }
+
+        @include tab-landscape {
+            align-items: center;
+        }
+
+        @include tab-sm-portrait {
+            margin-bottom: 25px;
+        }
+
+        @include mobile-lg {
+            margin-bottom: 20px;
+        }
+
+        .dealer-card-logo {
+            @include tab-sm-portrait {
+                width: 100px;
+                height: 100px;
+            }
+
+            @include mobile-lg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .dealer-card-info {
+            h3 {
+                @include tab-sm-portrait {
+                    font-size: 22px;
+                    line-height: 26px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .dealers-ratings-area {
+            
+            i {
+                @include tab-sm-portrait {
+                    font-size: 14px;
+                    margin-right: 4px;
+                    color: #FFB800;
+                }
+            }
+        }
+
+
+    }
+
+    .single-dealer-map {
+        width: 48%;
+        flex: none;
+        margin-left: 60px;
+        line-height: 0;
+
+        @include macbook {
+            width: 45%;
+            flex: none;
+            margin-left: 40px;
+        }
+
+        @include windows-laptop {
+            width: 45%;
+            flex: none;
+            margin-left: 40px;
+        }
+
+        @include tab-landscape {
+            width: 100%;
+            height: 350px;
+            margin-left: 0px;
+            margin-top: 40px;
+        }
+
+        @include mobile-lg {
+            margin-top: 25px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+
+            @include tab-sm-portrait {
+                height: 300px;
+            }
+
+            @include mobile-lg {
+                height: 250px;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+////// Review Masonry Card
+
+
+.review-masonry-grid {
+    margin: -20px;
+
+    @include macbook{
+         margin: -15px;
+    }
+
+    @include windows-laptop{
+        margin: -15px;
+    }
+
+    @include tab-landscape {
+        margin: -15px;
+    }
+
+    .item {
+        width: 33.3%;
+        float: left;
+        padding: 20px;
+
+        @include macbook{
+            padding: 15px;
+        }
+
+        @include windows-laptop{
+            padding: 15px;
+        }
+
+        @include tab-landscape {
+            width: 50%;
+            padding: 15px;
+        }
+
+        @include tab-sm-portrait {
+            width: 100%;
+        }
+    }
+}
+
+.review-card {
+    margin: 0;
+    padding: 30px;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+
+    @include tab-portrait {
+        padding: 24px;
+    }
+
+    @include tab-sm-portrait {
+        padding: 30px;
+    }
+
+    @include mobile-lg {
+        padding: 24px;
+    }
+
+    .review-card-body {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-color;
+
+        h4 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+
+            &::before {
+                content: "";
+                flex: none;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                margin-right: 20px;
+                background: rgba($color: $primary-color, $alpha: 0.1) url(../images/quote-icon-primary.svg) no-repeat center / 20px;
+            }
+        }
+
+    }
+
+    .review-card-footer {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .review-card-rating {
+            display: flex;
+
+            i {
+                margin-right: 8px;
+
+                &.rated {
+                    color: #FFB800;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .review-card-date {
+            font-size: 14px;
+            line-height: 14px;
+        }
+    }
+
+}

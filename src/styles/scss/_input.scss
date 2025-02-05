@@ -1,0 +1,753 @@
+.btn {
+    @include button;
+
+    @include macbook{
+        font-size: 13px;
+        line-height: 38px;
+        height: 40px;
+        letter-spacing: 0.16em;
+        padding: 0px 18px;
+    }
+
+    @include windows-laptop{
+        font-size: 13px;
+        line-height: 38px;
+        height: 40px;
+        letter-spacing: 0.16em;
+        padding: 0px 18px;
+    }
+    
+    @include tab-landscape{
+        font-size: 14px;
+        height: 40px;
+        line-height: 38px;
+        letter-spacing: 0.2em;
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 11px;
+        width: 6px;
+        background: url(../../assets/button-arrow-white.svg) no-repeat center center;
+        position: relative;
+        top: 0px;
+        margin-left: 16px;
+
+        @include macbook{
+            margin-left: 10px;
+            top: 1px;
+        }
+
+        @include windows-laptop{
+            margin-left: 10px;
+            top: 1px;
+        }
+
+        @include tab-landscape{
+            margin-left: 12px;
+            top: 1px;
+        }
+    }
+
+    &:hover {
+        color: white;
+        background: darken($primary-color, 15%);
+        border:1px solid darken($primary-color, 15%);
+        box-shadow: none;
+
+        &::after{
+            background: transparent;
+            background: url(../../assets/button-arrow-white.svg) no-repeat center center;
+        }
+    } 
+
+    &:focus {
+        color: white;
+        background: darken($primary-color, 15%);
+        border:1px solid darken($primary-color, 15%);
+        box-shadow: none;
+
+        &::after{
+            background: transparent;
+            background: url(../images/button-arrow-white.svg) no-repeat center center;
+        }
+    } 
+
+    &-white{
+        @extend .btn;
+        background: white;
+        color: black;
+        box-shadow: none;
+        border: 1px solid white;
+
+        &::after{
+            background: url(../images/button-arrow-black.svg) no-repeat center center; 
+        }
+
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+        &:focus{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+    }
+
+    &-black{
+        @extend .btn;
+        background: black;
+        color: white;
+        box-shadow: none;
+        border: 1px solid black;
+
+        &::after{
+            background: url(../images/button-arrow-white.svg) no-repeat center center; 
+        }
+
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+        &:focus{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+    }
+
+    &-stroke{
+        @extend .btn;
+        background: transparent;
+        color: white;
+        box-shadow: none;
+        border: 1px solid white;
+        &::after{
+            background: url(../images/button-arrow-white.svg) no-repeat center center; 
+        }
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+        &:focus{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+    }
+
+    &-stroke-primary{
+        @extend .btn;
+        background: transparent;
+        border-color: $primary-color;
+        color: $primary-color;
+
+        &::after{
+            background: url(../images/button-arrow-red.svg) no-repeat center center; 
+        }
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+        &:focus{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+    }
+
+    &-stroke-black{
+        @extend .btn;
+        background: transparent;
+        border-color: black;
+        color:  black;
+
+        &::after{
+            background: url(../images/button-arrow-black.svg) no-repeat center center; 
+        }
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+
+        &:focus{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center; 
+            }
+        }
+    }
+
+    &-previous{
+        background: $content-color;
+
+        &::before{
+            content: "";
+            display: inline-block;
+            height: 11px;
+            width: 6px;
+            background: url(../images/button-arrow-left-white.svg) no-repeat center center;
+            position: relative;
+            top: 0px;
+            margin-right: 18px;
+        }
+
+        &::after{
+            display: none;
+        }
+
+        &:focus{
+            background: $primary-color;
+            border-color: $primary-color;
+
+            &::before{
+                background: url(../images/button-arrow-left-white.svg) no-repeat center center;
+            }
+        }
+
+        &:hover{
+            background: $primary-color;
+            border-color: $primary-color;
+
+            &::before{
+                background: url(../images/button-arrow-left-white.svg) no-repeat center center;
+            }
+        }
+
+    }
+
+    &-load-more{
+        background: black;
+
+        &::after{
+            top: 2px;
+            height: 12px;
+            width: 12px;
+            transform: rotate(90deg);    
+        }
+
+        &:hover{
+            &::after{
+                top: 2px;
+                height: 12px;
+                width: 12px;
+                transform: rotate(90deg);    
+            }
+        }
+
+        &:focus{
+            &::after{
+                top: 2px;
+                height: 12px;
+                width: 12px;
+                transform: rotate(90deg);   
+            }
+        }
+    }
+
+    &-white-hover-stroke{
+        background: white;
+        color: $primary-color;
+
+        &::after{
+            background: url(../images/button-arrow-red.svg) no-repeat center center;
+        }
+
+        &:hover{
+            background: transparent;
+            color: white;
+            border-color: white;
+
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center;
+            }
+        }
+
+        &:focus{
+            background: transparent;
+            color: white;
+            border-color: white;
+
+            &::after{
+                background: url(../images/button-arrow-white.svg) no-repeat center center;
+            }
+        }
+    }
+
+    &-no-icon{
+        &::after{
+            display: none;
+        }
+    }
+
+    &-text{
+        letter-spacing: 0.1em;
+        line-height: 18px;
+        height: auto;
+        background: none;
+        color: $primary-color;
+        border: none;
+        padding: 0;
+        text-align: left;
+
+        &::after{
+            background: url(../images/button-arrow-red.svg) no-repeat center center;
+        }
+
+        &:hover{
+            color: black;
+            background: none;
+            border: none;
+
+            &::after{
+                background: url(../images/button-arrow-black.svg) no-repeat center center;
+            }
+        }
+
+        
+        &:focus{
+            color: black;
+            background: none;
+            border: none;
+
+            &::after{
+                background: url(../images/button-arrow-black.svg) no-repeat center center;
+            }
+        }
+    }
+
+    &-read-more{
+        background: transparent;
+        border-color: $primary-color;
+        color: $primary-color;
+        &:after{
+            background: url(../images/button-arrow-red.svg) no-repeat center center; 
+            transform: rotate(90deg);
+            height: 12px;
+            width: 6px;
+            top: 1px;
+        }
+        &:hover{
+            color: white;
+            border: 1px solid $primary-color;
+            background: $primary-color;
+        }
+    }
+
+    &-read-less{
+        &::after{
+            transform: rotate(-90deg);
+            top: 0;
+        }
+    }
+
+    &-big{
+        height: 52px;
+        line-height: 50px;
+
+        @include macbook{    
+            height: 46px;
+            line-height: 44px;   
+            letter-spacing: 0.22em;
+        }
+
+        @include windows-laptop{  
+            height: 46px;
+            line-height: 44px;      
+            letter-spacing: 0.22em;
+        }
+
+        @include tab-landscape{
+            height: 46px;
+            line-height: 44px;
+        }
+    }
+
+}
+
+.btn:disabled,
+input[type="submit"]:disabled {
+    background: #e1e1e1;
+    border: 1px solid #e1e1e1;
+    opacity: 1 !important;
+}
+
+
+
+input[type="submit"] {  
+    @extend .btn;
+    background: $primary-color;
+    box-shadow: none;
+    border: 1px solid $primary-color;
+
+    &:hover {
+        color: white;
+        background-color:$primary-color;
+    }
+}
+
+// input[type=text]:focus {
+//     background: url(/src/assets/search-cross.svg) no-repeat center right 10px/12px;
+//     transition: none;
+// }
+
+
+%input-styles {
+    @include input;
+}
+
+%input-styles--focus {
+    @include input-focus;
+}
+
+@mixin input-styles($styles, $focus_styles) {
+    $types: 'email', 'number', 'select', 'password', 'search', 'tel',
+        'text', 'url', 'color', 'date', 'datetime',
+        'datetime-local', 'month', 'time', 'week';
+
+    @each $type in $types {
+        input[type="#{$type}"] {
+            @extend #{$styles};
+
+            &:focus {
+                @extend #{$focus_styles};
+                border: 1px solid $border-color !important;
+            }
+        }
+    }
+
+    select {
+        @extend #{$styles};
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url(../images/select-caret-down.svg);
+        background-repeat: no-repeat;
+        background-position: right 20px center;
+
+        &:focus {
+            @extend #{$focus_styles};
+            border: 1px solid $border-color !important;
+        }
+    }
+
+    textarea {
+        @extend #{$styles};
+        height: 162px;
+        resize: none;
+        padding: 13px 20px;
+        border-color: $border-color !important;
+        border-radius: 0px !important;
+
+        &:focus {
+            @extend #{$focus_styles};
+            border-color: $border-color;
+        }
+    }
+
+}
+
+@include input-styles('%input-styles', '%input-styles--focus');
+
+
+
+// ===================== check and radio
+
+@mixin checbox {
+    appearance: none;
+    display: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: -9999px !important;
+
+    &+label {
+        padding: 0 0 0 30px !important;
+        color: $content-color !important;
+        display: inline-block !important;
+        max-width: inherit !important;
+        margin: 0px 12px 0 0 !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        line-height: 16px !important;
+        font-family: $primary-font !important;
+        position: relative !important;
+        letter-spacing: 0 !important;
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+
+        @include macbook{
+            font-size: 14px !important;
+            line-height: 18px !important;
+            padding: 0 0 0 24px !important;
+        }
+    
+        @include windows-laptop{
+            font-size: 14px !important;
+            line-height: 18px !important;
+            padding: 0 0 0 24px !important;
+        }
+    
+        @include tab-landscape{
+            font-size: 14px !important;
+        }
+    }
+
+    &+label:before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: $border-color;
+        left: 0;
+        top: 0px;
+        border-radius: 0;
+
+        @include macbook{
+            width: 16px;
+            height: 16px;
+        }
+
+        @include windows-laptop{
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &+label:after {
+        content: '';
+        background: none !important;
+        position: absolute;
+        left: 6px;
+        top: 3px;
+        width: 5px;
+        height: 9px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(50deg);
+        -ms-transform: rotate(50deg);
+        transform: rotate(50deg);
+        display: none;
+    }
+
+    &:checked+label {
+        color: $primary-color !important;
+        font-weight: 400 !important;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+    
+    &:checked+label:before {
+        background-color: $primary-color !important;
+       border-color: $primary-color;
+    }
+
+    &:checked+label:after {
+        display: block;
+    }
+
+}
+
+@mixin radio {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: -9999px !important;
+
+    &+label {
+        padding: 0 0 0 30px !important;
+        color: $content-color !important;
+        display: inline-block !important;
+        max-width: inherit !important;
+        margin: 0px 12px 0 0 !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        font-family: $primary-font !important;
+        line-height: 19px !important;
+        position: relative !important;
+        letter-spacing: 0 !important;        
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+    }
+
+    &+label:before {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 2px solid $border-color;
+        left: 0;
+        top: 0px;
+        border-radius: 50%;
+    }
+
+    &+label:after {
+        content: '';
+        position: absolute;
+        width: 8.81px;
+        height: 8.81px;
+        background: $primary-color !important;
+        left: 4.6px;
+        top: 4.6px;
+        border-radius: 50%;
+        display: none;
+    }
+
+    &:checked+label {
+        font-weight: 400 !important;
+        user-select: none;
+    }
+
+    &:checked+label:before {
+        border-width: 6px !important;
+        border-color: $primary-color !important;
+    }
+
+    &:checked+label:after {
+        display: none;
+    }
+
+}
+
+
+input[type=checkbox] {
+    @include checbox;
+}
+
+input[type=radio] {
+    @include radio;
+}
+
+
+/////// ============== Aditional Form Style ============== ///////
+
+.form-group{
+    position: relative;
+    margin-bottom: 30px;
+
+    @include mobile-lg{
+        margin-bottom: 20px;
+    }
+
+    label{
+        display: block;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 500;
+        font-family: $secondary-font;
+        letter-spacing: -0.02em;
+        color: #000000;
+        margin-bottom: 10px;
+
+        @include macbook{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @include windows-laptop{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @include tab-landscape{
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        @include mobile-lg{            
+            margin-bottom: 10px;
+        }
+
+        sup{
+            color: #FF2323;
+            font-size: 14px;
+            top: 2px;
+        }
+    }
+}
+
+
+.progressbar-wrapper{
+    margin-bottom: 20px;
+}
+
+.progress-count{
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: bold;
+    font-family: $secondary-font;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: $primary-color;
+    margin-bottom: 13px;
+
+    @include mobile-lg{
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.1em;
+        margin-bottom: 10px;
+    }
+}
+
+.progress{
+    height: 8px;
+    background-color: #EDEDED;
+    border-radius: 0;
+
+    @include mobile-lg{
+        height: 5px;
+    }
+
+    .progress-bar{
+        background-color: $primary-color;
+    }
+}
+
+.form-check{
+    padding-left: 0;
+}
+
+
