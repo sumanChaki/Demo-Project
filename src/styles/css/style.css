@@ -20334,7 +20334,7 @@ ul.price-listing li::before {
 }
 
 .common-section {
-  padding: 0px;
+  padding: 0px 0px 50px;
 }
 
 .product-details-image {
@@ -20381,6 +20381,71 @@ ul.price-listing li::before {
   100% {
     transform: rotate(360deg);
   }
+}
+/* =========== NAVIGATION DROPDOWN MENU START  =========== */
+/* Ensure dropdown appears on hover */
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Style dropdown items */
+.dropdown-menu .dropdown-item {
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+/* =========== NAVIGATION DROPDOWN MENU FINISH  =========== */
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  font-size: 14px;
+  line-height: 22px;
+  color: red;
+}
+
+.data-display-card p strong, .data-display-card blockquote strong, .data-display-card .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name strong, .header-carousel .swiper-wrapper .swiper-slide .car-model .data-display-card .car-name strong, .data-display-card .compare-table tbody tr td strong, .compare-table tbody tr .data-display-card td strong, .data-display-card .choose-car-color span:last-child strong, .choose-car-color .data-display-card span:last-child strong, .data-display-card .technical-details-table tr td strong, .technical-details-table tr .data-display-card td strong, .data-display-card .rental-booking-content-card ul li a strong, .rental-booking-content-card ul li .data-display-card a strong {
+  font-weight: 600;
+  color: #DB4C46;
+}
+
+.todo-wrapper {
+  padding: 0px;
+  margin: 30px 0px;
+}
+
+.todo-input-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.todo-section {
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

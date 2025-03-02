@@ -11,15 +11,20 @@ import Services from './Pages/Services/Services.jsx';
 import Products from './Pages/Products/Products.jsx';
 import ContactUs from './Pages/Contact/ContactUs.jsx';
 import ProductsDetails from './Pages/ProductsDetails/ProductsDetails.jsx';
+import BoardofDirectors from './Pages/About/BoardofDirectors/BoardofDirectors.jsx';
+import Awards from "./Pages/About/Awards/Awards.jsx";
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="/home" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="about/board-of-directors" element={<BoardofDirectors />} />
+      <Route path='about/awards' element={<Awards />} />
       <Route path="services" element={<Services />} />
       <Route path="products" element={<Products />} />
-      <Route path='products/:productId' element={<ProductsDetails />} />
+      <Route path="products/:productId" element={<ProductsDetails />} />
       <Route path="contact-us" element={<ContactUs />} />
     </Route>
   )

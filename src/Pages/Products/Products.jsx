@@ -17,6 +17,9 @@ function Products() {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [categoryList, setCategoryList] = useState([]);
+  const [selectCategory, setSelectCategory] = useState([]);
+
+
 
   const navigate = useNavigate();
   const postPerPage = 50;
@@ -62,18 +65,22 @@ function Products() {
     setViewChange(true);
   };
 
-  // ONCHANGE PRICE SORTING PRODUCTS
+  // ON DROPDOWN CHANGE PRICE SORTING PRODUCTS
 
   const priceSorted = (sortType) => {
-    let sortingProductPrice = [...myProducts];
-    // console.log("sortingProductPrice >>", sortingProductPrice);
+    try {
+      let sortingProductPrice = [...myProducts];
 
-    if (sortType === "low") {
-      sortingProductPrice.sort((a, b) => a.price - b.price);
-    } else if (sortType === "high") {
-      sortingProductPrice.sort((a, b) => b.price - a.price);
+      if (sortType === "low") {
+        sortingProductPrice.sort((a, b) => a.price - b.price);
+      } else if (sortType === "high") {
+        sortingProductPrice.sort((a, b) => b.price - a.price);
+      }
+
+      setSortedProduct(sortingProductPrice);
+    } catch (error) {
+      console.error("Error in priceSorted:", error);
     }
-    setSortedProduct(sortingProductPrice);
   };
 
   // DEFAULT PAGE URL SETUP
@@ -85,15 +92,23 @@ function Products() {
   //  DATA CHANGE BY CLICKING PREVIOUS BUTTON
 
   const previousChangeHandler = () => {
-    setIsLoading(true);
-    setCurrentPage((prev) => prev - 1);
+    try {
+      setIsLoading(true);
+      setCurrentPage((prev) => prev - 1);
+    } catch (error) {
+      console.error("Error in previousChangeHandler:", error);
+    }
   };
 
   //  DATA CHANGE BY CLICKING NEXT BUTTON
 
   const nextChangeHandler = () => {
-    setIsLoading(true);
-    setCurrentPage((prev) => prev + 1);
+    try {
+      setIsLoading(true);
+      setCurrentPage((prev) => prev + 1);
+    } catch (error) {
+      console.error("Error in nextChangeHandler:", error);
+    }
   };
 
   // SEARCH FILTER
@@ -135,10 +150,105 @@ function Products() {
     categoriesListing();
   }, []);
 
+  
+
+  // ON CHECKED CATEGORIES PRODUCT DISPLAYS THROUGH API
+
+  // const handleCheckboxChange = (categoriesName) => {
+  //   setSelectCategories(prev => {
+  //     if(prev.includes(categoriesName)){
+  //       return prev.filter((item) => item !== categoriesName); // Uncheck
+  //     } else {
+  //       return [...prev, categoriesName]; // checked
+  //     }
+  //   })
+  //   console.log("categoriesName >>>", categoriesName);
+  // }
+
+  // const filteredCategoriesItem = async () => {
+  //   if (selectCategories.length === 0) {
+  //     setMyProducts([]);
+  //     return; // Stop execution if no category is selected
+  //   }
+
+  //   setIsLoading(true);
+  //   try {
+  //     const productsArray = await Promise.all(
+  //       selectCategories.map(async (category) => {
+  //         const response = await apiRequest(
+  //           `${url.productUrl}/category/${category}`
+  //         );
+  //         return response.products; // Extract the products array
+  //       })
+  //     );
+
+  //     // Flatten the array (since each API call returns an array of products)
+  //     setMyProducts(productsArray.flat());
+  //   } catch (error) {
+  //     console.log("Error fetching categories:", error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+
+  // useEffect(() => {
+  //   filteredCategoriesItem();
+  // }, [selectCategories]);
+
+  const checkboxCategoryItem = (category) => {
+    setSelectCategory((prev) => {
+      if(prev.includes(category)) {
+        return prev.filter(item => item !== category) // unchecked category
+      } else {
+        return [...prev, category]; // checked category
+      }
+    })
+    console.log("category >>>", category);
+    
+  }
+
+  const fetchCategoryProduct = async() => {
+    if(selectCategory.length === 0){
+      setMyProducts([]);
+      return; // Stop execution if no category is selected
+    }
+
+    setIsLoading(true)
+
+    try {
+      const selectcategoryProduct = await Promise.all(
+        selectCategory.map(async (categoryName) => {
+          const productResponse = await apiRequest(  // API is calling based on selected category
+            `${url.productUrl}/category/${categoryName}`
+          );
+          return productResponse.products; // Extract the products array
+        })
+      );
+      // Flatten the array (since each API call returns an array of products)
+      setMyProducts(selectcategoryProduct.flat());
+    } catch (error) {
+      console.log("No product found");
+      
+    } finally{
+      setIsLoading(false);
+    }
+
+  }
+
+  useEffect(() => {
+    fetchCategoryProduct();
+  }, [selectCategory]);
+
+
   return (
     <div className="container-fluid p-0">
       <div className="listing-wrapper">
-        <ProductFilter categoryList={categoryList} />
+        <ProductFilter
+          categoryList={categoryList}
+          checkboxCategoryItem={checkboxCategoryItem}
+          selectCategory={selectCategory}
+        />
 
         <div className="listing-article">
           <ProductSearch

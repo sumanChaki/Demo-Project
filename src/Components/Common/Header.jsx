@@ -1,8 +1,16 @@
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
-import mainlogo from "../../assets/logo.svg";
+import { FaCaretDown } from "react-icons/fa";
+import mainlogo from "../../assets/logo.jpg";
+import { useState } from "react";
 
 function BasicExample() {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const handleDropdownClose = () => {
+    setShowDropdown(false);
+  };
+
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
@@ -16,13 +24,34 @@ function BasicExample() {
               <NavLink to="/home">Home</NavLink>
             </div>
 
-            <NavDropdown title="About" id="basic-nav-dropdown">
-              <NavDropdown.Item to="/board-of-directors">
-                Board of Director
-              </NavDropdown.Item>
+            <div
+              className="nav-item dropdown"
+              onMouseEnter={() => setShowDropdown(true)}
+              onMouseLeave={() => setShowDropdown(false)}
+            >
+              <NavLink to="/about" className="nav-link">
+                About <FaCaretDown className="dropdown-icon" />
+              </NavLink>
 
-              <NavDropdown.Item to="/awards">Awards</NavDropdown.Item>
-            </NavDropdown>
+              {showDropdown && (
+                <div className="dropdown-menu show">
+                  <Link
+                    to="/about/board-of-directors"
+                    className="dropdown-item"
+                    onClick={handleDropdownClose}
+                  >
+                    Board of Directors
+                  </Link>
+                  <Link
+                    to="/about/awards"
+                    className="dropdown-item"
+                    onClick={handleDropdownClose}
+                  >
+                    Awards
+                  </Link>
+                </div>
+              )}
+            </div>
 
             <div className="nav-item">
               <NavLink to="/services">Services</NavLink>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import ProductCategoriesListing from './ProductCategoriesListing';
 
-function ProductFilter({ categoryList }) {
+function ProductFilter({ categoryList, checkboxCategoryItem, selectCategory }) {
   return (
     <div className="listing-sidebar">
       <div className="sidebar-sticky">
@@ -17,7 +17,11 @@ function ProductFilter({ categoryList }) {
           <Link to="">Bikes</Link>
         </div>
 
-        <ProductCategoriesListing categoryList={categoryList} />
+        <ProductCategoriesListing
+          categoryList={categoryList}
+          checkboxCategoryItem={checkboxCategoryItem}
+          selectCategory={selectCategory}
+        />
 
         <div className="sidebar-card color-card">
           <h4>Color</h4>
