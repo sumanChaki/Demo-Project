@@ -1,6 +1,7 @@
 import { useFormik } from 'formik';
 import React, { useState } from 'react'
 import validationSchemas from '../../Utility/ValidationSchemas';
+import TodoList from '../../Components/Contact/TodoList';
 
 function ContactUs() {
   const [contactFormData, setContactFormData] = useState({
@@ -169,30 +170,7 @@ function ContactUs() {
         </div>
       </section>
 
-      <section className="todo-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="todo-wrapper">
-                <h2>Todo Listing</h2>
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div className="todo-input-wrapper">
-                      <input type="text" placeholder="Enter your todo name" />
-                      <button type="submit" className="btn btn-primary">
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <h3>Todo items results</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <TodoList />
     </div>
   );
 }

@@ -54,11 +54,23 @@ function BasicExample() {
             </div>
 
             <div className="nav-item">
-              <NavLink to="/services">Services</NavLink>
+              <NavLink to="/products">Products</NavLink>
             </div>
 
             <div className="nav-item">
-              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/recipes">Recipes</NavLink>
+            </div>
+
+            <div className="nav-item">
+              <NavLink to="/comments">Comments</NavLink>
+            </div>
+
+            <div className="nav-item">
+              <NavLink to="/quotes">Quotes</NavLink>
+            </div>
+
+            <div className="nav-item">
+              <NavLink to="/posts">Posts</NavLink>
             </div>
 
             <div className="nav-item">
@@ -72,8 +84,8 @@ function BasicExample() {
             Login
           </Link>
 
-          <Link to="/registration" className="btn">
-            Registration
+          <Link to="/signup" className="btn">
+            Sign Up
           </Link>
 
           <Link to="/cart" className="btn add-cart">

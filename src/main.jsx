@@ -7,12 +7,19 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider} f
 import Layout from './Layout.jsx';
 import Home from "./Pages/Home/Home.jsx";
 import About from './Pages/About/About.jsx';
-import Services from './Pages/Services/Services.jsx';
 import Products from './Pages/Products/Products.jsx';
 import ContactUs from './Pages/Contact/ContactUs.jsx';
 import ProductsDetails from './Pages/ProductsDetails/ProductsDetails.jsx';
 import BoardofDirectors from './Pages/About/BoardofDirectors/BoardofDirectors.jsx';
 import Awards from "./Pages/About/Awards/Awards.jsx";
+import { Provider } from 'react-redux';
+import { Store } from './Components/Redux/Store.js';
+import Login from './Components/Authentication/Login.jsx';
+import Signup from './Components/Authentication/Signup.jsx';
+import Recipes from './Pages/Services/Recipes.jsx';
+import Posts from './Pages/Posts/Posts.jsx';
+import Comments from './Pages/Comments/Comments.jsx';
+import Quotes from './Pages/Quotes/Quotes.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -21,16 +28,22 @@ const routes = createBrowserRouter(
       <Route path="/home" element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="about/board-of-directors" element={<BoardofDirectors />} />
-      <Route path='about/awards' element={<Awards />} />
-      <Route path="services" element={<Services />} />
+      <Route path="about/awards" element={<Awards />} />
       <Route path="products" element={<Products />} />
+      <Route path="recipes" element={<Recipes />} />
+      <Route path="posts" element={<Posts />} />
+      <Route path="comments" element={<Comments />} />
+      <Route path="quotes" element={<Quotes />} />
       <Route path="products/:productId" element={<ProductsDetails />} />
       <Route path="contact-us" element={<ContactUs />} />
+      <Route path="login" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
     </Route>
   )
 );
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={routes}>
-  </RouterProvider>
+  <Provider store={Store}>
+    <RouterProvider router={routes}></RouterProvider>
+  </Provider>
 );

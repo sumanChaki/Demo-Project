@@ -229,7 +229,6 @@
     line-height: 20px;
     text-align: center;
     border: 1px solid #e8e8e8;
-    
 
     &::after {
       display: none;
@@ -262,20 +261,20 @@
   }
 }
 
-.common-section{
+.common-section {
   padding: 0px 0px 50px;
 }
 
-.product-details-image{
+.product-details-image {
   height: 500px;
   overflow: hidden;
 
-  .slick-dots{
+  .slick-dots {
     bottom: 5px;
 
-    li{
-      button{
-        &::before{
+    li {
+      button {
+        &::before {
           font-size: 15px;
         }
       }
@@ -283,39 +282,42 @@
   }
 }
 
-.tags{
+.tags {
   margin-bottom: 20px;
   display: flex;
   gap: 15px;
 
-  ul{
+  ul {
     list-style: none;
     padding: 0px;
     margin: 0px;
     display: flex;
     gap: 15px;
 
-    li{
+    li {
       list-style-type: none;
     }
   }
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid lightgray;
-    border-top: 5px solid blue;
-    border-radius: 50%;
-    margin: 0 auto;
-    animation: spin 1s linear infinite;
+  width: 50px;
+  height: 50px;
+  border: 5px solid lightgray;
+  border-top: 5px solid blue;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
 
 /* =========== NAVIGATION DROPDOWN MENU START  =========== */
 
@@ -354,38 +356,91 @@
   background: #f8f9fa;
 }
 
-
 /* =========== NAVIGATION DROPDOWN MENU FINISH  =========== */
 
-.input-wrapper{
+.input-wrapper {
   margin-bottom: 20px;
 }
 
-.error-message{
+.error-message {
   font-size: 14px;
   line-height: 22px;
   color: red;
 }
 
-.data-display-card{
-  p{
-    strong{
+.data-display-card {
+  p {
+    strong {
       font-weight: 600;
       color: $primary-color;
     }
   }
 }
 
-.todo-wrapper{
+.todo-wrapper {
   padding: 0px;
   margin: 30px 0px;
 }
 
-.todo-input-wrapper{
+.todo-input-wrapper {
   display: flex;
   gap: 15px;
 }
 
-.todo-section{
+.todo-section {
   background-color: white;
+}
+
+.todo-list-display-items {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 15px;
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &.set-todo-item {
+      background-color: rgba($color: $primary-color, $alpha: 0.6);
+    }
+  }
+}
+
+.todo-editable {
+  display: flex;
+  gap: 10px;
+
+  .edit,
+  .delete,
+  .complete {
+    width: 24px;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.complete-item {
+  text-decoration: line-through;
+}
+
+.recipes-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  .recipes-card {
+    width: calc(50% - 24px);
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+  }
 }

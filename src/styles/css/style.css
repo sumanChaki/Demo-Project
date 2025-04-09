@@ -13390,9 +13390,6 @@ header .outer-wrapper {
     max-height: 460px;
   }
 }
-.signup-left .signup-left-content img {
-  filter: brightness(0) invert(1);
-}
 .signup-left .signup-logo {
   width: 288px;
 }
@@ -20446,6 +20443,57 @@ ul.price-listing li::before {
 
 .todo-section {
   background-color: white;
+}
+
+.todo-list-display-items {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.todo-list-display-items li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  background-color: #DB4C46;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list-display-items li.set-todo-item {
+  background-color: rgba(219, 76, 70, 0.6);
+}
+
+.todo-editable {
+  display: flex;
+  gap: 10px;
+}
+.todo-editable .edit,
+.todo-editable .delete,
+.todo-editable .complete {
+  width: 24px;
+  cursor: pointer;
+}
+.todo-editable .edit img,
+.todo-editable .delete img,
+.todo-editable .complete img {
+  width: 100%;
+}
+
+.complete-item {
+  text-decoration: line-through;
+}
+
+.recipes-wrapper {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.recipes-wrapper .recipes-card {
+  width: calc(50% - 24px);
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
 }
 
 /*# sourceMappingURL=style.css.map */
