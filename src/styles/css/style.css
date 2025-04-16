@@ -20129,6 +20129,44 @@ ul.price-listing li::before {
 .product-listing-item .description {
   min-height: 90px;
 }
+.product-listing-item .description h4, .product-listing-item .description .document-card h3, .document-card .product-listing-item .description h3, .product-listing-item .description .document-card .heading-h3, .document-card .product-listing-item .description .heading-h3 {
+  margin-bottom: 0px;
+}
+.product-listing-item .description ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.product-listing-item .description ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+.product-listing-item .description ul li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #b4b2b2;
+  border-radius: 50%;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+.product-listing-item .description.tags {
+  min-height: auto;
+  margin-bottom: 10px;
+}
+.product-listing-item .description.tags ul {
+  display: flex;
+  row-gap: 0px;
+  column-gap: 12px;
+  flex-wrap: wrap;
+}
+.product-listing-item .description.tags ul li {
+  margin-bottom: 0px;
+  padding-left: 15px;
+}
 .product-listing-item h4, .product-listing-item .document-card h3, .document-card .product-listing-item h3, .product-listing-item .document-card .heading-h3, .document-card .product-listing-item .heading-h3 {
   font-size: 18px;
 }
@@ -20494,6 +20532,54 @@ ul.price-listing li::before {
   background: #ffffff;
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
   -webkit-box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.04);
+}
+
+.recipes-section .product-listing-wrapper .product-listing-item {
+  width: calc(50% - 16px);
+}
+.recipes-section .product-listing-wrapper.product-grid-wrapper {
+  flex-direction: column;
+}
+.recipes-section .product-listing-wrapper.product-grid-wrapper .product-listing-item {
+  width: 100%;
+}
+.recipes-section .product-listing-wrapper .product-image {
+  height: 300px;
+}
+
+.cuisine h4 span, .cuisine .document-card h3 span, .document-card .cuisine h3 span, .cuisine .document-card .heading-h3 span, .document-card .cuisine .heading-h3 span {
+  font-size: 16px;
+  line-height: 22px;
+  color: #727272;
+}
+
+.rating {
+  margin-bottom: 20px;
+}
+.rating span {
+  color: #DB4C46;
+  font-weight: bold;
+}
+
+.product-pagination-btn {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.product-pagination-btn .btn::after, .product-pagination-btn .btn-white::after, .product-pagination-btn .btn-black::after, .product-pagination-btn .btn-stroke::after, .product-pagination-btn .btn-stroke-primary::after, .product-pagination-btn .btn-stroke-black::after, .product-pagination-btn input[type=submit]::after {
+  display: none;
+}
+
+.paginatin-buttons {
+  display: flex;
+  gap: 5px;
+}
+.paginatin-buttons .btn, .paginatin-buttons .btn-white, .paginatin-buttons .btn-black, .paginatin-buttons .btn-stroke, .paginatin-buttons .btn-stroke-primary, .paginatin-buttons .btn-stroke-black, .paginatin-buttons input[type=submit] {
+  opacity: 0.5;
+}
+.paginatin-buttons .btn.active, .paginatin-buttons .active.btn-white, .paginatin-buttons .active.btn-black, .paginatin-buttons .active.btn-stroke, .paginatin-buttons .active.btn-stroke-primary, .paginatin-buttons .active.btn-stroke-black, .paginatin-buttons input.active[type=submit] {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

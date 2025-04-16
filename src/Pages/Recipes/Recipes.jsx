@@ -6,20 +6,105 @@ import { Link } from 'react-router-dom';
 import RecipesSearch from '../../Components/RecipesListing/RecipesSearch';
 import RecipesFilter from '../../Components/RecipesListing/RecipesFilter';
 import RecipesItemListing from '../../Components/RecipesListing/RecipesItemListing';
+import Loader from '../Loader/Loader';
+import PaginationRecipes from '../../Components/RecipesListing/PaginationRecipes';
 
 function Recipes() {
-  const [recipes, setRecipes] = useState([])
+  const [isLoading, setIsLoading] = useState(false);
+  const [recipeItem, setRecipeItem] = useState([]);
+  const [viewChange, setViewChange] = useState(false);
+  const [sortedRating, setSortedRating] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(0);
 
-  const fetchAllRecipes = async () => {
-    const allRecipesList = await apiRequest(`${recipeUrl.recipePoint}`);
-    setRecipes(allRecipesList.recipes);
-    console.log(allRecipesList);
-  }
+  const postPerRecipes = 15;
+
+  // FETCH ALL RECIPES
+  const fetchRecipeItem = async () => {
+    setIsLoading(true);
+    try {
+      const skipRecipes = currentPage * postPerRecipes - postPerRecipes;
+      const recipeItemListing = await apiRequest(
+        `${recipeUrl.recipePoint}?limit=${postPerRecipes}&skip=${skipRecipes}`
+      );
+      setRecipeItem(recipeItemListing.recipes);
+      setSortedRating(recipeItemListing.recipes);
+      const totalRecipes = recipeItemListing.total;
+      const recipesPerCount = Math.ceil(totalRecipes / postPerRecipes);
+      setTotalPage(recipesPerCount);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    fetchAllRecipes()
-  },[])
+    fetchRecipeItem();
+  }, [currentPage]);
 
+  // VIEW CHANGE PRODUCT ITEM
+
+  const gridViewChangeHandler = () => {
+    setViewChange(false);
+  };
+
+  const rowViewChangeHandler = () => {
+    setViewChange(true);
+  };
+
+  // SORT BY RATING
+
+  const sortedRatingRecipes = (sortType) => {
+    try {
+      const sortingRecipes = [...recipeItem];
+
+      if (sortType === "low") {
+        sortingRecipes.sort((a, b) => a.rating - b.rating);
+        console.log("Low");
+      } else if (sortType === "high") {
+        sortingRecipes.sort((a, b) => b.rating - a.rating);
+        console.log("High");
+      }
+      setSortedRating(sortingRecipes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // DEFAULT SORTED PRODUCTS
+
+  useEffect(() => {
+    setSortedRating(recipeItem);
+  }, [recipeItem]);
+
+  // PREVIOUS RECIPES
+
+  const PreviousRecipesHandler = () => {
+    setIsLoading(true)
+    try {
+      setCurrentPage((prev) => Math.max(prev - 1, 1))
+      
+    } catch (error) {
+      console.log(error);
+      
+    } finally{
+      setIsLoading(false);
+    }
+  }
+
+  const nextRecipesHandler = () => {
+    setIsLoading(true);
+    try {
+      setCurrentPage((prev) => Math.max(prev + 1, 1));
+      
+    } catch (error) {
+      console.log(error);
+      
+    } finally{
+      setIsLoading(false);
+    }
+  }
 
   return (
     <section className="common-section recipes-section">
@@ -123,8 +208,59 @@ function Recipes() {
 
               <div className="listing-article">
                 <RecipesSearch />
-                <RecipesFilter />
-                <RecipesItemListing />
+                <RecipesFilter
+                  gridViewChangeHandler={gridViewChangeHandler}
+                  rowViewChangeHandler={rowViewChangeHandler}
+                  sortedRatingRecipes={sortedRatingRecipes}
+                />
+                {isLoading ? (
+                  <Loader />
+                ) : (
+                  <RecipesItemListing
+                    recipeItem={sortedRating}
+                    viewChange={viewChange}
+                    prevPagination
+                  />
+                )}
+                {/* <PaginationRecipes
+                  PreviousRecipesHandler={PreviousRecipesHandler}
+                  nextRecipesHandler={nextRecipesHandler}
+                /> */}
+                <div className="col-12">
+                  <div className="product-pagination-btn">
+                    <button
+                      type="button"
+                      className="btn"
+                      onClick={PreviousRecipesHandler}
+                      disabled={currentPage === 1}
+                    >
+                      «
+                    </button>
+
+                    <div className="paginatin-buttons">
+                      {Array.from({ length: totalPage }, (_, index) => (
+                        <button
+                          key={index + 1}
+                          onClick={() => setCurrentPage(index + 1)}
+                          className={`btn ${
+                            currentPage === index + 1 ? "active" : ""
+                          }`}
+                        >
+                          {index + 1}
+                        </button>
+                      ))}
+                    </div>
+
+                    <button
+                      type="button"
+                      className="btn"
+                      onClick={nextRecipesHandler}
+                      disabled={currentPage === totalPage}
+                    >
+                      »
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

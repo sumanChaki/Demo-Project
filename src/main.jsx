@@ -16,10 +16,11 @@ import { Provider } from 'react-redux';
 import { Store } from './Components/Redux/Store.js';
 import Login from './Components/Authentication/Login.jsx';
 import Signup from './Components/Authentication/Signup.jsx';
-import Recipes from './Pages/Services/Recipes.jsx';
 import Posts from './Pages/Posts/Posts.jsx';
 import Comments from './Pages/Comments/Comments.jsx';
 import Quotes from './Pages/Quotes/Quotes.jsx';
+import Recipes from './Pages/Recipes/Recipes.jsx';
+import RecipesDetails from './Pages/RecipesDetails/RecipesDetails.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -31,6 +32,7 @@ const routes = createBrowserRouter(
       <Route path="about/awards" element={<Awards />} />
       <Route path="products" element={<Products />} />
       <Route path="recipes" element={<Recipes />} />
+      <Route path="recipes/:recipeId" element={<RecipesDetails />} />
       <Route path="posts" element={<Posts />} />
       <Route path="comments" element={<Comments />} />
       <Route path="quotes" element={<Quotes />} />

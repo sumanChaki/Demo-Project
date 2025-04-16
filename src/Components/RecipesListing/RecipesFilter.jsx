@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';
+import grid from "../../assets/grid-view-icon.svg";
+import listView from "../../assets/list-view-icon-active.svg";
 
-function RecipesFilter() {
+function RecipesFilter({
+  gridViewChangeHandler,
+  rowViewChangeHandler,
+  sortedRatingRecipes
+}) {
   return (
     <div className="row">
       <div className="col-12">
@@ -8,19 +14,22 @@ function RecipesFilter() {
           <h1 className="heading-h2">Recipes</h1>
           <div className="page-listing-filter">
             <div className="listing-filter">
-              <select name="" id="">
-                <option value="default">Sort by Price</option>
-                <option value="low">Price: Low to high</option>
-                <option value="high">Price: high to Low</option>
+              <select name="" id="" onChange={(event) => sortedRatingRecipes(event.target.value)}>
+                <option value="default">Sort by Rating</option>
+                <option value="low">Rating: High to Low</option>
+                <option value="high">Rating: Low to high</option>
               </select>
             </div>
             <div className="page-listing-view">
-              <div className="page-listing-item">
-                <img src={""} alt="" />
+              <div
+                className="page-listing-item"
+                onClick={gridViewChangeHandler}
+              >
+                <img src={grid} alt="grid-view" />
               </div>
 
-              <div className="page-listing-item">
-                <img src={""} alt="" />
+              <div className="page-listing-item" onClick={rowViewChangeHandler}>
+                <img src={listView} alt="row-view" />
               </div>
             </div>
           </div>
