@@ -16,8 +16,12 @@ function Recipes() {
   const [sortedRating, setSortedRating] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
+  const [querryRecipes, setQuerryRecipes] = useState("");
+  const [debounce, setDebounce] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
-  const postPerRecipes = 15;
+
+  const postPerRecipes = 15;  // How many recipe items are displayed per page
 
   // FETCH ALL RECIPES
   const fetchRecipeItem = async () => {
@@ -105,6 +109,70 @@ function Recipes() {
       setIsLoading(false);
     }
   }
+
+  // SEARCH RECIPES BY DEBOUNCING METHOD
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebounce(querryRecipes);
+    }, 500);
+
+    return () => clearTimeout(handler); // If someone does not wait 500ms means continuous type
+  }, [querryRecipes]);
+
+  const fetchSearchRecipes = async (query) => {
+    try {
+      const searchListRecipes = await apiRequest(
+        `${recipeUrl.recipePoint}/search?q=${query}`
+      );
+      setRecipeItem(searchListRecipes.recipes);
+      setSortedRating(searchListRecipes.recipes); // update sorted too
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    if (debounce.trim()) {
+      fetchSearchRecipes(debounce);
+    } else {
+      fetchRecipeItem(); // fallback to normal recipe list when input is cleared
+    }
+  }, [debounce]);
+
+  // AFTER CLICKING CROSS ICON RECIPES LISTING WILL LE DISPLAYED DEFAULT
+
+  const crossIconRemove = async () => {
+    setIsLoading(true)
+    try {
+      const defaultListing = await apiRequest(`${recipeUrl.recipePoint}`);
+      setRecipeItem(defaultListing.recipes);
+      setSortedRating(defaultListing.recipes);
+      
+    } catch (error) {
+      console.log(error);   
+    } finally{
+      setIsLoading(false);
+    }
+    
+  }
+
+  useEffect(() => {
+    crossIconRemove()
+  }, [])
+
+  const handleSearchChange = (value) => {
+    setSearchValue(value);
+    setQuerryRecipes(value);
+  };
+
+  const handleClearSearch = () => {
+    setSearchValue("");
+    setQuerryRecipes("");
+    crossIconRemove();
+  };
+
+
 
   return (
     <section className="common-section recipes-section">
@@ -207,7 +275,11 @@ function Recipes() {
               </div>
 
               <div className="listing-article">
-                <RecipesSearch />
+                <RecipesSearch
+                  searchValue={searchValue}
+                  onSearchChange={handleSearchChange}
+                  onClearSearch={handleClearSearch}
+                />
                 <RecipesFilter
                   gridViewChangeHandler={gridViewChangeHandler}
                   rowViewChangeHandler={rowViewChangeHandler}

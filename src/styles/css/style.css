@@ -20546,6 +20546,12 @@ ul.price-listing li::before {
 .recipes-section .product-listing-wrapper .product-image {
   height: 300px;
 }
+.recipes-section .product-search-wrapper {
+  max-width: 400px;
+}
+.recipes-section .product-search-wrapper .product-cross-icon {
+  right: 20px;
+}
 
 .cuisine h4 span, .cuisine .document-card h3 span, .document-card .cuisine h3 span, .cuisine .document-card .heading-h3 span, .document-card .cuisine .heading-h3 span {
   font-size: 16px;

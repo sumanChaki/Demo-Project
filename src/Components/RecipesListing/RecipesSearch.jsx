@@ -1,19 +1,31 @@
-import React from 'react'
+// RecipesSearch.jsx
+import React from "react";
+import crossIcon from "../../assets/search-cross.svg";
 
-function RecipesSearch() {
+function RecipesSearch({ searchValue, onSearchChange, onClearSearch }) {
   return (
     <div className="row">
       <div className="col-12">
-        <div className="product-search-wrapper">
-          <img src="" className="product-cross-icon" />
-
-          <button type="button" className="btn">
-            Submit
-          </button>
+        <div
+          className={`product-search-wrapper ${
+            searchValue ? "appear-icon" : ""
+          }`}
+        >
+          <input
+            type="text"
+            value={searchValue}
+            onChange={(e) => onSearchChange(e.target.value)}
+          />
+          <img
+            src={crossIcon}
+            className="product-cross-icon"
+            onClick={onClearSearch}
+            alt="Clear Search"
+          />
         </div>
       </div>
     </div>
   );
 }
 
-export default RecipesSearch
+export default RecipesSearch;
