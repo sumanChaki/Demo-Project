@@ -31,7 +31,7 @@ function LoginForm() {
         <div className="col-lg-12">
           <div className="form-group input-email-icon">
             <input
-              type="email"
+              type="text"
               className="form-control"
               id=""
               placeholder="siliconmotors@gmail.com"
@@ -72,9 +72,7 @@ function LoginForm() {
 
         <div className="col-lg-12">
           <div className="form-group">
-            <a href="account-settings-test-drive.php" className="btn btn-big w-100">
-              Login
-            </a>
+          <button type='submit' className="btn btn-big w-100">Login</button>
           </div>
         </div>
 
