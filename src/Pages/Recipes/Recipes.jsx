@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import image from "../../assets/edit-icon.png";
 import apiRequest from '../../Utility/apiRequest';
 import { recipeUrl } from '../../Utility/endPoint';
-import { Link } from 'react-router-dom';
 import RecipesSearch from '../../Components/RecipesListing/RecipesSearch';
 import RecipesFilter from '../../Components/RecipesListing/RecipesFilter';
 import RecipesItemListing from '../../Components/RecipesListing/RecipesItemListing';
 import Loader from '../Loader/Loader';
-import PaginationRecipes from '../../Components/RecipesListing/PaginationRecipes';
 
 function Recipes() {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,6 +16,9 @@ function Recipes() {
   const [querryRecipes, setQuerryRecipes] = useState("");
   const [debounce, setDebounce] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const [tagsRecipes, setAllTagsRecipes] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectTagRecipes, setSelectTagRecipes] = useState([])
 
 
   const postPerRecipes = 15;  // How many recipe items are displayed per page
@@ -121,6 +121,7 @@ function Recipes() {
   }, [querryRecipes]);
 
   const fetchSearchRecipes = async (query) => {
+    setIsLoading(true)
     try {
       const searchListRecipes = await apiRequest(
         `${recipeUrl.recipePoint}/search?q=${query}`
@@ -129,6 +130,8 @@ function Recipes() {
       setSortedRating(searchListRecipes.recipes); // update sorted too
     } catch (err) {
       console.error(err);
+    } finally{
+      setIsLoading(false)
     }
   };
 
@@ -172,7 +175,69 @@ function Recipes() {
     crossIconRemove();
   };
 
+  // GET ALL RECIPES TAGS
 
+  const allRecipesTags = async () => {
+    setIsLoading(true)
+    try {
+      const listingTags = await apiRequest(`${recipeUrl.recipePoint}/tags`);      
+      setAllTagsRecipes(listingTags);
+    } catch (error) {
+      console.log(error);
+      
+    } finally{
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    allRecipesTags();
+  }, [])
+
+  // RECIPES LISTING DISPLAYS ACCORDING TO TAGS SELECTION
+
+  const fetchRecipesByTag = async (tags) => {
+    if (tags.length === 0) {
+      fetchRecipeItem();
+      return;
+    }
+    setIsLoading(true)
+
+    try {
+      const selectedRecipes = await Promise.all(
+        tags.map((item) => apiRequest(`${recipeUrl.recipePoint}/tag/${item}`))
+      );
+
+      const allRecipes = selectedRecipes.flatMap((res) => res.recipes);
+
+      setSelectTagRecipes(allRecipes);
+      
+    } catch (error) {
+      console.log(error);
+      
+    } finally{
+      setIsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchRecipesByTag(selectedTags);
+  }, [selectedTags]);
+
+  useEffect(() => {
+    if (selectedTags) {
+      setCurrentPage(1);
+    }
+  }, [selectedTags]);
+
+
+const selectTags = (item) => {
+  setSelectedTags((prevTag) =>
+    prevTag.includes(item)
+      ? prevTag.filter((tag) => tag !== item)
+      : [...prevTag, item]
+  ); 
+}
 
   return (
     <section className="common-section recipes-section">
@@ -183,38 +248,24 @@ function Recipes() {
               <div className="listing-sidebar">
                 <div className="sidebar-sticky">
                   <div className="sidebar-card categories-card">
-                    <h4>Categories</h4>
+                    <h4>Tags</h4>
                     <div className="input-wrapper">
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox1" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox2" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox3" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox4" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox5" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
+                      {tagsRecipes?.length > 0 &&
+                        tagsRecipes.map((item, index) => (
+                          <div className="input-wrapper-item" key={index}>
+                            <input
+                              name=""
+                              type="checkbox"
+                              id={`checkbox-${index + 1}`}
+                              checked={selectedTags.includes(item)}
+                              onChange={() => selectTags(item)}
+                            />
+                            <label htmlFor={`checkbox-${index + 1}`}>
+                              <span className="color-palate"></span>
+                              {item}
+                            </label>
+                          </div>
+                        ))}
                     </div>
                   </div>
 
@@ -289,9 +340,8 @@ function Recipes() {
                   <Loader />
                 ) : (
                   <RecipesItemListing
-                    recipeItem={sortedRating}
+                    recipeItem={selectedTags.length > 0 ? selectTagRecipes : sortedRating}
                     viewChange={viewChange}
-                    prevPagination
                   />
                 )}
                 {/* <PaginationRecipes
