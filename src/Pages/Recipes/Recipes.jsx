@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import apiRequest from '../../Utility/apiRequest';
+import { apiRequest } from "../../Utility/apiRequest";
 import { recipeUrl } from '../../Utility/endPoint';
 import RecipesSearch from '../../Components/RecipesListing/RecipesSearch';
 import RecipesFilter from '../../Components/RecipesListing/RecipesFilter';

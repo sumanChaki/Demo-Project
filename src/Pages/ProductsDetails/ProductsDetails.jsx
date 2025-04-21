@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import apiRequest from '../../Utility/apiRequest';
+import { apiRequest } from "../../Utility/apiRequest";
 import { url } from '../../Utility/endPoint';
 import ProductDetails from '../../Components/ProductDetails/ProductDetails';
 

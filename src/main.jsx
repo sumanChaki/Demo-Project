@@ -14,13 +14,13 @@ import BoardofDirectors from './Pages/About/BoardofDirectors/BoardofDirectors.js
 import Awards from "./Pages/About/Awards/Awards.jsx";
 import { Provider } from 'react-redux';
 import { Store } from './Components/Redux/Store.js';
-import Login from './Components/Authentication/Login.jsx';
-import Signup from './Components/Authentication/Signup.jsx';
 import Posts from './Pages/Posts/Posts.jsx';
 import Comments from './Pages/Comments/Comments.jsx';
 import Quotes from './Pages/Quotes/Quotes.jsx';
 import Recipes from './Pages/Recipes/Recipes.jsx';
 import RecipesDetails from './Pages/RecipesDetails/RecipesDetails.jsx';
+import Login from './Pages/Login/Login.jsx';
+import Signup from './Pages/Signup/SignUp.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(

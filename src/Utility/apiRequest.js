@@ -6,4 +6,45 @@ const apiRequest = async (endPoint) => {
     return productListing.data;
 }
 
-export default apiRequest;
+const loginUser = async (username, password) => {
+    try {
+        const response = await axios.post(
+          `${BASE_URL}/auth/login`,
+          { username, password },
+          {
+            headers: { "Content-Type": "application/json" },
+            withCredentials: true,
+          }
+        )
+        return response.data
+        
+    } catch (error) {
+       throw new Error("Login failed") 
+    }
+}
+
+const signupUser = async (name, email, phoneNumber, password, confirmPassword) => {
+    try {
+        const response = await axios.post(
+          `${BASE_URL}/users/add`,
+          {
+            name,
+            email,
+            phoneNumber,
+            password,
+            confirmPassword,
+          },
+          {
+            headers: { "Content-Type": "application/json" },
+            withCredentials: true
+          }
+        );
+        return response.data
+        
+    } catch (error) {
+     throw new Error ("Registration failed")   
+    }
+}
+
+
+export { apiRequest, loginUser, signupUser };

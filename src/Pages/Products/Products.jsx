@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import apiRequest from "../../Utility/apiRequest";
+import { apiRequest } from "../../Utility/apiRequest";
 import { url } from "../../Utility/endPoint";
 import Loader from "../Loader/Loader";
 import ProductsListing from "../../Components/ProductsListing/ProductsListing";
