@@ -2,22 +2,26 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../Utility/apiRequest';
 import { setLogin } from '../Redux/Auth/AuthReducer';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const loginFormHandler = async (e) => {
     e.preventDefault();
 
     try {
-      const data = await loginUser(username, password);
+      const data = await loginUser({ email, password });
       dispatch(setLogin({user: data, token: data.token}))
       console.log("Loged in data >>>", data);
+      navigate("/")
     } catch (error) {
       console.log("Login error >>>", error);
+      navigate("/signup");
       
     }
 
@@ -35,7 +39,7 @@ function LoginForm() {
               className="form-control"
               id=""
               placeholder="siliconmotors@gmail.com"
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
         </div>

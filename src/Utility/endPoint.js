@@ -5,3 +5,7 @@ export const url = {
 export const recipeUrl = {
   recipePoint: "recipes",
 };
+
+export const postUrl = {
+  postPoint: "posts",
+}

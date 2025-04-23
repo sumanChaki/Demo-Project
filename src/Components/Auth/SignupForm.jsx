@@ -1,37 +1,47 @@
-import React, { useState } from 'react'
-import { signupUser } from '../../Utility/apiRequest';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { signupUser } from "../../Utility/apiRequest";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignupForm() {
-
   const [userData, setUserData] = useState({
     name: "",
     email: "",
     phone: "",
     password: "",
-    confirmPassword: ""
-  })
+    confirmPassword: "",
+  });
+  const navigate = useNavigate();
 
   const userDataHandler = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
     setUserData((prev) => ({
       ...prev,
       [name]: value,
     }));
-  }
+  };
 
   const signupHandler = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
+    // Basic client-side validation
+    if (userData.password !== userData.confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
     try {
       const data = await signupUser(userData);
       console.log("SignUp data >>>", data);
-      
     } catch (error) {
       console.log("Registration error >>>", error.message);
-      
     }
-  }
+  };
 
+  const backToLoginHandler = (e) => {
+    e.preventDefault();
+    navigate("/login");
+
+  }
 
   return (
     <form onSubmit={signupHandler}>
@@ -100,10 +110,6 @@ function SignupForm() {
               value={userData.password}
               autoComplete="new-password"
             />
-            <span
-              toggle="#password-field"
-              className="fa fa-eye toggle-password"
-            ></span>
           </div>
         </div>
 
@@ -122,16 +128,12 @@ function SignupForm() {
               value={userData.confirmPassword}
               autoComplete="new-password"
             />
-            <span
-              toggle="#password-field1"
-              className="fa fa-eye toggle-password"
-            ></span>
           </div>
         </div>
 
         <div className="col-lg-12">
           <div className="form-group">
-            <button type="submit" className="btn btn-big w-100">
+            <button type="submit" className="btn btn-big w-100" onClick={backToLoginHandler}>
               Signup
             </button>
           </div>
@@ -150,4 +152,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm
+export default SignupForm;

@@ -32,6 +32,8 @@ function Recipes() {
         `${recipeUrl.recipePoint}?limit=${postPerRecipes}&skip=${skipRecipes}`
       );
       setRecipeItem(recipeItemListing.recipes);
+      console.log("Recipes >>", recipeItemListing.recipes);
+      
       setSortedRating(recipeItemListing.recipes);
       const totalRecipes = recipeItemListing.total;
       const recipesPerCount = Math.ceil(totalRecipes / postPerRecipes);
@@ -230,12 +232,13 @@ function Recipes() {
     }
   }, [selectedTags]);
 
+// THIS FUNCTION IS TRIGGERED WHEN USER SELECT MULTIPLE TAGS
 
 const selectTags = (item) => {
   setSelectedTags((prevTag) =>
     prevTag.includes(item)
-      ? prevTag.filter((tag) => tag !== item)
-      : [...prevTag, item]
+      ? prevTag.filter((tag) => tag !== item) // Remove Tag
+      : [...prevTag, item] // Add Tag
   ); 
 }
 
@@ -340,7 +343,9 @@ const selectTags = (item) => {
                   <Loader />
                 ) : (
                   <RecipesItemListing
-                    recipeItem={selectedTags.length > 0 ? selectTagRecipes : sortedRating}
+                    recipeItem={
+                      selectedTags.length > 0 ? selectTagRecipes : sortedRating
+                    }
                     viewChange={viewChange}
                   />
                 )}
@@ -348,39 +353,41 @@ const selectTags = (item) => {
                   PreviousRecipesHandler={PreviousRecipesHandler}
                   nextRecipesHandler={nextRecipesHandler}
                 /> */}
-                <div className="col-12">
-                  <div className="product-pagination-btn">
-                    <button
-                      type="button"
-                      className="btn"
-                      onClick={PreviousRecipesHandler}
-                      disabled={currentPage === 1}
-                    >
-                      «
-                    </button>
+                <div className="row">
+                  <div className="col-12">
+                    <div className="product-pagination-btn">
+                      <button
+                        type="button"
+                        className="btn"
+                        onClick={PreviousRecipesHandler}
+                        disabled={currentPage === 1}
+                      >
+                        «
+                      </button>
 
-                    <div className="paginatin-buttons">
-                      {Array.from({ length: totalPage }, (_, index) => (
-                        <button
-                          key={index + 1}
-                          onClick={() => setCurrentPage(index + 1)}
-                          className={`btn ${
-                            currentPage === index + 1 ? "active" : ""
-                          }`}
-                        >
-                          {index + 1}
-                        </button>
-                      ))}
+                      <div className="paginatin-buttons">
+                        {Array.from({ length: totalPage }, (_, index) => (
+                          <button
+                            key={index + 1}
+                            onClick={() => setCurrentPage(index + 1)}
+                            className={`btn ${
+                              currentPage === index + 1 ? "active" : ""
+                            }`}
+                          >
+                            {index + 1}
+                          </button>
+                        ))}
+                      </div>
+
+                      <button
+                        type="button"
+                        className="btn"
+                        onClick={nextRecipesHandler}
+                        disabled={currentPage === totalPage}
+                      >
+                        »
+                      </button>
                     </div>
-
-                    <button
-                      type="button"
-                      className="btn"
-                      onClick={nextRecipesHandler}
-                      disabled={currentPage === totalPage}
-                    >
-                      »
-                    </button>
                   </div>
                 </div>
               </div>

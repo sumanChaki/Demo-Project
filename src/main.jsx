@@ -18,9 +18,10 @@ import Posts from './Pages/Posts/Posts.jsx';
 import Comments from './Pages/Comments/Comments.jsx';
 import Quotes from './Pages/Quotes/Quotes.jsx';
 import Recipes from './Pages/Recipes/Recipes.jsx';
-import RecipesDetails from './Pages/RecipesDetails/RecipesDetails.jsx';
 import Login from './Pages/Login/Login.jsx';
 import Signup from './Pages/Signup/SignUp.jsx';
+import RecipeDetails from './Pages/RecipeDetails/RecipeDetails.jsx';
+import PostDetails from './Pages/PostDetails/PostDetails.jsx';
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
@@ -32,8 +33,9 @@ const routes = createBrowserRouter(
       <Route path="about/awards" element={<Awards />} />
       <Route path="products" element={<Products />} />
       <Route path="recipes" element={<Recipes />} />
-      <Route path="recipes/:recipeId" element={<RecipesDetails />} />
+      <Route path="recipes/:recipeId" element={<RecipeDetails />} />
       <Route path="posts" element={<Posts />} />
+      <Route path="posts/:postId" element={<PostDetails />} />
       <Route path="comments" element={<Comments />} />
       <Route path="quotes" element={<Quotes />} />
       <Route path="products/:productId" element={<ProductsDetails />} />

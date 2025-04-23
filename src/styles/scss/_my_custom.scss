@@ -556,3 +556,82 @@
     }
   }
 }
+
+.ingredients-list{
+  list-style: none;
+  padding: 0px;
+  margin-bottom: 30px;
+
+  li{
+    list-style-type: none;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 15px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgb(176 173 173);
+    }
+  }
+}
+
+.two-column-details{
+  display: flex;
+  gap: 30px;
+
+  .two-column-ind{
+    width: calc(50% - 16px);
+  }
+}
+
+.recipes-features{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+  .recipes-features-item{
+    width: calc(50% - 6px);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h3{
+      margin-bottom: 0px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    p{
+      @extend h3;
+      color: red;
+    }
+
+    .ingredients-list{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 0px;
+
+      li{
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+.posts-section{
+  .listing-article{
+    .product-listing-item{
+      .description{
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
