@@ -9,3 +9,7 @@ export const recipeUrl = {
 export const postUrl = {
   postPoint: "posts",
 }
+
+export const cartUrl = {
+  cartPoint: "cart"
+}

@@ -14,10 +14,15 @@ function RecipesFilter({
           <h1 className="heading-h2">Recipes</h1>
           <div className="page-listing-filter">
             <div className="listing-filter">
-              <select name="" id="" onChange={(event) => sortedRatingRecipes(event.target.value)}>
+              <select
+                onChange={(event) => {
+                  console.log("Selected Sort Type: ", event.target.value);
+                  sortedRatingRecipes(event.target.value);
+                }}
+              >
                 <option value="default">Sort by Rating</option>
-                <option value="low">Rating: High to Low</option>
-                <option value="high">Rating: Low to high</option>
+                <option value="high">Rating: High to Low</option>
+                <option value="low">Rating: Low to High</option>
               </select>
             </div>
             <div className="page-listing-view">

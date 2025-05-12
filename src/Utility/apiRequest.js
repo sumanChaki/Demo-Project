@@ -9,7 +9,7 @@ const apiRequest = async (endPoint) => {
 const loginUser = async (userData) => {
   console.log(userData);
   try {
-    const response = await axios.post(`${BASE_URL}/api/auth/login`, userData, {
+    const response = await axios.post(`${BASE_URL}api/auth/login`, userData, {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     });
@@ -22,7 +22,7 @@ const loginUser = async (userData) => {
 const signupUser = async (userData) => {
   try {
     const response = await axios.post(
-      `${BASE_URL}/api/auth/register`,
+      `${BASE_URL}api/auth/register`,
       userData, // send the object directly
       {
         headers: {
@@ -38,4 +38,61 @@ const signupUser = async (userData) => {
   }
 };
 
-export { apiRequest, loginUser, signupUser };
+
+const addToCart = async (cartData) => {
+  // console.log("cartData >>", cartData);
+  
+  try {
+    const response = await axios.post(`${BASE_URL}cart/add`, cartData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+    return response.data;
+  } catch (error) {
+    console.error(
+      "❌ Add to cart error:",
+      error.response?.data || error.message
+    );
+    throw new Error("Add to cart failed");
+  }
+};
+
+
+  // const addToCart = async () => {
+  //   try {
+  //     const response = await axios.post(`${BASE_URL}carts/add`, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         userId: 1,
+  //         products: [
+  //           {
+  //             id: 144,
+  //             quantity: 4,
+  //           },
+  //           {
+  //             id: 98,
+  //             quantity: 1,
+  //           },
+  //         ],
+  //       }),
+  //       withCredentials: true,
+  //     });
+  //     return response.data;
+  //   } catch (error) {
+  //     console.error(
+  //       "❌ Add to cart error:",
+  //       error.response?.data || error.message
+  //     );
+  //     throw new Error("Add to cart failed");
+  //   }
+  // };
+
+  
+
+  
+
+export { apiRequest, loginUser, signupUser, addToCart };

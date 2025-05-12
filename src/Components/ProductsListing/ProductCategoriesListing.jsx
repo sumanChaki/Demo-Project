@@ -9,19 +9,21 @@ function ProductCategoriesListing({
     <div className="sidebar-card categories-card">
       <h4>Categories</h4>
       <div className="input-wrapper">
-        {categoryList?.length > 0 &&
-          categoryList.map((item, index) => (
+        {categoryList && categoryList.length > 0 ? (
+          categoryList.map((category, index) => (
             <div className="input-wrapper-item" key={index}>
               <input
-                name=""
                 type="checkbox"
-                id={`categories-${index}`}
-                checked={selectCategory.includes(item.name)}
-                onChange={() => checkboxCategoryItem(item.name)}
+                id={`category-${index}`}
+                checked={selectCategory.includes(category)}
+                onChange={() => checkboxCategoryItem(category)}
               />
-              <label htmlFor={`categories-${index}`}>{item?.name}</label>
+              <label htmlFor={`category-${index}`}>{category}</label>
             </div>
-          ))}
+          ))
+        ) : (
+          <p>No categories available</p>
+        )}
       </div>
     </div>
   );

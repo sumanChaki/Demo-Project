@@ -9,6 +9,7 @@ function SignupForm() {
     phone: "",
     password: "",
     confirmPassword: "",
+    role: "user",
   });
   const navigate = useNavigate();
 
@@ -23,6 +24,7 @@ function SignupForm() {
   const signupHandler = async (e) => {
     e.preventDefault();
 
+    console.log("SignUp data >>>", userData);
     // Basic client-side validation
     if (userData.password !== userData.confirmPassword) {
       alert("Passwords do not match");
@@ -31,17 +33,15 @@ function SignupForm() {
 
     try {
       const data = await signupUser(userData);
-      console.log("SignUp data >>>", data);
+      if (data.success) {
+        navigate("/login");
+
+        console.log("SignUp data >>>", data);
+      }
     } catch (error) {
       console.log("Registration error >>>", error.message);
     }
   };
-
-  const backToLoginHandler = (e) => {
-    e.preventDefault();
-    navigate("/login");
-
-  }
 
   return (
     <form onSubmit={signupHandler}>
@@ -133,7 +133,7 @@ function SignupForm() {
 
         <div className="col-lg-12">
           <div className="form-group">
-            <button type="submit" className="btn btn-big w-100" onClick={backToLoginHandler}>
+            <button type="submit" className="btn btn-big w-100">
               Signup
             </button>
           </div>

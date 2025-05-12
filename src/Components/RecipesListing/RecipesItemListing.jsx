@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function RecipesItemListing({ recipeItem, viewChange }) {
+  // console.log("recipeItem 008>>", recipeItem.rating);
+  
 
   return (
     <div className="row">
@@ -12,11 +14,16 @@ function RecipesItemListing({ recipeItem, viewChange }) {
           }`}
         >
           {recipeItem?.length > 0 &&
-            recipeItem.map(
-              ({ id, name, image, tags, instructions, cuisine, rating }) => (
-                <div className={"product-listing-item"} key={id}>
+            recipeItem.map((item) => {
+              if (!item) return null; // skip if undefined
+
+              const { _id, name, image, tags, instructions, cuisine, rating, price } =
+                item;
+
+              return (
+                <div className="product-listing-item" key={_id}>
                   <figure className="product-image">
-                    <Link to={`/recipes/${id}`}>
+                    <Link to={`/recipes/${_id}`}>
                       <img src={image} alt={""} />
                     </Link>
                   </figure>
@@ -25,9 +32,9 @@ function RecipesItemListing({ recipeItem, viewChange }) {
                     <div className="description">
                       <h4>Instructions:</h4>
                       {instructions?.length > 0 &&
-                        instructions?.map((item, index) => (
-                          <ul>
-                            <li key={index}>{item}</li>
+                        instructions.map((item, index) => (
+                          <ul key={index}>
+                            <li>{item}</li>
                           </ul>
                         ))}
                     </div>
@@ -35,29 +42,33 @@ function RecipesItemListing({ recipeItem, viewChange }) {
                       <h4>Tags:</h4>
                       <ul>
                         {tags?.length > 0 &&
-                          tags?.map((item, index) => (
+                          tags.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}
                       </ul>
                     </div>
-
                     <div className="cuisine">
                       <h4>
                         Cuisine: <span>{cuisine}</span>
                       </h4>
                     </div>
-
                     <div className="rating">
-                      Rating: <span>{rating}</span>
+                      <h4>
+                        Rating: <span>{rating}</span>
+                      </h4>
                     </div>
-
-                    <Link to={`/recipes/${id}`} className="btn">
+                    <div className="price">
+                      <h4>
+                        Price: <span>{price}</span>
+                      </h4>
+                    </div>
+                    <Link to={`/recipes/${_id}`} className="btn">
                       More Details
                     </Link>
                   </div>
                 </div>
-              )
-            )}
+              );
+            })}
         </div>
       </div>
     </div>

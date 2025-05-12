@@ -1,42 +1,120 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { apiRequest } from '../../Utility/apiRequest';
-import { recipeUrl } from '../../Utility/endPoint';
+import { Link, useParams } from 'react-router-dom';
+import { addToCart, apiRequest } from '../../Utility/apiRequest';
+import { cartUrl, recipeUrl } from '../../Utility/endPoint';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCart } from '../../Components/Redux/Carts/CartsReducers';
 
 
 function RecipeDetails() {
-const { recipeId } = useParams();
-const [recipeDetails, setRecipeDetails] = useState({});
-const [isLoading, setIsLoading] = useState(false);
+  const { recipeId } = useParams();
+  const [recipeDetails, setRecipeDetails] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [cartDetails, setCartDetails] = useState([]);
+  const [isInCart, setIsInCart] = useState(false);
 
-const fetchRecipeDetails = async() => {
+  const user = useSelector((state) => state.auth.user);
+  // console.log("user >>", user);
+
+  const dispatch = useDispatch();
+
+  // FETCH ALL RECIPES DETAILS
+
+  const fetchRecipeDetails = async () => {
     try {
-        setIsLoading (true)
-        const recipeDetails = await apiRequest(
-          `${recipeUrl.recipePoint}/${recipeId}`
-        );
-        setRecipeDetails(recipeDetails);
-        
+      setIsLoading(true);
+      const recipeDetails = await apiRequest(
+        `${recipeUrl.recipePoint}/${recipeId}`
+      );
+      setRecipeDetails(recipeDetails);
+      // console.log("recipeDetails.recipes >>", recipeDetails.recipes);
     } catch (error) {
-       setIsLoading(false); 
-        
-    } finally{
-       setIsLoading(false); 
+      setIsLoading(false);
+    } finally {
+      setIsLoading(false);
     }
-}
+  };
+
+  // =========== USER CAN ADD RECIPE ONE TIME
+
+  const recipesInCart = async() => {
+    if (!user?.id || !recipeId) return;
+    try {
+      const res = await apiRequest(`${cartUrl.cartPoint}/user/${user.id}`);
+      const recipesInCart = res?.carts?.[0]?.recipes || [];
+
+      const found = recipesInCart.some(
+        (item) => String(item.id) === String(recipeId)
+      );
+      setIsInCart(found)
+      
+    } catch (error) {
+       console.error("Error checking recipe in cart:", error);
+    }
+  }
 
 useEffect(() => {
-    fetchRecipeDetails();
-}, [])
+  fetchRecipeDetails();
+  recipesInCart();
+}, [recipeId, user?.id]);
+
+  // ADD TO CART DETAILS
+
+  const addToCartHandler = async () => {
+  const payload = {
+    userId: user?.id,
+    recipes: [
+      {
+        recipeId: recipeId, 
+        quantity: 1,
+      },
+    ],
+  };
+
+    try {
+      const allCart = await addToCart(payload);
+      console.log("allCart >>", allCart);
+      setCartDetails(allCart);
+      dispatch(addCart({ userId: allCart.data.userId, recipes: allCart.data.recipes }));
+      setIsInCart(true);
+      
+    } catch (error) {
+      console.log("Error adding to cart:", error.message);
+    }
+  }
+
+
+
 
   return (
     <div className="container">
       <div className="product-details-wrapper">
-        {recipeDetails?.image && (
-          <div className="product-details-image">
-            <img src={recipeDetails?.image} />
-          </div>
-        )}
+        <div className="product-image-wrapper">
+          {recipeDetails?.image && (
+            <div className="product-details-image">
+              <img src={recipeDetails?.image} />
+            </div>
+          )}
+          {user?.id ? (
+            <div className="product-cart-btn">
+              {isInCart ? (
+                <Link className="btn add-cart" to="/cart">
+                  Go to Cart
+                </Link>
+              ) : (
+                <Link className="btn add-cart" onClick={addToCartHandler}>
+                  Add to Cart
+                </Link>
+              )}
+              <Link className="btn">Buy Now</Link>
+            </div>
+          ) : (
+            <div className="product-cart-btn logout">
+              <Link className="btn add-cart">Add to Cart</Link>
+              <Link className="btn">Buy Now</Link>
+            </div>
+          )}
+        </div>
 
         <div className="product-details-content">
           {recipeDetails?.name && <h2>{recipeDetails?.name}</h2>}
@@ -141,14 +219,22 @@ useEffect(() => {
               </div>
             )}
           </div>
+        </div>
+      </div>
 
-          <div className="product-cart-btn">
-            <button type="button" className="btn add-cart">
-              Add to Cart
-            </button>
-            <button type="button" className="btn">
-              Buy Now
-            </button>
+      <div className="similar-products-wrapper">
+        <h2>Similar products</h2>
+        <div className="similar-products">
+          <div className="similar-products-item">
+            <figure className="similar-products-image">
+              <img src="https://placehold.co/600x400/png" />
+            </figure>
+            <div className="similar-products-content">
+              <h4>Product title</h4>
+              <h5>
+                Price: <span>10000</span>
+              </h5>
+            </div>
           </div>
         </div>
       </div>

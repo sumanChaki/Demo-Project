@@ -7,6 +7,7 @@ import ProductFilter from "../../Components/ProductsListing/ProductFilter";
 import ProductSearch from "../../Components/ProductsListing/ProductSearch";
 import ProductViewChange from "../../Components/ProductsListing/ProductViewChange";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Products() {
   const [myProducts, setMyProducts] = useState([]);
@@ -19,12 +20,10 @@ function Products() {
   const [categoryList, setCategoryList] = useState([]);
   const [selectCategory, setSelectCategory] = useState([]);
 
-
-
   const navigate = useNavigate();
   const postPerPage = 50;
 
-  // FETCH ALL PRODUCTS AND LIMITS
+
 
   const fetchAllProducts = async () => {
     setIsLoading(true);
@@ -35,6 +34,8 @@ function Products() {
       );
       setMyProducts(allProducts.products);
       setSortedProduct(allProducts.products);
+      // console.log("All Products >>", allProducts);
+      
       const totalProducts = allProducts.total;
       const totalPageCount = Math.ceil(totalProducts / postPerPage);
       setTotalPage(totalPageCount);
@@ -112,6 +113,7 @@ function Products() {
   };
 
   // SEARCH FILTER
+
   const searchOnChange = (event) => {
     setSearchValue(event.target.value);
   };
@@ -140,8 +142,10 @@ function Products() {
   // CATEGORIES LISTING DISPLAYS
 
   const categoriesListing = async () => {
-    const listingCategories = await apiRequest(url.productUrl + "/categories");
-    console.log("listingCategories >>", listingCategories);
+    const listingCategories = await apiRequest(
+      `${url.productUrl}/category-list`
+    );
+    // console.log("listingCategories >>", listingCategories);
 
     setCategoryList(listingCategories);
   };

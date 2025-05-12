@@ -12,8 +12,8 @@ const fetchSingleProduct = async () => {
     const individualProduct = await apiRequest(
       `${url.productUrl}/${productId}`
     );
-    console.log(individualProduct);
-    setProductDetails(individualProduct);
+    console.log("Details >>", individualProduct.product);
+    setProductDetails(individualProduct.product);
 }
 
 useEffect(() => {

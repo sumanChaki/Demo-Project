@@ -559,7 +559,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 .btn:focus::after, input[type=submit]:focus::after, .btn-stroke-black:focus::after, .btn-stroke-primary:focus::after, .btn-stroke:focus::after, .btn-black:focus::after, .btn-white:focus::after {
   background: transparent;
-  background: url(../images/button-arrow-white.svg) no-repeat center center;
+  background: url(../../assets/button-arrow-white.svg) no-repeat center center;
 }
 .btn-white {
   background: white;
@@ -20141,9 +20141,6 @@ ul.price-listing li::before {
 .product-listing-item .description {
   min-height: 90px;
 }
-.product-listing-item .description h4, .product-listing-item .description .document-card h3, .product-listing-item .description .document-card .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .product-listing-item .description .document-card p, .product-listing-item .description .document-card .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .product-listing-item .description .document-card blockquote, .product-listing-item .description .document-card .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .product-listing-item .description .document-card .car-name, .product-listing-item .description .document-card .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .product-listing-item .description .document-card .car-name, .product-listing-item .description .document-card .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .product-listing-item .description .document-card td, .product-listing-item .description .document-card .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .product-listing-item .description .document-card td, .product-listing-item .description .document-card .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .product-listing-item .description .document-card span:last-child, .product-listing-item .description .document-card .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .product-listing-item .description .document-card span:last-child, .product-listing-item .description .document-card .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .product-listing-item .description .document-card td, .product-listing-item .description .document-card .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .product-listing-item .description .document-card td, .product-listing-item .description .document-card .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .product-listing-item .description .document-card a, .product-listing-item .description .document-card .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .product-listing-item .description .document-card a, .document-card .product-listing-item .description h3, .document-card .product-listing-item .description .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .document-card .product-listing-item .description p, .document-card .product-listing-item .description .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .document-card .product-listing-item .description blockquote, .document-card .product-listing-item .description .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .document-card .product-listing-item .description .car-name, .document-card .product-listing-item .description .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .document-card .product-listing-item .description .car-name, .document-card .product-listing-item .description .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .document-card .product-listing-item .description td, .document-card .product-listing-item .description .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .document-card .product-listing-item .description td, .document-card .product-listing-item .description .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .document-card .product-listing-item .description span:last-child, .document-card .product-listing-item .description .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .document-card .product-listing-item .description span:last-child, .document-card .product-listing-item .description .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .document-card .product-listing-item .description td, .document-card .product-listing-item .description .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .document-card .product-listing-item .description td, .document-card .product-listing-item .description .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .document-card .product-listing-item .description a, .document-card .product-listing-item .description .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .document-card .product-listing-item .description a, .product-listing-item .description .document-card .heading-h3, .document-card .product-listing-item .description .heading-h3 {
-  margin-bottom: 0px;
-}
 .product-listing-item .description ul {
   list-style: none;
   padding: 0px;
@@ -20180,10 +20177,11 @@ ul.price-listing li::before {
   padding-left: 15px;
 }
 .product-listing-item h4, .product-listing-item .document-card h3, .product-listing-item .document-card .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .product-listing-item .document-card p, .product-listing-item .document-card .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .product-listing-item .document-card blockquote, .product-listing-item .document-card .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .product-listing-item .document-card .car-name, .product-listing-item .document-card .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .product-listing-item .document-card .car-name, .product-listing-item .document-card .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .product-listing-item .document-card td, .product-listing-item .document-card .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .product-listing-item .document-card td, .product-listing-item .document-card .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .product-listing-item .document-card span:last-child, .product-listing-item .document-card .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .product-listing-item .document-card span:last-child, .product-listing-item .document-card .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .product-listing-item .document-card td, .product-listing-item .document-card .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .product-listing-item .document-card td, .product-listing-item .document-card .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .product-listing-item .document-card a, .product-listing-item .document-card .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .product-listing-item .document-card a, .document-card .product-listing-item h3, .document-card .product-listing-item .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .document-card .product-listing-item p, .document-card .product-listing-item .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .document-card .product-listing-item blockquote, .document-card .product-listing-item .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .document-card .product-listing-item .car-name, .document-card .product-listing-item .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .document-card .product-listing-item .car-name, .document-card .product-listing-item .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .document-card .product-listing-item td, .document-card .product-listing-item .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .document-card .product-listing-item td, .document-card .product-listing-item .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .document-card .product-listing-item span:last-child, .document-card .product-listing-item .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .document-card .product-listing-item span:last-child, .document-card .product-listing-item .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .document-card .product-listing-item td, .document-card .product-listing-item .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .document-card .product-listing-item td, .document-card .product-listing-item .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .document-card .product-listing-item a, .document-card .product-listing-item .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .document-card .product-listing-item a, .product-listing-item .document-card .heading-h3, .document-card .product-listing-item .heading-h3 {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 .product-listing-item h4 span, .product-listing-item .document-card h3 span, .product-listing-item .document-card .recipes-features .recipes-features-item p span, .recipes-features .recipes-features-item .product-listing-item .document-card p span, .product-listing-item .document-card .recipes-features .recipes-features-item blockquote span, .recipes-features .recipes-features-item .product-listing-item .document-card blockquote span, .product-listing-item .document-card .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name span, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .product-listing-item .document-card .car-name span, .product-listing-item .document-card .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name span, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .product-listing-item .document-card .car-name span, .product-listing-item .document-card .recipes-features .recipes-features-item .compare-table tbody tr td span, .recipes-features .recipes-features-item .compare-table tbody tr .product-listing-item .document-card td span, .product-listing-item .document-card .compare-table tbody tr .recipes-features .recipes-features-item td span, .compare-table tbody tr .recipes-features .recipes-features-item .product-listing-item .document-card td span, .product-listing-item .document-card .recipes-features .recipes-features-item .choose-car-color span:last-child span, .recipes-features .recipes-features-item .choose-car-color .product-listing-item .document-card span:last-child span, .product-listing-item .document-card .choose-car-color .recipes-features .recipes-features-item span:last-child span, .choose-car-color .recipes-features .recipes-features-item .product-listing-item .document-card span:last-child span, .product-listing-item .document-card .recipes-features .recipes-features-item .technical-details-table tr td span, .recipes-features .recipes-features-item .technical-details-table tr .product-listing-item .document-card td span, .product-listing-item .document-card .technical-details-table tr .recipes-features .recipes-features-item td span, .technical-details-table tr .recipes-features .recipes-features-item .product-listing-item .document-card td span, .product-listing-item .document-card .recipes-features .recipes-features-item .rental-booking-content-card ul li a span, .recipes-features .recipes-features-item .rental-booking-content-card ul li .product-listing-item .document-card a span, .product-listing-item .document-card .rental-booking-content-card ul li .recipes-features .recipes-features-item a span, .rental-booking-content-card ul li .recipes-features .recipes-features-item .product-listing-item .document-card a span, .document-card .product-listing-item h3 span, .document-card .product-listing-item .recipes-features .recipes-features-item p span, .recipes-features .recipes-features-item .document-card .product-listing-item p span, .document-card .product-listing-item .recipes-features .recipes-features-item blockquote span, .recipes-features .recipes-features-item .document-card .product-listing-item blockquote span, .document-card .product-listing-item .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name span, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .document-card .product-listing-item .car-name span, .document-card .product-listing-item .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name span, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .document-card .product-listing-item .car-name span, .document-card .product-listing-item .recipes-features .recipes-features-item .compare-table tbody tr td span, .recipes-features .recipes-features-item .compare-table tbody tr .document-card .product-listing-item td span, .document-card .product-listing-item .compare-table tbody tr .recipes-features .recipes-features-item td span, .compare-table tbody tr .recipes-features .recipes-features-item .document-card .product-listing-item td span, .document-card .product-listing-item .recipes-features .recipes-features-item .choose-car-color span:last-child span, .recipes-features .recipes-features-item .choose-car-color .document-card .product-listing-item span:last-child span, .document-card .product-listing-item .choose-car-color .recipes-features .recipes-features-item span:last-child span, .choose-car-color .recipes-features .recipes-features-item .document-card .product-listing-item span:last-child span, .document-card .product-listing-item .recipes-features .recipes-features-item .technical-details-table tr td span, .recipes-features .recipes-features-item .technical-details-table tr .document-card .product-listing-item td span, .document-card .product-listing-item .technical-details-table tr .recipes-features .recipes-features-item td span, .technical-details-table tr .recipes-features .recipes-features-item .document-card .product-listing-item td span, .document-card .product-listing-item .recipes-features .recipes-features-item .rental-booking-content-card ul li a span, .recipes-features .recipes-features-item .rental-booking-content-card ul li .document-card .product-listing-item a span, .document-card .product-listing-item .rental-booking-content-card ul li .recipes-features .recipes-features-item a span, .rental-booking-content-card ul li .recipes-features .recipes-features-item .document-card .product-listing-item a span, .product-listing-item .document-card .heading-h3 span, .document-card .product-listing-item .heading-h3 span {
-  font-size: 24px;
   color: red;
   margin-left: 7px;
 }
@@ -20384,9 +20382,22 @@ ul.price-listing li::before {
   padding: 0px 0px 50px;
 }
 
+.product-image-wrapper {
+  width: 500px;
+  flex: none;
+  position: fixed;
+}
+
+.product-details-image img {
+  width: 100%;
+}
+
 .product-details-image {
   height: 500px;
   overflow: hidden;
+  padding: 15px;
+  border: 1px solid rgb(225, 225, 225);
+  margin-bottom: 30px;
 }
 .product-details-image .slick-dots {
   bottom: 5px;
@@ -20565,18 +20576,18 @@ ul.price-listing li::before {
   right: 20px;
 }
 
-.cuisine h4 span, .cuisine .document-card h3 span, .cuisine .document-card .recipes-features .recipes-features-item p span, .recipes-features .recipes-features-item .cuisine .document-card p span, .cuisine .document-card .recipes-features .recipes-features-item blockquote span, .recipes-features .recipes-features-item .cuisine .document-card blockquote span, .cuisine .document-card .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name span, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .cuisine .document-card .car-name span, .cuisine .document-card .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name span, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .cuisine .document-card .car-name span, .cuisine .document-card .recipes-features .recipes-features-item .compare-table tbody tr td span, .recipes-features .recipes-features-item .compare-table tbody tr .cuisine .document-card td span, .cuisine .document-card .compare-table tbody tr .recipes-features .recipes-features-item td span, .compare-table tbody tr .recipes-features .recipes-features-item .cuisine .document-card td span, .cuisine .document-card .recipes-features .recipes-features-item .choose-car-color span:last-child span, .recipes-features .recipes-features-item .choose-car-color .cuisine .document-card span:last-child span, .cuisine .document-card .choose-car-color .recipes-features .recipes-features-item span:last-child span, .choose-car-color .recipes-features .recipes-features-item .cuisine .document-card span:last-child span, .cuisine .document-card .recipes-features .recipes-features-item .technical-details-table tr td span, .recipes-features .recipes-features-item .technical-details-table tr .cuisine .document-card td span, .cuisine .document-card .technical-details-table tr .recipes-features .recipes-features-item td span, .technical-details-table tr .recipes-features .recipes-features-item .cuisine .document-card td span, .cuisine .document-card .recipes-features .recipes-features-item .rental-booking-content-card ul li a span, .recipes-features .recipes-features-item .rental-booking-content-card ul li .cuisine .document-card a span, .cuisine .document-card .rental-booking-content-card ul li .recipes-features .recipes-features-item a span, .rental-booking-content-card ul li .recipes-features .recipes-features-item .cuisine .document-card a span, .document-card .cuisine h3 span, .document-card .cuisine .recipes-features .recipes-features-item p span, .recipes-features .recipes-features-item .document-card .cuisine p span, .document-card .cuisine .recipes-features .recipes-features-item blockquote span, .recipes-features .recipes-features-item .document-card .cuisine blockquote span, .document-card .cuisine .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name span, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .document-card .cuisine .car-name span, .document-card .cuisine .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name span, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .document-card .cuisine .car-name span, .document-card .cuisine .recipes-features .recipes-features-item .compare-table tbody tr td span, .recipes-features .recipes-features-item .compare-table tbody tr .document-card .cuisine td span, .document-card .cuisine .compare-table tbody tr .recipes-features .recipes-features-item td span, .compare-table tbody tr .recipes-features .recipes-features-item .document-card .cuisine td span, .document-card .cuisine .recipes-features .recipes-features-item .choose-car-color span:last-child span, .recipes-features .recipes-features-item .choose-car-color .document-card .cuisine span:last-child span, .document-card .cuisine .choose-car-color .recipes-features .recipes-features-item span:last-child span, .choose-car-color .recipes-features .recipes-features-item .document-card .cuisine span:last-child span, .document-card .cuisine .recipes-features .recipes-features-item .technical-details-table tr td span, .recipes-features .recipes-features-item .technical-details-table tr .document-card .cuisine td span, .document-card .cuisine .technical-details-table tr .recipes-features .recipes-features-item td span, .technical-details-table tr .recipes-features .recipes-features-item .document-card .cuisine td span, .document-card .cuisine .recipes-features .recipes-features-item .rental-booking-content-card ul li a span, .recipes-features .recipes-features-item .rental-booking-content-card ul li .document-card .cuisine a span, .document-card .cuisine .rental-booking-content-card ul li .recipes-features .recipes-features-item a span, .rental-booking-content-card ul li .recipes-features .recipes-features-item .document-card .cuisine a span, .cuisine .document-card .heading-h3 span, .document-card .cuisine .heading-h3 span {
-  font-size: 16px;
-  line-height: 22px;
-  color: #727272;
+.rating,
+.price {
+  margin-bottom: 10px;
 }
-
-.rating {
-  margin-bottom: 20px;
-}
-.rating span {
+.rating span,
+.price span {
   color: #DB4C46;
   font-weight: bold;
+}
+
+.price {
+  margin-bottom: 20px;
 }
 
 .product-pagination-btn {
@@ -20663,6 +20674,297 @@ ul.price-listing li::before {
 
 .posts-section .listing-article .product-listing-item .description {
   margin-bottom: 20px;
+}
+
+.product-cart-btn {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.product-cart-btn.logout .btn, .product-cart-btn.logout .btn-white, .product-cart-btn.logout .btn-black, .product-cart-btn.logout .btn-stroke, .product-cart-btn.logout .btn-stroke-primary, .product-cart-btn.logout .btn-stroke-black, .product-cart-btn.logout input[type=submit] {
+  cursor: not-allowed;
+  background-color: white;
+  border: 1px solid rgb(231, 227, 227);
+  color: #727272;
+}
+.product-cart-btn.logout .btn::before, .product-cart-btn.logout .btn-white::before, .product-cart-btn.logout .btn-black::before, .product-cart-btn.logout .btn-stroke::before, .product-cart-btn.logout .btn-stroke-primary::before, .product-cart-btn.logout .btn-stroke-black::before, .product-cart-btn.logout input[type=submit]::before {
+  filter: brightness(0);
+}
+.product-cart-btn.logout .btn::after, .product-cart-btn.logout .btn-white::after, .product-cart-btn.logout .btn-black::after, .product-cart-btn.logout .btn-stroke::after, .product-cart-btn.logout .btn-stroke-primary::after, .product-cart-btn.logout .btn-stroke-black::after, .product-cart-btn.logout input[type=submit]::after {
+  filter: brightness(0);
+}
+.product-cart-btn.logout .btn.add-cart, .product-cart-btn.logout .add-cart.btn-white, .product-cart-btn.logout .add-cart.btn-black, .product-cart-btn.logout .add-cart.btn-stroke, .product-cart-btn.logout .add-cart.btn-stroke-primary, .product-cart-btn.logout .add-cart.btn-stroke-black, .product-cart-btn.logout input.add-cart[type=submit] {
+  background-color: white;
+  border: 1px solid rgb(231, 227, 227);
+  color: #727272;
+}
+.product-cart-btn.logout .btn.add-cart::before, .product-cart-btn.logout .add-cart.btn-white::before, .product-cart-btn.logout .add-cart.btn-black::before, .product-cart-btn.logout .add-cart.btn-stroke::before, .product-cart-btn.logout .add-cart.btn-stroke-primary::before, .product-cart-btn.logout .add-cart.btn-stroke-black::before, .product-cart-btn.logout input.add-cart[type=submit]::before {
+  filter: brightness(0);
+}
+
+.cart-details-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.price-details-list {
+  width: 400px;
+  flex: none;
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  padding: 20px;
+}
+.price-details-list h3, .price-details-list .heading-h3, .price-details-list .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .price-details-list p, .price-details-list .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .price-details-list blockquote, .price-details-list .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .price-details-list .car-name, .price-details-list .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .price-details-list .car-name, .price-details-list .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .price-details-list td, .price-details-list .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .price-details-list td, .price-details-list .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .price-details-list span:last-child, .price-details-list .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .price-details-list span:last-child, .price-details-list .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .price-details-list td, .price-details-list .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .price-details-list td, .price-details-list .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .price-details-list a, .price-details-list .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .price-details-list a {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 10px;
+}
+.price-details-list ul {
+  list-style: none;
+  padding: 0px;
+  border-bottom: 1px solid #E8E8E8;
+  margin-bottom: 20px;
+}
+.price-details-list ul li {
+  padding: 0px;
+  margin-bottom: 20px;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.price-details-list ul li p, .price-details-list ul li blockquote, .price-details-list ul li .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .price-details-list ul li .car-name, .price-details-list ul li .compare-table tbody tr td, .compare-table tbody tr .price-details-list ul li td, .price-details-list ul li .choose-car-color span:last-child, .choose-car-color .price-details-list ul li span:last-child, .price-details-list ul li .technical-details-table tr td, .technical-details-table tr .price-details-list ul li td, .price-details-list .rental-booking-content-card ul li a, .rental-booking-content-card .price-details-list ul li a {
+  margin-bottom: 0px;
+}
+
+.cart-details-list {
+  width: 100%;
+}
+
+.delivey-card {
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.delivery-address-change {
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #DB4C46;
+}
+
+.delivery-details {
+  width: 100%;
+}
+
+.delivery-details-wrap {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.delivery-details-wrap p, .delivery-details-wrap blockquote, .delivery-details-wrap .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .delivery-details-wrap .car-name, .delivery-details-wrap .compare-table tbody tr td, .compare-table tbody tr .delivery-details-wrap td, .delivery-details-wrap .choose-car-color span:last-child, .choose-car-color .delivery-details-wrap span:last-child, .delivery-details-wrap .technical-details-table tr td, .technical-details-table tr .delivery-details-wrap td, .delivery-details-wrap .rental-booking-content-card ul li a, .rental-booking-content-card ul li .delivery-details-wrap a {
+  margin-bottom: 0px;
+}
+.delivery-details-wrap p span, .delivery-details-wrap blockquote span, .delivery-details-wrap .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name span, .header-carousel .swiper-wrapper .swiper-slide .car-model .delivery-details-wrap .car-name span, .delivery-details-wrap .compare-table tbody tr td span, .compare-table tbody tr .delivery-details-wrap td span, .delivery-details-wrap .choose-car-color span:last-child span, .choose-car-color .delivery-details-wrap span:last-child span, .delivery-details-wrap .technical-details-table tr td span, .technical-details-table tr .delivery-details-wrap td span, .delivery-details-wrap .rental-booking-content-card ul li a span, .rental-booking-content-card ul li .delivery-details-wrap a span {
+  font-weight: 600;
+  color: black;
+}
+.delivery-details-wrap .delivery-point {
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  height: 26px;
+  line-height: 26px;
+  padding: 0px 12px;
+  color: #727272;
+}
+
+.product-info-wrapper {
+  display: flex;
+  gap: 20px;
+}
+.product-info-wrapper .product-info {
+  display: flex;
+  gap: 5px;
+  height: 35px;
+}
+.product-info-wrapper .product-info input {
+  height: 100%;
+  width: 40px;
+}
+.product-info-wrapper input {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.decrement-circle,
+.increment-circle {
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-later {
+  text-transform: uppercase;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remove-later {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.deliveried-product-wrapper {
+  background-color: white;
+  border: 1px solid #E8E8E8;
+  padding: 20px;
+}
+
+.deliveried-product {
+  display: flex;
+  gap: 30px;
+  background-color: white;
+  border-bottom: 1px solid #E8E8E8;
+  padding: 0px 0px 20px 0px;
+  margin-bottom: 20px;
+}
+.deliveried-product:last-child {
+  border: none;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.deliveried-product h3, .deliveried-product .heading-h3, .deliveried-product .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .deliveried-product p, .deliveried-product .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .deliveried-product blockquote, .deliveried-product .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .deliveried-product .car-name, .deliveried-product .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .deliveried-product .car-name, .deliveried-product .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .deliveried-product td, .deliveried-product .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .deliveried-product td, .deliveried-product .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .deliveried-product span:last-child, .deliveried-product .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .deliveried-product span:last-child, .deliveried-product .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .deliveried-product td, .deliveried-product .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .deliveried-product td, .deliveried-product .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .deliveried-product a, .deliveried-product .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .deliveried-product a {
+  margin-bottom: 15px;
+}
+.deliveried-product .delivered-image {
+  width: 120px;
+  height: 120px;
+  flex: none;
+}
+.deliveried-product .delivered-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.deliveried-product .delivered-content {
+  width: 100%;
+}
+
+.place-order {
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+}
+.total-price h3, .total-price .heading-h3, .total-price .recipes-features .recipes-features-item p, .recipes-features .recipes-features-item .total-price p, .total-price .recipes-features .recipes-features-item blockquote, .recipes-features .recipes-features-item .total-price blockquote, .total-price .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .car-name, .recipes-features .recipes-features-item .header-carousel .swiper-wrapper .swiper-slide .car-model .total-price .car-name, .total-price .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .car-name, .header-carousel .swiper-wrapper .swiper-slide .car-model .recipes-features .recipes-features-item .total-price .car-name, .total-price .recipes-features .recipes-features-item .compare-table tbody tr td, .recipes-features .recipes-features-item .compare-table tbody tr .total-price td, .total-price .compare-table tbody tr .recipes-features .recipes-features-item td, .compare-table tbody tr .recipes-features .recipes-features-item .total-price td, .total-price .recipes-features .recipes-features-item .choose-car-color span:last-child, .recipes-features .recipes-features-item .choose-car-color .total-price span:last-child, .total-price .choose-car-color .recipes-features .recipes-features-item span:last-child, .choose-car-color .recipes-features .recipes-features-item .total-price span:last-child, .total-price .recipes-features .recipes-features-item .technical-details-table tr td, .recipes-features .recipes-features-item .technical-details-table tr .total-price td, .total-price .technical-details-table tr .recipes-features .recipes-features-item td, .technical-details-table tr .recipes-features .recipes-features-item .total-price td, .total-price .recipes-features .recipes-features-item .rental-booking-content-card ul li a, .recipes-features .recipes-features-item .rental-booking-content-card ul li .total-price a, .total-price .rental-booking-content-card ul li .recipes-features .recipes-features-item a, .rental-booking-content-card ul li .recipes-features .recipes-features-item .total-price a {
+  border: none;
+}
+
+.form-group-text {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.full-details {
+  display: flex;
+  gap: 15px;
+}
+
+.personal-details-section label {
+  margin-bottom: 0px;
+}
+.personal-details-section .edit {
+  color: #DB4C46;
+  line-height: 16px;
+}
+.personal-details-section .form-group:last-child {
+  margin-bottom: 0px;
+}
+
+.delete-wishlist {
+  cursor: pointer;
+}
+
+.cart-length {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: -5px;
+  width: 24px;
+  height: 24px;
+  background-color: #DB4C46;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.after-login {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 45px 0px 5px;
+  text-transform: none;
+  line-height: initial;
+}
+.after-login::after {
+  content: "";
+  background: url(../../assets/icon-caret-down-gray.svg) no-repeat center/10px;
+  width: 35px;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  border: 0;
+  border-left: 1px solid white;
+  filter: brightness(0) invert(1);
+}
+.after-login .profile-image {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 8px;
+}
+.after-login .profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.after-login:hover::after {
+  background: url(../../assets/icon-caret-down-gray.svg) no-repeat center/10px;
+}
+
+.after-login-wrapper {
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

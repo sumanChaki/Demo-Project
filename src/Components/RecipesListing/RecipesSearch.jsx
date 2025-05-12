@@ -14,6 +14,7 @@ function RecipesSearch({ searchValue, onSearchChange, onClearSearch }) {
           <input
             type="text"
             value={searchValue}
+            placeholder="Search your products"
             onChange={(e) => onSearchChange(e.target.value)}
           />
           <img

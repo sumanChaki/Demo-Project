@@ -70,9 +70,10 @@
 
         &::after{
             background: transparent;
-            background: url(../images/button-arrow-white.svg) no-repeat center center;
+            background: url(../../assets/button-arrow-white.svg) no-repeat center center;
         }
     } 
+    
 
     &-white{
         @extend .btn;

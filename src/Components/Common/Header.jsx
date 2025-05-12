@@ -1,14 +1,48 @@
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { FaCaretDown } from "react-icons/fa";
 import mainlogo from "../../assets/logo.jpg";
 import { useState } from "react";
+import {useDispatch, useSelector} from 'react-redux';
+import userImage from "../../assets/user-img.png";
+import { setLogout } from "../Redux/Auth/AuthReducer";
+import { persistor } from "../Redux/Store";
 
 function BasicExample() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const handleDropdownClose = () => {
     setShowDropdown(false);
   };
+
+  const handleLoginClose = () => {
+    setShowLogin(false)
+  }
+
+const logoutHandler = async (e) => {
+  e.preventDefault();
+  try {
+    setShowLogin(false);
+
+    // Dispatch logout actions
+    dispatch(setLogout());
+    dispatch({ type: "RESET_STORE" }); // 💥 Clear all Redux slices
+
+    await persistor.purge(); // Clean persisted storage
+
+    // Navigate away
+    navigate("/login");
+  } catch (error) {
+    console.log("Logout error >>>", error);
+  }
+};
+
+  const user = useSelector((state) => state.auth?.user?.token);
+  const cartLength = useSelector((state) => state.carts?.recipes);
 
 
   return (
@@ -80,17 +114,57 @@ function BasicExample() {
         </Navbar.Collapse>
 
         <div className="nav-btn-group">
-          <Link to="/login" className="btn">
-            Login
-          </Link>
+          {user !== undefined ? (
+            <div
+              className="after-login-wrapper"
+              onClick={handleLoginClose}
+              onMouseEnter={() => setShowLogin(true)}
+              onMouseLeave={() => setShowLogin(false)}
+            >
+              <div className="btn after-login">
+                <div className="profile-image">
+                  <img src={userImage} alt="#" />
+                </div>
+                <div className="profile-text">Hi Suman</div>
+              </div>
 
-          <Link to="/signup" className="btn">
-            Sign Up
-          </Link>
+              {showLogin && (
+                <div className="dropdown-menu show">
+                  <Link
+                    to="/my-profile"
+                    className="dropdown-item"
+                    onClick={handleLoginClose}
+                  >
+                    My Profile
+                  </Link>
+                  <Link
+                    to="/"
+                    className="dropdown-item"
+                    onClick={handleLoginClose}
+                  >
+                    Orders
+                  </Link>
+                  <Link
+                    to="/login"
+                    className="dropdown-item"
+                    onClick={logoutHandler}
+                  >
+                    Logout
+                  </Link>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link to="/login" className="btn">
+              Login
+            </Link>
+          )}
 
-          <Link to="/cart" className="btn add-cart">
-            Cart
-          </Link>
+          {user !== undefined && (
+            <Link to="/cart" className="btn add-cart">
+              <div className="cart-length">{cartLength?.length}</div>
+            </Link>
+          )}
         </div>
       </Container>
     </Navbar>

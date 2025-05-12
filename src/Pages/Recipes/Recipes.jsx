@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { apiRequest } from "../../Utility/apiRequest";
-import { recipeUrl } from '../../Utility/endPoint';
-import RecipesSearch from '../../Components/RecipesListing/RecipesSearch';
-import RecipesFilter from '../../Components/RecipesListing/RecipesFilter';
-import RecipesItemListing from '../../Components/RecipesListing/RecipesItemListing';
-import Loader from '../Loader/Loader';
+import { recipeUrl } from "../../Utility/endPoint";
+import RecipesSearch from "../../Components/RecipesListing/RecipesSearch";
+import RecipesFilter from "../../Components/RecipesListing/RecipesFilter";
+import RecipesItemListing from "../../Components/RecipesListing/RecipesItemListing";
+import Loader from "../Loader/Loader";
 
 function Recipes() {
   const [isLoading, setIsLoading] = useState(false);
@@ -18,10 +18,12 @@ function Recipes() {
   const [searchValue, setSearchValue] = useState("");
   const [tagsRecipes, setAllTagsRecipes] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
-  const [selectTagRecipes, setSelectTagRecipes] = useState([])
+  const [selectTagRecipes, setSelectTagRecipes] = useState([]);
+  const [allRatingList, setAllRatingList] = useState([]);
+  const [selectedRating, setSelectedRating] = useState([]);
+  const [selectedRatingRecipes, setSelectedRatingRecipes] = useState([]);
 
-
-  const postPerRecipes = 15;  // How many recipe items are displayed per page
+  const postPerRecipes = 15; // How many recipe items are displayed per page
 
   // FETCH ALL RECIPES
   const fetchRecipeItem = async () => {
@@ -32,8 +34,8 @@ function Recipes() {
         `${recipeUrl.recipePoint}?limit=${postPerRecipes}&skip=${skipRecipes}`
       );
       setRecipeItem(recipeItemListing.recipes);
-      console.log("Recipes >>", recipeItemListing.recipes);
-      
+      // console.log("Recipes >>", recipeItemListing);
+
       setSortedRating(recipeItemListing.recipes);
       const totalRecipes = recipeItemListing.total;
       const recipesPerCount = Math.ceil(totalRecipes / postPerRecipes);
@@ -63,16 +65,23 @@ function Recipes() {
 
   const sortedRatingRecipes = (sortType) => {
     try {
-      const sortingRecipes = [...recipeItem];
+      let listToSort =
+        selectedTags.length > 0 ? [...selectTagRecipes] : [...recipeItem];
 
       if (sortType === "low") {
-        sortingRecipes.sort((a, b) => a.rating - b.rating);
-        console.log("Low");
+        listToSort.sort((a, b) => a.rating - b.rating); // Low to High
       } else if (sortType === "high") {
-        sortingRecipes.sort((a, b) => b.rating - a.rating);
-        console.log("High");
+        listToSort.sort((a, b) => b.rating - a.rating); // High to Low
       }
-      setSortedRating(sortingRecipes);
+
+      if (sortType === "default") {
+        setSortedRating(
+          selectedTags.length > 0 ? selectTagRecipes : recipeItem
+        );
+        return;
+      }
+
+      setSortedRating(listToSort);
     } catch (error) {
       console.log(error);
     }
@@ -87,30 +96,16 @@ function Recipes() {
   // PREVIOUS RECIPES
 
   const PreviousRecipesHandler = () => {
-    setIsLoading(true)
-    try {
-      setCurrentPage((prev) => Math.max(prev - 1, 1))
-      
-    } catch (error) {
-      console.log(error);
-      
-    } finally{
-      setIsLoading(false);
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
     }
-  }
+  };
 
   const nextRecipesHandler = () => {
-    setIsLoading(true);
-    try {
-      setCurrentPage((prev) => Math.max(prev + 1, 1));
-      
-    } catch (error) {
-      console.log(error);
-      
-    } finally{
-      setIsLoading(false);
+    if (currentPage < totalPage) {
+      setCurrentPage((prev) => prev + 1);
     }
-  }
+  };
 
   // SEARCH RECIPES BY DEBOUNCING METHOD
 
@@ -123,17 +118,17 @@ function Recipes() {
   }, [querryRecipes]);
 
   const fetchSearchRecipes = async (query) => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const searchListRecipes = await apiRequest(
         `${recipeUrl.recipePoint}/search?q=${query}`
       );
-      setRecipeItem(searchListRecipes.recipes);
-      setSortedRating(searchListRecipes.recipes); // update sorted too
+      setRecipeItem(searchListRecipes);
+      setSortedRating(searchListRecipes); // update sorted too
     } catch (err) {
       console.error(err);
-    } finally{
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -148,23 +143,21 @@ function Recipes() {
   // AFTER CLICKING CROSS ICON RECIPES LISTING WILL LE DISPLAYED DEFAULT
 
   const crossIconRemove = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const defaultListing = await apiRequest(`${recipeUrl.recipePoint}`);
-      setRecipeItem(defaultListing.recipes);
-      setSortedRating(defaultListing.recipes);
-      
+      setRecipeItem(defaultListing.recipes); 
+      setSortedRating(defaultListing.recipes); 
     } catch (error) {
-      console.log(error);   
-    } finally{
+      console.log(error);
+    } finally {
       setIsLoading(false);
     }
-    
-  }
+  };
 
   useEffect(() => {
-    crossIconRemove()
-  }, [])
+    crossIconRemove();
+  }, []);
 
   const handleSearchChange = (value) => {
     setSearchValue(value);
@@ -177,24 +170,34 @@ function Recipes() {
     crossIconRemove();
   };
 
-  // GET ALL RECIPES TAGS
+  // // GET ALL RECIPES TAGS
 
   const allRecipesTags = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
-      const listingTags = await apiRequest(`${recipeUrl.recipePoint}/tags`);      
+      const listingTags = await apiRequest(`${recipeUrl.recipePoint}/tags`);
       setAllTagsRecipes(listingTags);
     } catch (error) {
       console.log(error);
-      
-    } finally{
-      setIsLoading(false)
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     allRecipesTags();
-  }, [])
+  }, []);
+
+  // THIS FUNCTION IS TRIGGERED WHEN USER SELECT MULTIPLE TAGS
+
+  const selectTags = (item) => {
+    setSelectedTags(
+      (prevTag) =>
+        prevTag.includes(item)
+          ? prevTag.filter((tag) => tag !== item) // Remove Tag
+          : [...prevTag, item] // Add Tag
+    );
+  };
 
   // RECIPES LISTING DISPLAYS ACCORDING TO TAGS SELECTION
 
@@ -203,24 +206,22 @@ function Recipes() {
       fetchRecipeItem();
       return;
     }
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
       const selectedRecipes = await Promise.all(
         tags.map((item) => apiRequest(`${recipeUrl.recipePoint}/tag/${item}`))
       );
 
-      const allRecipes = selectedRecipes.flatMap((res) => res.recipes);
+      const allRecipes = selectedRecipes.flatMap((res) => res);
 
       setSelectTagRecipes(allRecipes);
-      
     } catch (error) {
       console.log(error);
-      
-    } finally{
+    } finally {
       setIsLoading(false);
     }
-  }
+  };
 
   useEffect(() => {
     fetchRecipesByTag(selectedTags);
@@ -232,15 +233,61 @@ function Recipes() {
     }
   }, [selectedTags]);
 
-// THIS FUNCTION IS TRIGGERED WHEN USER SELECT MULTIPLE TAGS
+  // GET ALL RECIPE RATING
 
-const selectTags = (item) => {
-  setSelectedTags((prevTag) =>
-    prevTag.includes(item)
-      ? prevTag.filter((tag) => tag !== item) // Remove Tag
-      : [...prevTag, item] // Add Tag
-  ); 
-}
+  const fetchAllRating = async () => {
+    try {
+      const listedRating = await apiRequest(`${recipeUrl.recipePoint}/rating`);
+      setAllRatingList(listedRating);
+    } catch (error) {
+      console.log("error >>", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllRating();
+  }, []);
+
+  // ON SELECTED RATING RECIPE DATA WILL BE SHOWN
+
+  const ratingHandler = (item) => {
+    setSelectedRating((prevRating) =>
+      prevRating.includes(item)
+        ? prevRating.filter((rating) => rating !== item)
+        : [...prevRating, item]
+    );
+  };
+
+
+  const fetchRatingRecipe = async (ratings) => {
+    if (ratings.length === 0) {
+      fetchRecipeItem();
+      return;
+    }
+    setIsLoading(true);
+
+    try {
+      const ratedRecipes = await Promise.all(
+        ratings.map((item) =>
+          apiRequest(`${recipeUrl.recipePoint}/rating/${item}`)
+        )
+      );
+      const allRatedRecipes = ratedRecipes.flatMap((res) => res);
+      setSelectedRatingRecipes(allRatedRecipes);
+      console.log("allRatedRecipes >>", allRatedRecipes);
+
+      setIsLoading(false);
+    } catch (error) {
+      console.log("error >>", error);
+      setIsLoading(false);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRatingRecipe(selectedRating);
+  }, [selectedRating]);
 
   return (
     <section className="common-section recipes-section">
@@ -273,56 +320,23 @@ const selectTags = (item) => {
                   </div>
 
                   <div className="sidebar-card color-card">
-                    <h4>Color</h4>
+                    <h4>Rating</h4>
                     <div className="input-wrapper">
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox18" />
-                        <label htmlFor="checkbox18">
-                          <span className="color-palate"></span>Beige (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox19" />
-                        <label htmlFor="checkbox19">
-                          <span className="color-palate"></span>Black (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox20" />
-                        <label htmlFor="checkbox20">
-                          <span className="color-palate"></span>Blue (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox21" />
-                        <label htmlFor="checkbox21">
-                          <span className="color-palate"></span>Green (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox22" />
-                        <label htmlFor="checkbox22">
-                          <span className="color-palate"></span>Red (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox23" />
-                        <label htmlFor="checkbox23">
-                          <span className="color-palate"></span>Silver (60)
-                        </label>
-                      </div>
-
-                      <div className="input-wrapper-item">
-                        <input name="" type="checkbox" id="checkbox24" />
-                        <label htmlFor="checkbox24">
-                          <span className="color-palate"></span>White (60)
-                        </label>
-                      </div>
+                      {allRatingList?.length > 0 &&
+                        allRatingList?.map((item, index) => (
+                          <div className="input-wrapper-item" key={index}>
+                            <input
+                              name=""
+                              type="checkbox"
+                              id={`checkbox--${index + 1}`}
+                              onChange={() => ratingHandler(item)}
+                            />
+                            <label htmlFor={`checkbox--${index + 1}`}>
+                              <span className="color-palate"></span>
+                              {item}
+                            </label>
+                          </div>
+                        ))}
                     </div>
                   </div>
                 </div>
@@ -344,7 +358,11 @@ const selectTags = (item) => {
                 ) : (
                   <RecipesItemListing
                     recipeItem={
-                      selectedTags.length > 0 ? selectTagRecipes : sortedRating
+                      selectedTags.length > 0
+                        ? selectTagRecipes
+                        : selectedRating.length > 0
+                        ? selectedRatingRecipes
+                        : sortedRating
                     }
                     viewChange={viewChange}
                   />
@@ -353,43 +371,45 @@ const selectTags = (item) => {
                   PreviousRecipesHandler={PreviousRecipesHandler}
                   nextRecipesHandler={nextRecipesHandler}
                 /> */}
-                <div className="row">
-                  <div className="col-12">
-                    <div className="product-pagination-btn">
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={PreviousRecipesHandler}
-                        disabled={currentPage === 1}
-                      >
-                        «
-                      </button>
+                {selectedTags.length === 0 && (
+                  <div className="row">
+                    <div className="col-12">
+                      <div className="product-pagination-btn">
+                        <button
+                          type="button"
+                          className="btn"
+                          onClick={PreviousRecipesHandler}
+                          disabled={currentPage === 1}
+                        >
+                          «
+                        </button>
 
-                      <div className="paginatin-buttons">
-                        {Array.from({ length: totalPage }, (_, index) => (
-                          <button
-                            key={index + 1}
-                            onClick={() => setCurrentPage(index + 1)}
-                            className={`btn ${
-                              currentPage === index + 1 ? "active" : ""
-                            }`}
-                          >
-                            {index + 1}
-                          </button>
-                        ))}
+                        <div className="paginatin-buttons">
+                          {Array.from({ length: totalPage }, (_, index) => (
+                            <button
+                              key={index + 1}
+                              onClick={() => setCurrentPage(index + 1)}
+                              className={`btn ${
+                                currentPage === index + 1 ? "active" : ""
+                              }`}
+                            >
+                              {index + 1}
+                            </button>
+                          ))}
+                        </div>
+
+                        <button
+                          type="button"
+                          className="btn"
+                          onClick={nextRecipesHandler}
+                          disabled={currentPage === totalPage}
+                        >
+                          »
+                        </button>
                       </div>
-
-                      <button
-                        type="button"
-                        className="btn"
-                        onClick={nextRecipesHandler}
-                        disabled={currentPage === totalPage}
-                      >
-                        »
-                      </button>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>

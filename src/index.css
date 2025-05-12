@@ -136,6 +136,10 @@ section {
   padding-left: 50px;
 }
 
+.btn.add-cart::after{
+  display: none;
+}
+
 .btn.btn-white {
   background-color: white;
   color: black;
@@ -290,17 +294,7 @@ input[type="email"] {
   margin-bottom: 30px;
 }
 
-.product-details-image {
-  border: 1px solid rgb(225, 225, 225);
-  padding: 20px;
-  width: 500px;
-  flex: none;
-  position: fixed;
-}
 
-.product-details-image img {
-  width: 100%;
-}
 
 .product-details-content {
   width: 100%;
@@ -326,12 +320,6 @@ input[type="email"] {
   opacity: 0.6 !important;
   pointer-events: auto;
   color: white;
-}
-
-.product-cart-btn {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
 }
 
 .rating-header {

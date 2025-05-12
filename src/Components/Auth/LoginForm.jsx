@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../Utility/apiRequest';
 import { setLogin } from '../Redux/Auth/AuthReducer';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -16,7 +16,16 @@ function LoginForm() {
 
     try {
       const data = await loginUser({ email, password });
-      dispatch(setLogin({user: data, token: data.token}))
+      dispatch(
+        setLogin({
+          user: {
+            id: data.user._id,
+            token: data.token,
+            name: data.user.name,
+            email: data.user.email,
+          },
+        })
+      );
       console.log("Loged in data >>>", data);
       navigate("/")
     } catch (error) {
@@ -76,7 +85,9 @@ function LoginForm() {
 
         <div className="col-lg-12">
           <div className="form-group">
-          <button type='submit' className="btn btn-big w-100">Login</button>
+            <button type="submit" className="btn btn-big w-100">
+              Login
+            </button>
           </div>
         </div>
 
@@ -84,7 +95,7 @@ function LoginForm() {
           <p className="login-text">
             Not registered yet?{" "}
             <strong>
-              <a href="sign-up.php">Create an Account</a>
+              <Link to="/signup">Create an Account</Link>
             </strong>
           </p>
         </div>
